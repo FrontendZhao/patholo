@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="      
+	http://www.springframework.org/schema/beans      
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd      
+	http://www.springframework.org/schema/tx      
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd     
+	http://www.springframework.org/schema/context      
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/aop      
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	
+	<bean id="springJdbcTx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" >
+		<property name="dataSource" ref="dataSource"/>
+		<qualifier value="springJdbcTx" />
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<tx:advice id="springJdbcTxAdvice" transaction-manager="springJdbcTx">
+		<tx:attributes>
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="query*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="springJdbcTxPointcut" expression="execution(* com.platform..service..*.*(..))" />
+		<aop:advisor pointcut-ref="springJdbcTxPointcut" advice-ref="springJdbcTxAdvice"/>
+	</aop:config>
+	
+	<!-- 注解事务驱动 -->
+	<tx:annotation-driven transaction-manager="springJdbcTx" />
+	
+</beans>

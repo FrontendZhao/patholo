@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kfbio Slide Viewer </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./Kfbio Slide Viewer_files/farbtastic.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/slideviewer.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/liteaccordion.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Kfbio Slide Viewer_files/colpick.css" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/jquery.ui.all.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/jquery.ui.theme.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/jquery.ui.dialog.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./Kfbio Slide Viewer_files/index.css" rel="stylesheet" type="text/css">
+</head>
+<body style="overflow: hidden">
+
+    <!--End 倍率条-->
+    <!-- 病例信息-->
+    <div class="xxim_main transparent_class" id="tooldiv" style="position: absolute;
+        top: 0px; right: 0px; width: 300px; height: 100%; display: none">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#caseinfo" data-toggle="tab">病例信息</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="caseinfo">
+                <div id="slidecase" style="font-size: 14px; padding: 4px; height: 695px;">
+                    <textarea id="casetxt" style="border: 0px; resize: none; width: 100%; overflow: hidden; height: 695px;" readonly="true">C-01  男性，57岁，小肠肿瘤
+ID：125
+赵明, 茹国庆, 何向蕾，浙江省人民医院病理科 310014
+病理号：2015-24361
+病史摘要：患者男性，57岁，因反复腹痛7月余伴黑便1次入院，4个月体重下降约5kg。患者无发热，无呕血，无血便。胃镜和肠镜检查无明显异常。小肠造影提示小肠炎症样改变。上腹部+盆腔增强CT及MRI示盆腔一小段小肠肠壁增厚，倾向恶性肿瘤，淋巴瘤待排。行腹腔镜下小肠肿瘤切除术，术中见距屈氏韧带约25cm处空回肠交界处肿瘤分别约5.0×4.0cm，向腔外生长。临床诊断为间质瘤。巨检示小肠一段，长26cm，距一端切缘9cm，另一端切缘8cm处浆膜面见一灰白肿物，已剖开，肿物大小5.5x5x4cm，与肠管另一段4cm处有粘连，肿物与周围境界尚清楚。表面粘膜未见明显异常。周围未触及肿大淋巴结。
+</textarea></div>
+            </div>
+        </div>
+    </div>
+    <div id="xxim_on" class="xxim_icon xxim_on" onclick="showtool()" style="">
+        <img src="./Kfbio Slide Viewer_files/tabopen.png" width="18px" height="90px" id="img_case">
+    </div>
+     <!-- End病例信息-->
+    <div id="container" style="height: 745px;">
+    <div id="container_toolbar"><div class="toolbar" style="display: none;"><table><tbody><tr><td class="toolstrip" style="text-align: left; width: 80%;"><a class="toolbutton" title="返回首页" style="display: none;"><span class="toolbutton-inner toolbtn-icon-back"></span></a><a class="toolbutton" title="自适应窗口"><span class="toolbutton-inner toolbtn-icon-home"></span></a><a class="toolbutton" style=""><span class="toolbutton-inner toolbtn-icon-2x"></span></a><a class="toolbutton" style=""><span class="toolbutton-inner toolbtn-icon-4x"></span></a><a class="toolbutton" style=""><span class="toolbutton-inner toolbtn-icon-10x"></span></a><a class="toolbutton" style=""><span class="toolbutton-inner toolbtn-icon-20x"></span></a><a class="toolbutton" style=""><span class="toolbutton-inner toolbtn-icon-40x"></span></a></td><td class="toolstrip" style="text-align: center; width: 20%;"><span class="toollabel" style="width: 10%;"></span><span class="toollabel" style="width: 90%;">0.38x</span></td></tr></tbody></table></div><div class="toolbar" style="display: none;"><table><tbody><tr><td class="toolstrip" style="text-align: left; width: 150px;"><span class="toollabel">标注类型：</span></td><td class="toolstrip" style="text-align: left; width: 60%;"><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-hand"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-selectanno"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-line"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-arrow"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-rect"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-ellipse"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-angle"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-arc"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-circle3"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-polygon"></span></a><a class="toolbutton"><span class="toolbutton-inner toolbtn-icon-position"></span></a></td><td class="toolstrip" style="text-align: right; width: 40%;"><a class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-corner-all ui-shadow toolbutton-jqm" style="display: none;"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">完成</span></span></a><a class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-corner-all ui-shadow toolbutton-jqm" style="display: none;"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">保存</span></span></a><a class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-corner-all ui-shadow toolbutton-jqm"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">编辑</span></span></a><a class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-corner-all ui-shadow toolbutton-jqm"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">删除</span></span></a><a class="ui-btn ui-btn-up-a ui-btn-inline ui-btn-corner-all ui-shadow toolbutton-jqm"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">返回</span></span></a></td></tr></tbody></table></div></div><div id="container_viewer" style="height: 745px; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><div style="background: none transparent; border: none; margin: 0px; padding: 0px; position: relative; width: 100%; height: 100%; left: 0px; top: 0px; text-align: left;"><div style="background: none transparent; border: none; margin: 0px; padding: 0px; position: absolute; width: 100%; height: 100%; overflow: hidden; top: 0px; left: 0px; text-align: left;"><canvas id="slide" width="1600" height="745" style="background: none transparent; border: none; margin: 0px; padding: 0px; position: absolute; width: 100%; height: 100%;"></canvas><div id="shapeContainer" style="position: absolute; width: 1600px; height: 745px;"><canvas id="shapeCanvas" width="1600" height="745" style="position: absolute;"></canvas><canvas id="drawCanvas" width="1600" height="745" style="position: absolute;"></canvas><canvas id="measureCanvas" width="1600" height="745" style="position: absolute;"></canvas><div style="font-size: 12px; background-color: rgb(247, 248, 250); border: 1px solid rgb(163, 174, 185); color: rgb(0, 0, 0); font-family: &quot;Microsoft Sans Serif&quot;, Arial, Helvetica, sans-serif, 宋体; opacity: 0.8; position: absolute; padding: 4px; border-radius: 4px; left: 787.5px; top: 480.5px;">宽：10454.7 微米<br>高：5360.77 微米<br>面积：56045215.2 平方微米<br>周长：31630.94 微米<br>描述：<br></div></div></div><div style="background: none transparent; border: none; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px;"><span style="background: none transparent; border: none; margin: 0px; padding: 0px; position: static; display: inline-block;"><div id="Thumbnail" style="width: 173px; height: 200px; top: 10px; left: 10px; position: relative; z-index: 0; overflow: hidden; border: 1px solid rgb(49, 157, 206); display: block;"><canvas width="173" height="200" id="cavView" style="z-index: 0; position: absolute;"></canvas><div id="hLine" style="top: 53.6407px; width: 173px; height: 1px; line-height: 1px; position: absolute; left: 0px; background-color: rgb(255, 0, 0); z-index: 0;"></div><div id="vLine" style="left: 86.5px; height: 200px; width: 1px; line-height: 1px; position: absolute; top: 0px; background-color: rgb(255, 0, 0); z-index: 0;"></div><div id="viewRect" style="top: -39.8603px; left: -114.308px; border: 1px solid rgb(255, 0, 0); background-color: rgb(255, 255, 255); position: absolute; width: 401.615px; height: 187.002px; cursor: pointer; z-index: 0; opacity: 0.5;"></div></div></span></div><div style="background: none transparent; border: none; margin: 0px; padding: 0px; position: absolute; top: 0px; right: 0px;"></div><div style="background: none transparent; border: none; margin: 0px; padding: 0px; position: absolute; right: 0px; bottom: 0px;"></div><div style="background: none transparent; border: none; margin: 0px; padding: 0px; position: absolute; left: 0px; bottom: 0px;"><span style="background: none transparent; border: none; margin: 0px; padding: 0px; position: static; display: inline-block;"><div style="position: relative;"></div></span></div><span style="background: none transparent; border: none; margin: 0px; padding: 0px; position: static; display: inline-block; height: 100%; width: 100%;"><div id="MSlide" style="position: absolute;"><ul id="MainUl" class="dropdown-menu" style="display: none;"><li><img src="./Kfbio Slide Viewer_files/zx.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">直线</a></li><li><img src="./Kfbio Slide Viewer_files/jt.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">箭头</a></li><li><img src="./Kfbio Slide Viewer_files/jx.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">矩形</a></li><li><img src="./Kfbio Slide Viewer_files/ty.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">椭圆</a></li><li><img src="./Kfbio Slide Viewer_files/pen.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">曲线</a></li><li><img src="./Kfbio Slide Viewer_files/pin.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">标注</a></li><li class="divider"></li><li><img src="./Kfbio Slide Viewer_files/adjust.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">图像调整</a></li><li class="divider"></li><li><img src="./Kfbio Slide Viewer_files/sj.png" style="float:right"><img src="./Kfbio Slide Viewer_files/other.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">其它</a></li><li><img src="./Kfbio Slide Viewer_files/about.png" style="width:35px;height:35px;"><a tabindex="-1" style="background:transparent;color:white">关于</a></li></ul><ul id="OtherUl" class="dropdown-menu" style="display: none;"><li><img src="./Kfbio Slide Viewer_files/nav.png" style="width:35px;height:35px"><a tabindex="-1" style="background:transparent;color:white">导航图</a></li><li><img src="./Kfbio Slide Viewer_files/caseinfo.png" style="width:35px;height:35px"><a tabindex="-1" style="background:transparent;color:white">病例信息</a></li><li><img src="./Kfbio Slide Viewer_files/edit.png" style="width:35px;height:35px"><a tabindex="-1" style="background:transparent;color:white">注释管理</a></li><li><img src="./Kfbio Slide Viewer_files/ImageInfo.png" style="width:35px;height:35px"><a tabindex="-1" style="background:transparent;color:white">图像信息</a></li></ul><ul id="RightUl" class="dropdown-menu"><li><img src="./Kfbio Slide Viewer_files/edit(1).png" style="width:35px;height:35px"><a tabindex="-1" style="background:transparent;color:white">编辑</a></li><li><img src="./Kfbio Slide Viewer_files/sc.png" style="width:35px;height:35px"><a tabindex="-1" style="background:transparent;color:white">删除</a></li></ul></div></span><span style="background: none transparent; border: none; margin: 0px; padding: 0px; position: static; display: inline-block; height: 100%; width: 100%;"><div style="position: absolute; top: 5px; right: 0px;"><div class="NavBar_zoomControlContainer"><div class="NavBar_zoomDrop" style="position: absolute; display: block;"><div id="xbl" href="#" style="font-size: 14px; margin-top: 10px; font-weight: bold; text-align: center; border: 1px dashed blue; color: black;">0.38</div><a class="toolbutton" style=" margin-top:-9px"><span class="toolbutton-inner toolbtn-icon-home"></span></a><a class="toolbutton" style=" margin-top:-9px"><span class="toolbutton-inner toolbtn-icon-2x"></span></a><a class="toolbutton" style=" margin-top:-9px"><span class="toolbutton-inner toolbtn-icon-4x"></span></a><a class="toolbutton" style=" margin-top:-9px"><span class="toolbutton-inner toolbtn-icon-10x"></span></a><a class="toolbutton" style=" margin-top:-9px"><span class="toolbutton-inner toolbtn-icon-20x"></span></a><a class="toolbutton" style=" margin-top:-9px"><span class="toolbutton-inner toolbtn-icon-40x"></span></a></div><a class="NavBar_button NavBar_toolButton NavBar_zoomIn" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" uici="NB.ZC.ZoomIn"></a><a class="NavBar_button NavBar_toolButton NavBar_zoomOut" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" uici="NB.ZC.ZoomOut"></a></div></div></span></div></div></div>
+    <div style="position: absolute; z-index: 999; bottom: 2px; left: 160px; opacity: 0.9; display: block;" onclick="toolswitch(this)" data-rel="popover" data-placement="top" data-i18n="[data-original-title]index.Save" id="xtooldiv" data-original-title="保存注释成功！" title="">
+        <img src="./Kfbio Slide Viewer_files/la_no.png" id="toolimg">
+    </div>
+    <div style="position: absolute; z-index: 999; bottom: 2px; right: 2px;" id="div_label">
+        <div style="position: absolute; z-index: 999; right: 255px;" id="div_label_sw">
+            <img id="div_label_img_sw" src="./Kfbio Slide Viewer_files/ra_no.png" onclick="hiddlabel()" width="20px" height="160px" style="height: 100px;">
+        </div>
+        <img id="img_label" src="./Kfbio Slide Viewer_files/LabelHandler.ashx" style="width: 100px; height: 100px;">
+        <img id="img_pre" src="./Kfbio Slide Viewer_files/PreviewHandler.ashx" style="width: 150px; height: 100px;">
+    </div>
+    <div id="one" style="position: absolute; z-index: 999; bottom: 2px; left: 0px; display: block; opacity: 0.9; border: 1px solid rgb(49, 157, 206); width: 160px; height: 110px;" class="liteAccordion rounded basic">
+        <ol>
+            
+            <li id="li_anno" class="slide">
+                <h2 class="selected" style="height: 30px; left: 0px; width: 110px;">
+                    <span>
+                        <img src="./Kfbio Slide Viewer_files/234.png" id="anno_img"></span><b>1</b></h2>
+                <div style="padding: 0px 0px 0px 30px; height: 108px; margin-left: 10px; width: 120px; left: 0px;">
+                    <div>
+                        <img src="./Kfbio Slide Viewer_files/zx.png" width="35px" style="cursor: pointer" id="img_zx" data-i18n="[title]Tool.Line" class="xz" title="直线">
+                        <img src="./Kfbio Slide Viewer_files/jt.png" width="35px" style="cursor: pointer" id="img_jt" data-i18n="[title]Tool.Arrow" class="xz" title="箭头">
+                        <img src="./Kfbio Slide Viewer_files/jx.png" width="35px" style="cursor: pointer" id="img_jx" data-i18n="[title]Tool.Rectangle" class="xz" title="矩形">
+                        <img src="./Kfbio Slide Viewer_files/ty.png" width="35px" style="cursor: pointer" id="img_ty" data-i18n="[title]Tool.Ellipse" class="xz" title="椭圆">
+                        <img src="./Kfbio Slide Viewer_files/pen.png" width="35px" style="cursor: pointer" id="img_pen" data-i18n="[title]Tool.Curve" class="xz" title="曲线">
+                        <img src="./Kfbio Slide Viewer_files/pin.png" width="35px" style="cursor: pointer" id="img_pin" data-i18n="[title]Tool.Position" class="xz" title="标注"></div>
+                    <div>
+                        <button style="width: 40px; color: white; padding: 2px; margin: 2px;" class="btn btn-primary" id="btn_edit" data-i18n="index.edit">编辑</button>
+                        <button style="width: 40px; color: white; padding: 2px; margin: 2px" class="btn btn-danger" id="btn_delete" data-i18n="index.delete">删除</button>
+                    </div>
+                </div>
+            </li>
+            
+        </ol>
+    </div>
+    <div id="over" class="over">
+    </div>
+    <div id="layout" class="layout">
+        <img src="./Kfbio Slide Viewer_files/Loading1.gif" alt=""></div>
+
+
+<script src="./Kfbio Slide Viewer_files/jquery-1.7.2.min.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/i18next.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/bootstrap.min.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/liteaccordion.jquery.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/jquery-ui-1.8.14.custom.min.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/jquery.cookie.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/farbtastic.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/colpick.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/Seadragon.js.下载" type="text/javascript"></script>
+<script type="text/javascript">
+    function isIElast() {
+        var t;
+        var browser = navigator.appName
+        var b_version = navigator.appVersion
+        var version = b_version.split(";");
+        if (version[1] != null) {
+            var trim_Version = version[1].replace(/[ ]/g, "");
+        }
+        if (browser == "Microsoft Internet Explorer") {
+            return trim_Version == "MSIE6.0" || trim_Version == "MSIE7.0" || trim_Version == "MSIE8.0" ? t = !1 : t = !0,
+      t;
+        }
+        else {
+            return !0
+        }
+    }
+var shotwidth=0;
+var shotheight=0;
+var ScaleBarLeft="#",ScaleBarRight=0,ScaleBarTop=5,ScaleBarBottom="#";
+if(isIElast())
+{
+window.addEventListener('message',function(e){
+            var words = e.data.split('|');
+           
+            if(words[0]=="[Screenshot]")
+            {
+                var ShotParam= words[1].replace('[','').replace(']','');
+             
+                var ShotParamArr=ShotParam.split('*');
+
+                shotwidth=ShotParamArr[0];
+
+                shotheight=ShotParamArr[1];
+              
+                SaveImgs();
+            //截图
+            }
+      
+            
+        },false);
+    }
+   function hiddenLableForTif()
+	{
+ 	
+		if($("#img_pre").css("width") != "0px"&&$("#img_label").css("width") == "0px")
+		{
+		     $("#img_pre").css("width", "0px");
+		     $("#div_label_sw").css("right", "0px");
+		
+            $("#div_label_img_sw").attr("src", "image/la_no.png");
+			
+					return false;	
+	      }
+		  else if($("#img_pre").css("width") == "0px"&&$("#img_label").css("width") == "0px")
+		  {
+			 $("#img_pre").css("width", "250px");
+		     $("#div_label_sw").css("right", "250px");
+		
+            $("#div_label_img_sw").attr("src", "image/la_no.png");
+				return false;	
+		  }
+		
+		
+	
+	}
+    function hiddlabel() {
+			var re=hiddenLableForTif();
+			if(re==false)
+			{
+			 return;
+			} 
+	
+        $("#div_label").height($("#img_label").height());
+        if ($("#img_label").css("display") != "none") {
+            $("#img_label").css("display", "none");
+            $("#img_pre").css("display", "none");
+            $("#div_label_sw").css("right", "0px");
+            $("#div_label_img_sw").attr("src", "image/la_no.png");
+
+
+        }
+        else {
+            var cwidthcw = 250;
+            var cwidth2 = 150;
+            var winwidth = $(window).width();
+            if (winwidth <= 400) {
+
+                cwidthcw = 100;
+                document.getElementById("img_pre").style.width = 0 + "px";
+            }
+
+            if (winwidth > 400) {
+                if (getQueryString("ZJSlideID") != "") {
+
+                    cwidthcw = 100;
+                    document.getElementById("img_pre").style.width = 0 + "px";
+                }
+                else {
+                    document.getElementById("img_pre").style.width = cwidth2 + "px";
+                }
+            }
+		
+				
+            $("#div_label_img_sw").attr("src", "image/ra_no.png");
+            $("#img_label").css("display", "");
+            $("#img_pre").css("display", "");
+            $("#div_label_sw").css("right", cwidthcw + 5);
+        }
+    }
+    function getWebGamma(){
+    var config={ Gamma: 1.2, Contrast: 1, Light: 0, RgbR: 0, RgbG:0, RgbB: 0};
+    return config;
+    }
+    function showtool()
+ {
+
+ if($("#tooldiv").css("display")!="none")
+ {
+ $("#casetxt").css("overflow","hidden");
+ $("#tooldiv").css("display","none");
+  $("#xxim_on").css("right","0px")
+  $("#img_case").attr("src","images/tabopen.png")
+ }
+ else
+ {
+ $("#casetxt").css("overflow","auto");
+ $("#tooldiv").css("display","block");
+ $("#xxim_on").css("right","300px")
+  $("#img_case").attr("src","images/tabclose.png")
+ }
+
+ }
+    //setInterval(function(){
+ // if(xviewer!=undefined)
+   //xviewer.saveAnnotations();
+  
+ // },2000)
+    function toolswitch(v) {
+    var cwidth=190;;
+     if(getQueryString("SwitchCut")!="1")
+       {
+       $("#li_shot").remove();
+       cwidth=160;
+       }
+       if(getQueryString("SwitchAnno")=="1")
+       {
+        $("#li_anno").remove();
+         cwidth=160;
+       }
+        var display = $("#one").css("display");
+        if (display == "none") {
+            $("#one").css("display", "block")
+            $(v).css("left", cwidth+"px");
+            $("#toolimg").attr("src", "image/la_no.png");
+        }
+        else {
+            $("#one").css("display", "none")
+            $(v).css("left", "0px");
+            $("#toolimg").attr("src", "image/ra_no.png");
+
+        }
+    }
+    function isnav(v) {
+        var cv = $(v).attr("checked");
+        if (cv == "checked") {
+            $("#Thumbnail").css("display", "");
+        }
+        else {
+            $("#Thumbnail").css("display", "none");
+        }
+    }
+    function isbar(v) {
+        var cv = $(v).attr("checked");
+        if (cv == "checked") {
+            $(".NavBar_zoomControlContainer").css("display", "");
+        }
+        else {
+            $(".NavBar_zoomControlContainer").css("display", "none");
+        }
+    }
+    var SlideIDss;
+    function getGamma() {
+        var ColorConfig = { Gamma: 1.2, Contrast: 1, Light: 0, RgbR: 0, RgbG:0, RgbB: 0};
+        return ColorConfig;
+    }
+    function showLoading() {
+        document.getElementById("over").style.display = "block";
+        document.getElementById("layout").style.display = "block";
+    }
+    function hideLoading() {
+        document.getElementById("over").style.display = "none";
+        document.getElementById("layout").style.display = "none";
+    }
+    function Frms(slideid) {
+        var ProxyIP = getQueryString("ProxyIP");
+        if (ProxyIP != "")
+            ProxyIP = "&ProxyIP=" + ProxyIP;
+        var kfbpath = "";
+        if (slideid.toLowerCase().indexOf('.kfb') != -1) {
+            kfbpath = "&kfbpath=" + slideid;
+            slideid = -1;
+        }
+        var SlidePath = getQueryString("SlidePath");
+        if (SlidePath != "")
+            SlidePath = "&SlidePath=" + SlidePath;
+        window.location.href = "SeadragonViewer.aspx?caseno=" + getQueryString("caseno") + "&SlideID=" + slideid + "&SwitchCut=" + getQueryString("SwitchCut") + "&ram=" + Math.random(0, 9999) + "" + ProxyIP + kfbpath + SlidePath;
+    }
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return "";
+    }
+    function getVer() {
+        var ver = '2.7.0.0';
+        return ver;
+    }
+
+    var  uploadurl="";
+    var Readmode="";
+     $(window).resize(function() {
+         $("#divtool").css("height",$(window).height()-10);
+              $("#slidecase").css("height",$(window).height()-50);  
+            $("#casetxt").css("height",$(window).height()-50);      
+    });
+    var xviewer;
+    var configshotcount;
+     //页面加载
+    $(document).ready(function () {
+    
+    if(getQueryString("ToolBottom")!="")
+    { $("#one").css("bottom",getQueryString("ToolBottom")+"px");
+    
+     $("#xtooldiv").css("bottom",getQueryString("ToolBottom")+"px");
+     $("#div_label").css("bottom",getQueryString("ToolBottom")+"px");
+    }
+      var cwidth=190;
+        if(getQueryString("SwitchCut")!="1")
+       {
+       $("#li_shot").remove();
+       cwidth=160;
+       }
+       if(getQueryString("SwitchAnno")=="1")
+       {
+        $("#li_anno").remove();
+         cwidth=160;
+       }
+       if(getQueryString("SwitchCut")!="1"&&getQueryString("SwitchAnno")=="1")
+       {
+          $("#xtooldiv").css("display","none");
+       }
+       else
+       {
+         $("#xtooldiv").css("display","block");
+       }
+     
+      
+         $('#one').liteAccordion({
+        onTriggerSlide: function () {
+            this.find('figcaption').fadeOut();
+        },
+        onSlideAnimComplete: function () {
+            this.find('figcaption').fadeIn();
+        },
+        autoPlay: false,
+        pauseOnHover: true,
+        //                    theme: 'stitch',
+        rounded: true,
+        containerWidth:cwidth,
+        enumerateSlides: true
+    }).find('figcaption:first').show();
+    //判断标签开关
+    if(getQueryString("SwitchLabel")==1)
+    {
+     $("#div_label").css("display","none");
+    }
+      configshotcount='60';
+
+     var caseshow='1';
+     if(caseshow==1)
+     {
+      $("#xxim_on").css("display","");
+ 	LoadCaseInfo();
+     }
+
+
+    //开关式样
+    $('#xtooldiv').popover({ html: true, trigger: 'manual' });
+        $(":checkbox").checkboxpicker({
+            offLabel: '关',
+            onLabel: '开'
+
+        });
+
+      uploadurl='';
+         
+     var Readmode='1';
+         $("#divtool").css("height",$(window).height()-10);
+         $("#slidecase").css("height",$(window).height()-50);  
+         $("#casetxt").css("height",$(window).height()-50); 
+        // LoadCaseInfo();
+        if(getQueryString("SwitchAnno")=="1")
+        {
+        $("#btn_edit").attr("disabled",true);
+        $("#btn_delete").attr("disabled",true);
+        }
+     
+ 
+    });
+    function LoadCaseInfo() {
+      var kfbpath = getQueryString("kfbpath");
+        if (kfbpath != "")
+            kfbpath = "&kfbpath=" + kfbpath;
+
+        var slideid = getQueryString("slideid");
+            if (slideid != "")
+            slideid = "&ID=" + slideid;
+        var url = "../CasesHandler.ashx?"+kfbpath+slideid;
+        $.ajax({
+            type: "POST",
+            url: url,
+            cache: false,
+            dataType: 'text',
+
+            success: function (v) {
+                document.getElementById("casetxt").innerHTML = v;
+            }
+
+        });
+    }
+
+    function parseID() {
+        var url = location.href;
+        var index = url.indexOf('?');
+        var args = url.substring(index + 1).split('&');
+        for (var i = 0; i < args.length; i++) {
+            var nameValues = args[i].split('=');
+            if (nameValues.length == 2) {
+                if (nameValues[0].toLowerCase() == "caseno") {
+                    slideId = parseInt(nameValues[1]);
+                    return slideId;
+                }
+                else if (nameValues[0].toLowerCase() == "slideid") {
+                    slideId = parseInt(nameValues[1])
+                    return slideId;
+                }
+            }
+        }
+
+    }
+    function isMoblie() {
+        var t;
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if (!( bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+            return t = !1, t;
+        }
+        else {
+            return t = !0, t;
+        }
+    }
+    /* End */
+</script>
+<script src="./Kfbio Slide Viewer_files/ImageProcess.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/Annotations.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/bootstrap-checkbox.js.下载" type="text/javascript"></script>
+<script src="./Kfbio Slide Viewer_files/hammer.min.js.下载" type="text/javascript"></script>
+<script type="text/javascript">
+    function loadJs(url, fn) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        //是否js文件
+        var isJs = /(\.js)$/.exec(url);
+        if (script.readyState) {
+            script.onreadystatechange = function () {
+                if (script.readyState == 'loaded' || script.readyState == 'complete') {
+                    script.onreadystatechange = null;
+                    fn instanceof Function && fn.call();
+                    !isJs && script.parentNode.removeChild(script);
+                }
+            };
+        }
+        else {
+            script.onload = function () {
+                fn instanceof Function && fn.call();
+                !isJs && script.parentNode.removeChild(script);
+            };
+        }
+        script.src = encodeURI(url);
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+    function initLang() {
+        $.i18n.init({
+            detectLngQS: 'lang',
+            useCookie: false,
+            fallbackLng: 'en',
+            resGetPath: "Locales/__ns__.__lng__.json",
+            ns: {
+                namespaces: ['translation'],
+                defaultNs: 'translation'
+            }
+        }, function (t) {
+            loadJs("SlideViewer/slideviewer.js?v=201601024", function () {
+                var slideId = parseID();
+                var container = $("#container");
+                container.height($(window).height());
+                var viewer = SeadragonLiYViewer.createViewer("container");
+                xviewer = viewer;
+                viewer.openli(slideId);
+                var lang = getQueryString("lang");
+                if (lang == "en") {
+                    $("#shot_img").attr("src", "images/123en.png");
+                    $("#anno_img").attr("src", "images/234en.png");
+                }
+
+            });
+
+            $("body").i18n();
+
+
+        });
+
+
+    }
+    initLang();
+</script>
+
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-annotationDialog" style="display: block; z-index: 1002; outline: 0px; height: auto; width: 450px; top: 189px; left: 575px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-annotationDialog">编辑注释</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="annotationDialog" data-role="dialog" data-overlay-theme="e" class="ui-dialog-topright ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 305px;"> 		<div data-role="content" data-theme="c"> 			<div data-role="fieldcontain"> 				<label for="lineWidth" class="ui-item-label">线宽：</label> 				<select id="lineWidth" class="ui-item-field"> 					<option value="1">1</option> 					<option value="2">2</option> 					<option value="5" selected="selected">5</option> 					<option value="10">10</option> 					<option value="20">20</option> 				</select> 			</div> 			<div data-role="fieldcontain"> 				<label for="annoName" class="ui-item-label">名称：</label> 				<input type="text" id="annoName" class="ui-item-field"> 			</div> 			<div data-role="fieldcontain"> 				<label for="annoDesc" class="ui-item-label"> 描述：</label> 				<textarea id="annoDesc" class="ui-item-field" rows="2"></textarea> 			</div> 			<div data-role="fieldcontain" id="Color"> 				<label for="color" class="ui-item-label">颜色：</label> 				<input type="text" id="picker"> 				</div>             <div data-role="fieldcontain">         <label for="chkAutoShow" data-inline="true" style="width:27%">显示：</label><input type="checkbox" id="chkAutoShow" checked="checked">             </div> <div data-role="fieldcontain"><table><tbody><tr><td style="width:30%"><label>定位图标：</label></td><td><input type="radio" name="identity" value="1" checked="checked" disabled=""><img src="./Kfbio Slide Viewer_files/pin_1.png" alt=""></td><td><input type="radio" name="identity" value="2" disabled=""><img src="./Kfbio Slide Viewer_files/pin_2.png"></td><td><input type="radio" name="identity" value="3" disabled=""><img src="./Kfbio Slide Viewer_files/pin_3.png" alt=""></td><td><input type="radio" name="identity" value="4" disabled=""><img src="./Kfbio Slide Viewer_files/pin_4.png" alt=""></td></tr></tbody></table></div>		</div> 	</div><div class="colpick colpick_hex colpick_hex_ns colpick_dark" id="collorpicker_103" style="position: absolute;"><div class="colpick_color" style="background-color: rgb(0, 149, 255);"><div class="colpick_color_overlay1"><div class="colpick_color_overlay2"><div class="colpick_selector_outer" style="left: 116px; top: 34px;"><div class="colpick_selector_inner"></div></div></div></div></div><div class="colpick_hue" style="background:-webkit-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background: -o-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background: -ms-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background:-moz-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); -webkit-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background:linear-gradient(to bottom,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); "><div class="colpick_hue_arrs" style="top: 67px;"><div class="colpick_hue_larr"></div><div class="colpick_hue_rarr"></div></div></div><div class="colpick_new_color" style="background-color: rgb(50, 137, 199);"></div><div class="colpick_current_color" style="background-color: rgb(50, 137, 199);"></div><div class="colpick_hex_field"><div class="colpick_field_letter">#</div><input type="text" maxlength="6" size="6"></div><div class="colpick_rgb_r colpick_field"><div class="colpick_field_letter">R</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_rgb_g colpick_field"><div class="colpick_field_letter">G</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_rgb_b colpick_field"><div class="colpick_field_letter">B</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_h colpick_field"><div class="colpick_field_letter">H</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_s colpick_field"><div class="colpick_field_letter">S</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_b colpick_field"><div class="colpick_field_letter">B</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_submit">OK</div></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">应用</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">取消</span></button></div></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-annotationSaveDialog" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-annotationSaveDialog">保存标注</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="annotationSaveDialog" data-role="dialog" class="ui-dialog-content ui-widget-content"> 		<div data-role="content" data-theme="c" data-mini="true"> 			<p data-lang="Annotations.AskSave.Message">标注已经改变，是否保存？</p> 		</div> 	</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">是</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">否</span></button></div></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-slideDialog" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-slideDialog">切片信息</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="slideDialog" data-role="dialog" data-overlay-theme="e" class="ui-dialog-topright ui-dialog-content ui-widget-content"> 		<div data-role="content" data-theme="b"> 			<div data-role="fieldcontain"> 				<label class="ui-item-label">文件名:</label>			 <label id="filename"></label> 			</div> 			<div data-role="fieldcontain"> 				<label class="ui-item-label">文件大小</label> 				<label id="filesize"></label> 			</div> 			<div data-role="fieldcontain"> 				<label class="ui-item-label">图像像素</label> 				<label id="imgpixel"></label>  			</div> 			<div data-role="fieldcontain"> 				<label class="ui-item-label">扫描倍率</label> 				 <label id="multiple"></label> 				</div>    <div data-role="fieldcontain"> 				<label class="ui-item-label">扫描时刻</label>			 <label id="ScanTime"></label> 			</div><div data-role="fieldcontain"> 				<label class="ui-item-label">扫描时间</label>			 <label id="SpeedTime"></label> 			</div>  <div data-role="fieldcontain"> 				<label class="ui-item-label">扫描机器</label>			 <lablel id="ScanMac"> 			</lablel></div>		 <div data-role="fieldcontain"> 				<label class="ui-item-label">预览图</label>			   <br><img id="labelImg" style="width:180px;height:180px"><img id="slideImg" style=" height:180px;width:280px">			</div>	  </div> 	</div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-annotationoption" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-annotationoption">编辑注释</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="annotationoption" data-role="dialog" data-overlay-theme="e" class="ui-dialog-topright ui-dialog-content ui-widget-content"> 		<div data-role="content" data-theme="c"> 			<div data-role="fieldcontain">			 <label class="ui-item-label">名称：</label>				<select id="AnnoName" class="ui-item-field"></select>				</div>				<div data-role="fieldcontain">			<label style="margin-left:10px">删除： </label><img style="width:32px;height:32px;margin-right:10px;" src="./Kfbio Slide Viewer_files/sc.png" id="delete">				<label> 隐藏： </label><img src="./Kfbio Slide Viewer_files/T_hidd.png" id="hide" style="margin-right:10px">				<label> 全部隐藏： </label><img src="./Kfbio Slide Viewer_files/qT_hidd.png" style="margin-right:0px" id="ahide">					  </div>  <div data-role="fieldcontain"> 				<label for="lineWidth" class="ui-item-label">线宽：</label> 				<select id="linewidth" class="ui-item-field"> 					<option value="1">1</option> 					<option value="2">2</option> 					<option value="5" selected="selected">5</option> 					<option value="10">10</option> 					<option value="20">20</option> 				</select> 			</div> 			<div data-role="fieldcontain"> 				<label for="annoName" class="ui-item-label">名称：</label> 				<input type="text" id="annoname" class="ui-item-field"> 			</div> 			<div data-role="fieldcontain"> 				<label for="annoDesc" class="ui-item-label">描述：</label> 				<textarea id="annodesc" class="ui-item-field" rows="2"></textarea> 			</div> 			<div data-role="fieldcontain" id="color"> 				<label for="color" class="ui-item-label">颜色：</label> 				<input type="text" id="Picker"> 				</div>             <div data-role="fieldcontain">       <label for="chkAutoShow" data-inline="true">显示：</label>     <input type="checkbox" id="chkautoShow">        </div><div data-role="fieldcontain"><table><tbody><tr><td style="width:30%"><label>定位图标：</label></td><td><input type="radio" name="identitys" value="1" checked="checked"><img src="./Kfbio Slide Viewer_files/pin_1.png" alt=""></td><td><input type="radio" name="identitys" value="2"><img src="./Kfbio Slide Viewer_files/pin_2.png"></td><td><input type="radio" name="identitys" value="3"><img src="./Kfbio Slide Viewer_files/pin_3.png" alt=""></td><td><input type="radio" name="identitys" value="4"><img src="./Kfbio Slide Viewer_files/pin_4.png" alt=""></td></tr></tbody></table></div>     <div data-role="fieldcontain"><div class="ui-item-label" style="height:120px;line-height:120px;display:block;overflow:hidden;float:left;font-weight:bold">测量信息：</div><div id="Measurement" style="padding:5px 0;;overflow:hidden;float:left;display:inline"><div></div>       		</div> 	</div></div></div><div class="colpick colpick_hex colpick_hex_ns colpick_dark" id="collorpicker_537" style="position: absolute;"><div class="colpick_color" style="background-color: rgb(0, 149, 255);"><div class="colpick_color_overlay1"><div class="colpick_color_overlay2"><div class="colpick_selector_outer" style="left: 116px; top: 34px;"><div class="colpick_selector_inner"></div></div></div></div></div><div class="colpick_hue" style="background:-webkit-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background: -o-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background: -ms-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background:-moz-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); -webkit-linear-gradient(top,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); background:linear-gradient(to bottom,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000); "><div class="colpick_hue_arrs" style="top: 67px;"><div class="colpick_hue_larr"></div><div class="colpick_hue_rarr"></div></div></div><div class="colpick_new_color" style="background-color: rgb(50, 137, 199);"></div><div class="colpick_current_color" style="background-color: rgb(50, 137, 199);"></div><div class="colpick_hex_field"><div class="colpick_field_letter">#</div><input type="text" maxlength="6" size="6"></div><div class="colpick_rgb_r colpick_field"><div class="colpick_field_letter">R</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_rgb_g colpick_field"><div class="colpick_field_letter">G</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_rgb_b colpick_field"><div class="colpick_field_letter">B</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_h colpick_field"><div class="colpick_field_letter">H</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_s colpick_field"><div class="colpick_field_letter">S</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_b colpick_field"><div class="colpick_field_letter">B</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_submit">OK</div></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">应用</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">取消</span></button></div></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-slidecase" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-slidecase">病例信息</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="slidecase" class="ui-dialog-content ui-widget-content"><textarea id="test" style="width:465px;height:410px;border:0;resize: none;" readonly="true"></textarea></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-demo" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-demo">图像调整</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="demo" class="ui-dialog-content ui-widget-content"> 		<fieldset> 				<legend>伽马因子</legend> 				<div data-role="fieldcontain"> 					<table class="adjustment-table"><tbody><tr><td class="adjust-td-text"><label class="adjustment-slider-text" for="gamma">伽马因子</label></td> 					<td class="adjustment-td-slider"><div id="gamma" class="adjustment-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-role="slider"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" style="left: 23.3333%;"></a></div></td>					<td class="adjustment-td-value"><label id="gammaValue" class="adjustment-slider-value">1</label></td></tr></tbody></table> 				</div> 		</fieldset> 		<fieldset> 			<legend>对比度&amp;亮度</legend> 			<div data-role="fieldcontain"> 				<table class="adjustment-table"><tbody><tr><td class="adjust-td-text"><label class="adjustment-slider-text" for="min">对比度</label></td> 				<td class="adjustment-td-slider"><div id="min" class="adjustment-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-role="slider"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" style="left: 50%;"></a></div></td> 				<td class="adjustment-td-value"><label id="minValue" class="adjustment-slider-value">100%</label></td></tr></tbody></table> 			</div> 			<div data-role="fieldcontain"> 				<table class="adjustment-table"><tbody><tr><td class="adjust-td-text"><label class="adjustment-slider-text" for="max">亮度</label></td> 				<td class="adjustment-td-slider"><div id="max" class="adjustment-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-role="slider"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" style="left: 50%;"></a></div></td> 				<td class="adjustment-td-value"><label id="maxValue" class="adjustment-slider-value">100%</label></td></tr></tbody></table> 			</div> 		</fieldset> 		<fieldset> 			<legend>通道</legend> 			<div data-role="fieldcontain"> 				<table class="adjustment-table"><tbody><tr><td class="adjust-td-text"><label class="adjustment-slider-text" for="red">红</label></td> 				<td class="adjustment-td-slider"><div id="red" class="adjustment-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-role="slider"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" style="left: 50%;"></a></div></td> 				<td class="adjustment-td-value"><label id="redValue" class="adjustment-slider-value">50%</label></td></tr></tbody></table> 			</div> 			<div data-role="fieldcontain"> 				<table class="adjustment-table"><tbody><tr><td class="adjust-td-text"><label class="adjustment-slider-text" for="green">绿</label></td> 				<td class="adjustment-td-slider"><div id="green" class="adjustment-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-role="slider"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" style="left: 50%;"></a></div></td> 				<td class="adjustment-td-value"><label id="greenValue" class="adjustment-slider-value">1</label></td></tr></tbody></table> 			</div> 			<div data-role="fieldcontain"> 				<table class="adjustment-table"><tbody><tr><td class="adjust-td-text"><label class="adjustment-slider-text" for="blue">蓝</label></td> 				<td class="adjustment-td-slider"><div id="blue" class="adjustment-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-role="slider"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" style="left: 50%;"></a></div></td> 				<td class="adjustment-td-value"><label id="blueValue" class="adjustment-slider-value">1</label></td></tr></tbody></table> 			</div> 			 		 		</fieldset> 	</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">对比</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">重置</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">应用</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">取消</span></button></div></div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-Version" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-Version">&nbsp;</span><a href="http://image.kfbio.cn/HTML5/SeadragonViewer.aspx?SlideID=336#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="Version" class="ui-dialog-content ui-widget-content"><fieldset><div style="position:relative"><img style="margin-top:15%" src="./Kfbio Slide Viewer_files/web.png" alt=""><img src="./Kfbio Slide Viewer_files/Sca_1.jpg" alt="" style="width:300px;height:250px;float:right;margin-right:10px"><label style="position:absolute;bottom:-100px;left:50px">Version 2.7.0.0</label></div></fieldset><fieldset><div class="bj-jb" style="margin-top:10px;height:60px;background-image:url(image/bjd.png);position:relative"><img style="height:42px;width:115px;margin:15px;" src="./Kfbio Slide Viewer_files/logo4.png" alt=""><label style="position:absolute;top:15px;right:10px;font-size:small;font-weight:normal;font-color:gray">宁波江丰生物 科技因你而生</label><label style="position:absolute; bottom:2px;right:10px;font-size:small;font-weight:normal;font-color:gray">ⓒCopyright 2013-2014 KFBIO. All Rights Reserved</label></div></fieldset></div></div><div class="ui-widget-overlay" style="width: 1600px; height: 1597px; z-index: 1001;"></div></body></html>

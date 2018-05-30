@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+      <title>HTML5</title>
+      <style>
+         body { font-family: Arial, Helvetica; color: white; background-color: #ddd; }
+         .link-overlay a, .link-overlay a:visited, .link-overlay a:active, .link-overlay a:hover { color: rgb(227,76,38); font-size: 0.6em; padding: 0px}
+         .button-overlay { position: absolute; left:2px; top:2px }
+         .link-overlay { position: absolute; left:180px; top:0px }
+         .img1{
+	      margin:100 100 ;
+	      -webkit-animation: 4s infinite normal linear mymove;
+          animation: 4s infinite normal linear mymove;
+	      } 
+	      /* translate */
+	      .img2{
+	      margin:100 auto;
+	      /* height:100px; */
+	      -webkit-animation: 0.5s infinite normal linear mymove;
+          animation: 0.5s infinite normal linear mymove;
+	      }
+
+		@-webkit-keyframes mymove {
+		  0 {
+		  /*  开始平移动画; */
+		    -webkit-transform: translateY(0px);
+		            transform: translateY(0px);
+		   /* 开始旋转动画 */
+		     -webkit-transform: rotate(0deg);
+		            transform: rotate(0deg);
+		           
+		  }
+		  100% {
+		    /*  结束平移动画; */
+		    -webkit-transform: translateY(50px);
+		            transform: translateY(50px);
+		   /* 结束旋转动画 */
+		     -webkit-transform: rotate(360deg);
+		            transform: rotate(360deg);
+		  }
+		}
+		
+		
+      </style>
+   </head>
+   
+   <body style="margin:0px; overflow:hidden">
+      
+      <div class="link-overlay">
+         <div style="text-align:center;clear:both">
+
+
+</div>
+      </div>
+      <div style="width: 100%;height: 100%;background: url('5555.jpg') no-repeat;background-size:100% 100%;">
+      <a id="stop" onclick="stop()">暂停</a>
+      <a id="begin" onclick="begin()">开始</a>
+      <!-- <canvas id="canvas" style="background-color:#ddd"></canvas> -->
+      <img class="img1" alt="" src="0000.png" width="500",height="500">
+      <img class="img2" alt="" src="7777.png" width="320",height="320">
+      <img class="img3" alt="" src="1111.png" width="250",height="292">
+      <script type="text/javascript">
+        //使动画停止
+        function stop(){
+        	document.getElementsByTagName("img")[0].style.animationPlayState='paused';
+        	document.getElementsByTagName("img")[0].style.WebkitAnimationPlayState='paused';
+        }
+        //动画开始
+        function begin(){
+        	document.getElementsByTagName("img")[0].style.animationPlayState='running';
+        	document.getElementsByTagName("img")[0].style.WebkitAnimationPlayState='running';
+        }
+        var i=1;
+        
+        window.setInterval(function(){
+        	
+        	var j=1111*i++;
+        	document.getElementsByTagName("img")[2].src=j+'.png';
+        	if(i==3){i=1;}
+        },250);
+      </script>
+      </div>
+   </body>
+</html>

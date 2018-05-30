@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 重载 convention 类-->
+	<constant name="struts.convention.classes.reload" value="true" />  
+	<!-- 设置 convention 返回结果页面的跟路径 -->
+	<constant name="struts.convention.result.path" value="/views/"/>
+	
+	<!-- 开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<!-- 配置文件修改冲自动加载 -->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<!-- 文件上传 -->
+	 <constant name="struts.multipart.maxSize" value="1024000000"/>  
+	
+	<!-- 访问Action的后缀 -->
+	<constant name="struts.action.extension" value="action,do,,"/>
+	<constant name="struts.action.excludePattern" value="=/dwr/.*,/dwr/test/.*,/j_spring_security_check*,/j_spring_security_logout*"/>
+	
+	
+	<!-- 全局配置 -->
+	<package name="basePackage" namespace="/" extends="json-default" >
+		<!-- 拦截器配置 -->
+		<interceptors>
+			<!-- 定义拦截器 -->
+			<interceptor name="certificate" class="com.platform.project.sys.interceptor.CertificateInterceptor"></interceptor>
+			<!-- 定义拦截器栈 -->
+			<interceptor-stack name="customDefaultStack">
+				<interceptor-ref name="defaultStack"/>
+				<!-- <interceptor-ref name="certificate"/> -->
+				<interceptor-ref name="timer"/>
+			</interceptor-stack>
+		</interceptors>	
+		<default-interceptor-ref name="customDefaultStack"/>
+		
+		<!-- Result配置 -->
+		<global-results>
+			<!-- 没有权限 -->
+			<result name="_authority_" >/views/comm/error/authority.jsp</result>
+			<!-- 访问出错 -->
+			<result name="_exception_" >/views/comm/error/exception.jsp</result>
+			<!-- session超时 -->
+			<result name="_timeout_" >/views/comm/error/timeout.jsp</result>
+		</global-results>	
+			
+		<!-- Action配置 -->
+		<!-- 适用以模块分层 (http://localhost:8080/ims/system_TestEntity_toList)-->
+		<action name="*_*_*" class="com.platform.{1}.web.action.{2}Action" method="{3}" >
+			<result name="{3}" >/views/{1}/{2}_{3}.jsp</result>
+		</action>
+
+		<action name="*_*_*" class="com.platform.{1}.web.action.{2}Controller" method="{3}" >
+			<result name="{3}" >/views/{1}/{2}_{3}.jsp</result>
+		</action>
+
+		<action name="*_*_*" class="com.platform.{1}.web.action.{2}" method="{3}" >
+			<result name="{3}" >/views/{1}/{2}_{3}.jsp</result>
+		</action>
+	
+		<!-- Exception配置 -->
+		
+	</package>
+	
+</struts>

@@ -1,0 +1,52 @@
+/** 添加、修改表单样式 */
+table.table_form {
+	border-collapse: collapse;
+	font-family: verdana, arial, sans-serif;
+	font-size: 12px;
+}
+
+table.table_form td {
+	padding: 6px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #f0f0f0;
+}
+
+table.table_form td.label {
+	background-color: #F0F8FF;
+	width: 8em;
+	text-align: right;
+}
+
+table.table_form td input, table.table_form td select, table.table_form td textarea
+	{
+	width: 100%;
+}
+
+table.table_form .easyui-textbox, table.table_form .textbox-f {
+	width: 157px;
+}
+
+/** 搜索表单样式 */
+table.table_form_search {
+	font-family: verdana, arial, sans-serif;
+	font-size: 12px;
+}
+
+table.table_form_search td {
+	border-color: #BFEFFF;
+}
+
+table.table_form_search td.label {
+	width: 5em;
+}
+
+table.table_form_search td input, table.table_form_search td select, table.table_form_search td textarea
+	{
+	width: 100%;
+}
+
+table.table_form_search .easyui-textbox, table.table_form_search .textbox-f {
+	width: 120px;
+}
+
