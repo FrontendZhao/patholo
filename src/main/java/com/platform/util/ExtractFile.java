@@ -10,7 +10,7 @@ import com.platform.project.sys.spring.SpringUtil;
 
 public class ExtractFile{
   static{
-    System.loadLibrary("Release_x64_JavaDll");
+    System.loadLibrary("mds");
   }
   ExtractFile(String filePath)
   {
