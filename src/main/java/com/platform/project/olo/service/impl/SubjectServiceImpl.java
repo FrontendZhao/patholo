@@ -54,7 +54,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 			return null;
 		}
 		if(EmptyUtils.isNotEmpty(map.get("SNAME")) && EmptyUtils.isNotEmpty(map.get("CNAME")) && EmptyUtils.isNotEmpty(map.get("NAME"))){
-			path+=map.get("SNAME").toString()+"\\"+map.get("CNAME").toString()+"\\"+map.get("NAME").toString()+"\\"+map.get("NAME").toString();
+			path+=map.get("SNAME").toString()+"/"+map.get("CNAME").toString()+"/"+map.get("NAME").toString()+"/"+map.get("NAME").toString();
 		}else{
 			return null;
 		}

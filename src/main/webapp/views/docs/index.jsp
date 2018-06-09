@@ -217,7 +217,7 @@
 	<div class="footer">
 		<div class="container">
 			<h3><a href="index.html">Entity</a></h3>
-			<p>Copyright &copy; 2018.华北电力大学宏图技术小组.</p>
+			<p>Copyright &copy; 2018.宏图技术小组.</p>
 		</div>
 	</div>
 	<!-- //footer -->	

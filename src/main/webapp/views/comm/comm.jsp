@@ -16,33 +16,35 @@
 				<div class="header-mdl agileits-logo navbar-left"><!-- header-two --> 
 					<h1><a  href="${ctx}/views/docs/index.jsp">Physic</a></h1>
 				</div>
-				 <nav class="navbar navbar-default" id="example-navbar-menuchild" role="navigation">
-				   <div class="navbar-header navbar-right">
-				      <button type="button" class="navbar-toggle" data-toggle="collapse" 
-				         data-target="#example-navbar-collapse">
-				         <span class="sr-only">切换</span>
-				         <span class="icon-bar"></span>
-				         <span class="icon-bar"></span>
-				         <span class="icon-bar"></span>
-				      </button>
-				   </div>
-				   <div class="collapse navbar-collapse" id="example-navbar-collapse">
-				      <ul class="nav navbar-nav navbar-right">
-				         <li class="icon-bar"><a href="${ctx}/views/users/login.jsp" data-toggle="modal" data-target="#commModal" >登陆</a></li>
-				         <li class="icon-bar"><a href="${ctx}/views/users/register.jsp" data-toggle="modal" data-target="#commModal" >注册</a></li>
-				         <li class="icon-bar"><a href="${ctx}/views/FAQ/help.jsp"  target="_blank"  >帮助</a></li>
-				         <li class="dropdown">
-				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				                                                 语言 <span class="caret"></span>
-				            </a>
-				            <ul class="dropdown-menu">
-				               <li><a href="#">中文</a></li>
-				               <li><a href="#">English</a></li>
-				            </ul>
-				         </li>
-				      </ul>
-				   </div>
-				</nav> 
+				<div class="navbar-right">
+					 <nav class="navbar navbar-default" id="example-navbar-menuchild" role="navigation">
+					   <div class="navbar-header navbar-right">
+					      <button type="button" class="navbar-toggle" data-toggle="collapse" 
+					         data-target="#example-navbar-collapse">
+					         <span class="sr-only">切换</span>
+					         <span class="icon-bar"></span>
+					         <span class="icon-bar"></span>
+					         <span class="icon-bar"></span>
+					      </button>
+					   </div>
+					   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+					      <ul class="nav navbar-nav navbar-right">
+					         <li class="icon-bar"><a href="${ctx}/views/users/login.jsp" data-toggle="modal" data-target="#commModal" >登陆</a></li>
+					         <li class="icon-bar"><a href="${ctx}/views/users/register.jsp" data-toggle="modal" data-target="#commModal" >注册</a></li>
+					         <li class="icon-bar"><a href="${ctx}/views/FAQ/help.jsp"  target="_blank"  >帮助</a></li>
+					         <li class="dropdown">
+					            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					                                                 语言 <span class="caret"></span>
+					            </a>
+					            <ul class="dropdown-menu">
+					               <li><a href="#">中文</a></li>
+					               <li><a href="#">English</a></li>
+					            </ul>
+					         </li>
+					      </ul>
+					   </div>
+					</nav> 
+				</div>
 
 				<div class="clearfix"> </div>
 			</div>  

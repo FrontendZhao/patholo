@@ -4,6 +4,8 @@ import java.io.File;
 import javax.servlet.ServletContext;
 
 import org.apache.struts2.ServletActionContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.platform.project.sys.spring.SpringUtil;
 
@@ -24,6 +26,7 @@ public class ExtractFile{
   public native void CreateMDSFile(String filePath);
   public native byte[] GetTileData(int Level,int x,int y);
   public native void ReleaseMDSFile();
+  public static Logger log=LoggerFactory.getLogger(ExtractFile.class);
   private long ptrMDS;
   public int maxLevel;
   public int ImageWidth;
@@ -49,8 +52,8 @@ public class ExtractFile{
 			ServletContext application=ServletActionContext.getServletContext();
 			Object newClass=application.getAttribute(sliceNo);
 			String slicePath= SpringUtil.getProperty("example_file_path");
-			if(!EmptyUtils.isNotEmpty(newClass) && (new File(slicePath+"\\科目\\"+path+".mds").exists())){
-				newClass=new ExtractFile(slicePath+"\\科目\\"+path+".mds");
+			if(!EmptyUtils.isNotEmpty(newClass) && (new File(slicePath+"/科目/"+path+".mds").exists())){
+				newClass=new ExtractFile(slicePath+"/科目/"+path+".mds");
 				application.setAttribute(sliceNo,newClass);
 				//((ExtractFile)newClass).ReleaseMDSFile();
 			}
@@ -66,14 +69,8 @@ public class ExtractFile{
 		try {
 			ExtractFile newClass=(ExtractFile)application.getAttribute(sliceNo);
 			b=newClass.GetTileData(Integer.parseInt(level),Integer.parseInt(x),Integer.parseInt(y));
-			if(b.length==0){
-				System.out.println("层数"+level);
-				System.out.println("x"+x);
-				System.out.println("y"+y);
-				System.out.println("长度"+b.length);
-			}
 		} catch (Exception e) {
-			System.out.println(level+","+x+","+y);
+			log.warn(level+","+x+","+y);
 			//e.printStackTrace();
 		}
 		//Thread.sleep(1000);

@@ -27,7 +27,7 @@
 	</context-param>
 	<context-param>
 		<param-name>spring.profiles.active</param-name>
-		<param-value>test</param-value>
+		<param-value>linux</param-value>
 		<!-- <param-value>${profiles.activation}</param-value> -->
 	</context-param>
 	<listener>

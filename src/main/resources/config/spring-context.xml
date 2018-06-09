@@ -12,32 +12,30 @@
 	http://www.springframework.org/schema/aop      
 	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 	
-	<!-- 开发环境的配置 -->
-	<beans profile="dev" >
+	<!-- linux环境的配置 -->
+	<beans profile="linux" >
 		<!-- 属性文件读入 -->
 		<bean id="propertyPlaceholderConfigurer"
 			class="com.platform.project.sys.spring.CustomPropertyConfigurer">
 			<property name="locations">
 				<list>
-					<value>classpath*:config/propfiles/jdbc_dev.properties</value>
-					<value>classpath*:config/propfiles/proj.properties</value>
-					<value>classpath*:config/propfiles/TVibrationOrigTimeSignal.properties</value>
+					<value>classpath*:config/propfiles/jdbc_linux.properties</value>
+					<value>classpath*:config/propfiles/proj_linux.properties</value>
 				</list>
 			</property>
 		</bean>
 		<import resource="spring-all.xml"/>
 	</beans>
 	
-	<!-- 测试环境的配置 -->
-	<beans profile="test" >
+	<!-- windows环境的配置 -->
+	<beans profile="win" >
 		<!-- 属性文件读入 -->
 		<bean id="propertyPlaceholderConfigurer"
 			class="com.platform.project.sys.spring.CustomPropertyConfigurer">
 			<property name="locations">
 				<list>
-					<value>classpath*:config/propfiles/jdbc_test.properties</value>
-					<value>classpath*:config/propfiles/proj.properties</value>
-					<value>classpath*:config/propfiles/TVibrationOrigTimeSignal.properties</value>
+					<value>classpath*:config/propfiles/jdbc_win.properties</value>
+					<value>classpath*:config/propfiles/proj_win.properties</value>
 				</list>
 			</property>
 		</bean>
