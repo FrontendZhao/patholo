@@ -16,7 +16,7 @@
 		<!-- 项目编码 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- JDK版本 -->
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
 		<!-- WEB项目根据路径 -->
 		<webapp.path>src/main/webapp</webapp.path>
 		<!-- WEB项目的class路径 -->
