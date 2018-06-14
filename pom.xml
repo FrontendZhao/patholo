@@ -405,11 +405,12 @@
 			<version>${mysql-connector-java.version}</version>
 		</dependency>
 
-		<dependency>
+        <!-- 收费的，需手动引入 -->
+		<!-- <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>${oracle-ojdbc6.version}</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.aspectj</groupId>
