@@ -98,7 +98,7 @@
 
 		<!-- connection -->
 		<mysql-connector-java.version>5.1.34</mysql-connector-java.version>
-		<oracle-ojdbc6.version>11.2.0.2.0</oracle-ojdbc6.version>
+		<oracle-ojdbc6.version>11.2.0.3.0</oracle-ojdbc6.version>
 		<com.microsoft.sqlserver.sqljdbc4.version>4.0</com.microsoft.sqlserver.sqljdbc4.version>
 
 		<!-- alibaba -->
@@ -405,7 +405,6 @@
 			<version>${mysql-connector-java.version}</version>
 		</dependency>
 
-        <!-- 收费的，需手动引入 -->
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
