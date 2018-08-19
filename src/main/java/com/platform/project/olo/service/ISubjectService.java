@@ -1,5 +1,6 @@
 package com.platform.project.olo.service;
 
+import java.io.File;
 import java.util.List;
 
 import org.hibernate.service.spi.ServiceException;
@@ -25,7 +26,7 @@ public interface ISubjectService {
 	 * @return
 	 * @throws SerialException
 	 */
-	public List<?> findSliceData(String cataNo) throws ServiceException;
+	public List<?> findSliceData(String cataNo,String sql) throws ServiceException;
 	
 	/**
 	 * 获取磁盘下所有实例名称
@@ -41,4 +42,20 @@ public interface ISubjectService {
 	 * 解析切片并返回切片
 	 */
 	public byte[] tileUrlSlice(String level,String x,String y,String sliceNo)throws ServiceException, InterruptedException ;
+	
+	/**
+	 * 批注序列化
+	 */
+	public boolean savePostil(String postil,String sliceNo) throws ServiceException;
+	/**
+	 * 加载批注
+	 * @param sliceNo
+	 * @return
+	 * @throws ServiceException
+	 */
+	public Object loadPostil(String sliceNo) throws ServiceException;
+	/**
+	 * 上传批注图片
+	 */
+	public void uploadFile(File file) throws ServiceException;
 }

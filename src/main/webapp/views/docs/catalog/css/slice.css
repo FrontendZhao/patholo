@@ -156,7 +156,19 @@
 	height:auto;
 	visibility:hidden;
 }
+#toolbar .list-group .lineW .input-group{
+	visibility:visible;
+}
+#toolbar .list-group .color .input-group{
+	visibility:visible;
+}
 #toolbar .list-group .list-group-item:HOVER{
 	background-color:#949494;
+}
+.colorpicker{
+	margin-top: 10px;
+}
+#toolbar .list-group .color{
+	height: 170px;
 }
  /* #toolbar */

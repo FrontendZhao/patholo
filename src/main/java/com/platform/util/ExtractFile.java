@@ -12,7 +12,7 @@ import com.platform.project.sys.spring.SpringUtil;
 
 public class ExtractFile{
   static{
-    System.loadLibrary("mds");
+    System.loadLibrary("libmds");
   }
   ExtractFile(String filePath)
   {
@@ -23,9 +23,11 @@ public class ExtractFile{
   {
     
   }
+  
   public native void CreateMDSFile(String filePath);
   public native byte[] GetTileData(int Level,int x,int y);
   public native void ReleaseMDSFile();
+  public native byte[] GetThumbnail(int height);
   public static Logger log=LoggerFactory.getLogger(ExtractFile.class);
   private long ptrMDS;
   public int maxLevel;
@@ -60,6 +62,8 @@ public class ExtractFile{
 			return newClass;
 	}
 	
+	
+	
 	public static byte[] getSliceTileData(String level,String x,String y,String sliceNo) throws InterruptedException{
 		ServletContext application=ServletActionContext.getServletContext();
 		if(!EmptyUtils.isNotEmpty(application.getAttribute(sliceNo))){
@@ -74,6 +78,20 @@ public class ExtractFile{
 			//e.printStackTrace();
 		}
 		//Thread.sleep(1000);
+		return b;
+	}
+	public static byte[] getSliceThumbnail(String height,String sliceNo) throws InterruptedException{
+		ServletContext application=ServletActionContext.getServletContext();
+		if(!EmptyUtils.isNotEmpty(application.getAttribute(sliceNo))){
+			return null;
+		}
+		byte [] b=null;
+		try {
+			ExtractFile newClass=(ExtractFile)application.getAttribute(sliceNo);
+			b=newClass.GetThumbnail(Integer.parseInt(height));
+		} catch (Exception e) {
+			log.warn(sliceNo+"缩略图出错");
+		}
 		return b;
 	}
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Service;
 
+import com.platform.project.olo.model.Postil;
 import com.platform.project.olo.model.Subject;
 import com.platform.project.olo.service.ISubjectService;
 import com.platform.project.sys.service.BaseService;
@@ -29,8 +30,8 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	}
 
 	@Override
-	public List<?> findSliceData(String cataNo) throws ServiceException {
-		String sql="select ID,NAME,PID from tb_slice where pid=? and visible=1";
+	public List<?> findSliceData(String cataNo,String sql1) throws ServiceException {
+		String sql="select ID,NAME,PID from tb_slice where pid=? and visible=1"+sql1;
 		return hibernateDao.queryList(sql,new Object[]{cataNo});
 	}
 
@@ -72,6 +73,25 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	public byte[] tileUrlSlice(String level, String x, String y,
 			String sliceNo) throws ServiceException, InterruptedException {
 		return ExtractFile.getSliceTileData(level,x,y,sliceNo);
+	}
+
+	@Override
+	public boolean savePostil(String postil,String sliceNo) throws ServiceException {
+		jdbcTemplate.execute("update tb_postil set b='"+postil+"' where sliceNo="+sliceNo);
+		return true;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Object loadPostil(String sliceNo) throws ServiceException {
+		List<Object> l= hibernateDao.queryByHql("from "+Postil.class.getName()+" where sliceNo="+sliceNo);
+		return l;
+	}
+
+	@Override
+	public void uploadFile(File file) throws ServiceException {
+		// TODO 自动生成的方法存根
+		
 	}
 	
 	

@@ -33,17 +33,17 @@ $(function(){
 })
 function initPic(){
 
-	$.ajax({
+	/*$.ajax({
 		async:false,
-		url:WEB_ROOT+'/olo/subject!doFindSliceInfo.do',
-		data:{'sliceNo':100001},
+		url:WEB_ROOT+'/olo/subject!doSliceThumbnail.do',
 		success:function(sliceInfo){
 			if(sliceInfo==null){
 				
 			  return false;
 			}
+			console.info(sliceInfo);
 		}
-	})
+	})*/
     //读取xml
     //var p= getXmlDom(WEB_ROOT+'/views/docs/DSI0/MoticDigitalSlideImage');
     //console.info(p);

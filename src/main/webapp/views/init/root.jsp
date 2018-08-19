@@ -8,6 +8,7 @@
 <link href="${ctx}/resources/reference/jquery/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all"> 
 <script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
 <script src="${ctx}/resources/reference/jquery/bootstrap/js/bootstrap.min.js"></script>
+<script src="${ctx}/resources/reference/jquery/jquery-ui.min.js"></script>
 
 <!-- 全局变量定义 -->
 <script type="text/javascript">

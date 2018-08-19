@@ -1,14 +1,22 @@
 package com.platform.project.olo.action;
 
 
+import java.io.File;
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.platform.project.olo.service.ISubjectService;
 import com.platform.project.sys.action.BaseAction;
+import com.platform.project.sys.spring.SpringUtil;
+import com.platform.util.EmptyUtils;
 import com.platform.util.ExtractFile;
 
 
@@ -40,7 +48,12 @@ public class SubjectAction extends BaseAction {
 	
 	public void doFindSliceData(){
 		try {
-			writeJson(subjectService.findSliceData(getValue("ID")));
+			Object obj= getSession().getAttribute("username");
+			String sql="";
+			if(EmptyUtils.isEmpty(obj)){
+				sql+=" and tourist=1";
+			}
+			writeJson(subjectService.findSliceData(getValue("ID"),sql));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -62,6 +75,25 @@ public class SubjectAction extends BaseAction {
 		}
 	}
 	
+	public void doSliceThumbnail(){
+		try {
+			String thumbnail= SpringUtil.getProperty("Thumbnail");
+			
+			String thumbnailhigh= SpringUtil.getProperty("ThumbnailHigh");
+			
+			String [] thumb=thumbnail.split(",");
+			
+			byte [][] b=new byte[thumb.length][];
+			
+			for (int i = 0; i < thumb.length; i++) {
+				
+				 b[i]=ExtractFile.getSliceThumbnail(thumbnailhigh, thumb[i]);
+			} ;
+			writeJson(b);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void doTileUrlSlice(){
 		try {
 			String sliceNo=getValue("sliceNo");
@@ -69,6 +101,42 @@ public class SubjectAction extends BaseAction {
 			String x=getValue("x");
 			String y=getValue("y");
 			writePng(ExtractFile.getSliceTileData(level,x,y,sliceNo),sliceNo+"_"+level+"_"+x+"_"+y);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void doSavePostil(){
+		try {
+			writeJson(subjectService.savePostil(getValue("postil"),getValue("sliceNo")));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void doLoadPostil(){
+		try {
+			writeJson(subjectService.loadPostil(getValue("sliceNo")));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void doUploadFile(){
+		try {
+			MultipartResolver resolver = new CommonsMultipartResolver(getRequest().getSession().getServletContext());
+			MultipartHttpServletRequest multipartRequest = resolver.resolveMultipart(getRequest());
+			MultipartFile file= multipartRequest.getFile("upfile");
+			System.out.println(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void doLoginBL(){
+		try {
+			Object obj= getSession().getAttribute("username");
+			writeJson(EmptyUtils.isNotEmpty(obj));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

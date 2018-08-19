@@ -17,7 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 		<!-- JDK版本 -->
-		<jdk.version>1.8</jdk.version>
+		<jdk.version>1.7</jdk.version>
 		<!-- WEB项目根据路径 -->
 		<webapp.path>src/main/webapp</webapp.path>
 		<!-- WEB项目的class路径 -->
@@ -279,23 +279,6 @@
 			<version>${org.hibernate.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>${com.alibaba.druid.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql-connector-java.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${org.aspectj.aspectjweaver.version}</version>
-		</dependency>
 		<!-- end:platform-db -->
 
 		<!-- start:platform-project -->

@@ -1,7 +1,17 @@
+var sliceinfo,viewer,canvas,selObject;
 $(function(){
 	//初始化
 	init();
-	
+    
+	$(document).on("show.bs.modal", ".modal", function(){
+	    $(this).draggable({
+	//        handle: ".modal-header"   // 只能点击头部拖动
+	    });
+	    $(this).css("overflow", "hidden"); // 防止出现滚动条，出现的话，你会把滚动条一起拖着走的
+	});
+
+
+
 })
 
 function init(){
@@ -13,6 +23,15 @@ function init(){
 	doMouseHover();
 	//加载图像
 	doLoadOpenseadPNG();
+	//批注初始化
+    initPostil();
+	//加载批注
+	loadPostil();
+	//鼠标右键
+	onRightMouse();
+	//批注编辑
+	edit();
+	
 }
 
 function doLoadOpenseadPNG(){
@@ -25,22 +44,24 @@ function doLoadOpenseadPNG(){
 				
 			  return false;
 			}
+			 sliceinfo=sliceInfo;
 			 //生成图片
-			 initPic(sliceInfo);
+			 initPic();
 		}
 	})
 }	
 
-function initPic(sliceInfo){
+function initPic(){
 	var self = this;
-    $(".panel-title").html(sliceInfo.NAME);
+    $(".panel-title").html(sliceinfo.NAME);
     
 	//var p= getXmlDom('/filePath/科目/'+sliceInfo.SNAME+'/'+sliceInfo.CNAME+'/'+sliceInfo.NAME+'/1/DSI0/MoticDigitalSlideImage');
-	if(!sliceInfo.WIDTH){
+	if(!sliceinfo.WIDTH){
 	    $("#openSeadragon").html("切片未找到！");
 	    return;
 	}
-	this.viewer= OpenSeadragon({  
+	
+	viewer= OpenSeadragon({  
 		  
 	    id:  'openSeadragon',  
 	    //按钮图片路径
@@ -52,7 +73,7 @@ function initPic(sliceInfo){
 	    //设置图像必须留着窗口中
 	    visibilityRatio:0.8,
 	    tileOverlap:1,
-	    debugMode:true,
+	    debugMode:false,
 	    //preserveImageSizeOnResize:true,
 	    //loadTilesWithAjax:true,
 	    animationTime:2,
@@ -60,28 +81,30 @@ function initPic(sliceInfo){
 		showNavigator:true,
 		navigatorPosition:'BOTTOM_LEFT',
 		minZoomImageRatio:1,
-		zoomPerClick:1.2,
+		zoomPerClick:1.8,
 		zoomPerScroll:1.5,
 		minZoomLevel:0.4,
 		//maxZoomLevel:7.128,
 		defaultZoomLevel:0,
 		//navigatorSizeRatio:0.15,
 		gestureSettingsMouse:{
-		    scrollToZoom:true
+		    scrollToZoom:true,
+		    dblClickToZoom:true,
+		    clickToZoom:false
 		},
+		preserveImageSizeOnResize:true,
 		imageLoaderLimit:1,
 	    tileSources: [{
-	    	width:sliceInfo.WIDTH,
-			height:sliceInfo.HEIGHT,
+	    	width:sliceinfo.WIDTH,
+			height:sliceinfo.HEIGHT,
 			tileSize:256,
 	        getTileUrl:function(level,x,y){
-	        	return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceInfo.ID;
+	        	return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceinfo.ID;
 	        }
         }]
 	});
 	
-	 //批注初始化
-     initPostil(viewer);   
+     
 	/*var canvas = viewer.fabricjsOverlay({scale:1}).fabricCanvas();
   fabric.Object.prototype.transparentCorners = false;
 
@@ -204,19 +227,21 @@ function initPic(sliceInfo){
 function pad(num, n) {
     return (Array(n).join(0) + num).slice(-n);
 }
-function initPostil(viewer){
+function initPostil(){
 	var bl=0;
     var typedchoose=$("#toolbar .panel-toolbar .curvs-groups a");
     var typeuchoose=$("#toolbar .panel-toolbar .roups-groups a");
     var type="line";
     var polyN=3;
     var polychoose=$("#toolbar .curvs-groups .poly input");
-    var color="#000";
+    var lineWchoose=$("#toolbar .texts-groups .lineW input");
+    var colorchoose=$("#toolbar .texts-groups .color input");
+    var color="#0000ff";
     var linewidth=4.0;
     var ni=0;
     var x1,y1,ex,ey,w,h;
     var overlay = viewer.fabricjsOverlay({scale:1});
-    var canvas= overlay.fabricCanvas();
+    canvas= overlay.fabricCanvas();
     var _scale=1/viewer.container.clientWidth;
     var pointArr=[];
     var groupPostil=[];
@@ -224,6 +249,7 @@ function initPostil(viewer){
     var draw;
     var zoom;
     var control=new Control(viewer);
+    $('#colorpicker').colorpicker({'container':true});
     // 绘制形状
     typedchoose.each(function(index,ele){
         $(ele).click(function(){
@@ -237,7 +263,8 @@ function initPostil(viewer){
                canvas.isDrawingMode=true;
                canvas.freeDrawingBrush.width=linewidth/zoom;
                canvas.freeDrawingBrush.height=linewidth/zoom;
-               draw=new Draw(viewer,{color:color,width:linewidth/zoom});
+               canvas.freeDrawingBrush.color=color;
+               //draw=new Draw(viewer,{color:color,width:linewidth/zoom});
                bl=0;
             }
         })
@@ -253,19 +280,26 @@ function initPostil(viewer){
         })
     })
     $('.selectes').click(function(){
-            bl=0;
-            viewer.setMouseNavEnabled(true);
+        bl=0;
+        viewer.setMouseNavEnabled(true);
     })
     polychoose.change(function(){
         polyN=Math.floor(this.value);
     })
+    lineWchoose.change(function(){
+        linewidth=Math.floor(this.value);
+    })
+    colorchoose.change(function(){
+        color=this.value;
+    })
     canvas.on('mouse:down',function(e){
+    	console.info(333);
 		 if(bl==1){
 	    	 var viewportWindowPoint= viewer.viewport.viewportToWindowCoordinates(new OpenSeadragon.Point(0, 0));
 		     ex=viewportWindowPoint.x;
 	         ey=viewportWindowPoint.y;
 	         pointArr.push({'x':(e.e.clientX-ex)/zoom,'y':(e.e.clientY-ey)/zoom});
-		     draw=new Draw(viewer,{color:color,linew:linewidth/zoom,n:polyN});//实例化构造函数
+		     draw=new Draw(viewer,{color:color,linew:linewidth,n:polyN,'type':type});//实例化构造函数
 		     Postil= draw['init'+type](canvas,groupPostil,Postil,ni++,pointArr);
 		     canvas.add(Postil);
 		     bl=2;
@@ -291,7 +325,7 @@ function initPostil(viewer){
 		     ex=viewportWindowPoint.x;
 	         ey=viewportWindowPoint.y;
 	         pointArr.push({'x':(e.e.clientX-ex)/zoom,'y':(e.e.clientY-ey)/zoom});
-		     draw=new Draw(viewer,{color:color,linew:linewidth/zoom,n:polyN});//实例化构造函数
+		     draw=new Draw(viewer,{color:color,linew:linewidth,n:polyN,'type':type});//实例化构造函数
 		     groupPostil= draw['init'+type](canvas,groupPostil,Postil,ni++,pointArr);
 		     if(groupPostil!=null){
 		     	canvas.renderAll();
@@ -359,21 +393,122 @@ function initPostil(viewer){
      	    var zoom1= viewer.viewport.getZoom(true);
      	
        	    for (var i = 0; i < canvas.getObjects().length; i++) {
-       	    	setItemProp(canvas.item(i),zoom,zoom1,linewidth);
+       	    	setItemProp(canvas.item(i),zoom,zoom1);
        	    }
        	    zoom= viewer.viewport.getZoom(true);
      });
+     $('.exportJson').click(function(){
+     	var postil=JSON.stringify(canvas);
+        if(postil!='undefined' && postil!=''){
+        
+        	 $.ajax({
+        	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
+        	     data:{'postil':postil,'sliceNo':sliceinfo.ID},
+        	     contentType: 'application/json',
+        	     dataType:'json',
+        	     success:function(success){
+        	        console.info(success);
+        	     }
+        	     
+        	 })
+        }
+     })
+     return canvas;
 }
-function setItemProp(obj,zoom,zoom1,linewidth){
+function onRightMouse(){
+	
+	/*context.init({
+	    fadespeed:100,
+	    preventdoublecontext:false
+	});*/
+	
+	$("#openSeadragon").bind("contextmenu", function(e){
+		if(e.which==3){
+			
+			selObject= canvas.getActiveObject();
+			//context.attach('#openSeadragon', loadRightArray(selObject));
+			if(selObject==undefined){
+				$('#commModal').modal({
+						    remote:WEB_ROOT+'/views/docs/catalog/prop.jsp',
+						    target:'_parent'
+				})
+		    }else{
+		        $('#commModal').modal({
+						    remote:WEB_ROOT+'/views/docs/catalog/edit.jsp',
+						    target:'_parent'
+				})
+		    }
+		    return false;
+	    }
+	    
+    })
+		
+}
+function loadRightArray(selObject){
+	var rightArray=[];
+	if(selObject==undefined){
+				rightArray=[
+					{header: ''},
+					{text: '切片信息', action: function(e){
+						e.preventDefault();
+						alert('html contextual menu destroyed!');
+					}},
+					{text: '关于', action: function(e){
+						e.preventDefault();
+						alert('宏图');
+					}}
+			    ];
+		}else{
+			    rightArray=[
+					{header: ''},
+					{text: '编辑', action: function(e){
+						e.preventDefault();
+						$('#commModal').modal({
+						    remote:WEB_ROOT+'/views/docs/catalog/edit.jsp',
+						    target:'_parent'
+						})
+					}},
+					{text: '属性', action: function(e){
+						e.preventDefault();
+						$('#commModal').modal({
+						    remote:WEB_ROOT+'/views/docs/catalog/prop.jsp',
+						    target:'_parent'
+						})
+					}},
+					{text: '删除', action: function(e){
+						e.preventDefault();
+						canvas.remove(selObject);
+					}}
+			    ];
+			
+		}
+	return rightArray;
+}
+function edit(){
+    	$('#editColor').colorpicker({'container':true});
+}
+function loadPostil(){
+    $.ajax({
+    	     url:WEB_ROOT+'/olo/subject!doLoadPostil.do',
+    	     data:{'sliceNo':sliceinfo.ID},
+    	     contentType: 'application/json',
+    	     dataType:'json',
+    	     success:function(msg){
+    	        canvas.loadFromJSON(msg[0].b);
+    	     }
+        	     
+     })
+}
+function setItemProp(obj,zoom,zoom1){
 	if(obj.typeProp=='group'){
 	     for (var i = 0; i < obj.getObjects().length; i++) {
-	     	setItemProp(obj.item(i),zoom,zoom1,linewidth);
+	     	setItemProp(obj.item(i),zoom,zoom1);
 	     }
+	     return;
 	}
     if(obj.linewState){
-       	 obj.set({'strokeWidth':linewidth/zoom});
-	}
-	if(obj.sizeState){
+       	 obj.set({'strokeWidth':obj.lineW/zoom});
+	}else if(obj.sizeState){
 		
 		if(obj.radius){
 		  obj.set({'radius':5/zoom});
@@ -381,15 +516,29 @@ function setItemProp(obj,zoom,zoom1,linewidth){
 		  obj.set({'width':30/zoom,'height':30/zoom});
 		}
 	}else{
-	      obj.set({'strokeWidth':linewidth/zoom});
+		  //obj.set({'strokeWidth':obj.lineW/zoom});
 	}
 }
 function makefun(){
     $('.poly').hover(function(){
-        $('#toolbar .list-group .input-group').css('visibility','visible');
+        $('#toolbar .list-group .poly .input-group').css('visibility','visible');
     },function(){
-        $('#toolbar .list-group .input-group').css('visibility','hidden');
+        $('#toolbar .list-group .poly .input-group').css('visibility','hidden');
     })
+    $('.color').hover(function(){
+    	$('.color').css('height','170px');
+    	$('#colorpicker').colorpicker('show');
+    },function(){
+    	//$('.color').animate({height: '-80px'}, 10);
+        $('#colorpicker').colorpicker('hide');
+        $('.color').css('height','37px');
+    })
+    /*$('.lineW').hover(function(){
+        $('#toolbar .list-group .lineW .input-group').css('visibility','visible');
+    },function(){
+        $('#toolbar .list-group .lineW .input-group').css('visibility','hidden');
+    })
+    */
 }
 function doCollapse(){
         var tool=false;
@@ -447,6 +596,15 @@ function doMouseHover(){
            },
            function(){
               $('#toolbar .panel-toolbar .configs-groups').stop().slideUp(200);
+           }
+        );
+        $('#colorpicker').hover(
+           function(){
+           	$('.colorpicker-visible').hover(
+           function(){
+              $('#toolbar .panel-toolbar .texts-groups').stop(1000).slideDown(0);
+           }
+        );
            }
         );
 }

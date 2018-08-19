@@ -7,9 +7,11 @@ function Draw(obj,setting){
     //this.width=setting.width||"1";
     this.lineW=setting.linew;
     this.polyN=setting.n;
+    this.color=setting.color;
+    this.type=setting.type;
     fabric.Object.prototype.selectable=true;
-    //fabric.Object.prototype.lockMovementX=true;
-    //fabric.Object.prototype.lockMovementY=true;
+    fabric.Object.prototype.lockMovementX=true;
+    fabric.Object.prototype.lockMovementY=true;
     fabric.Object.prototype.objectCaching=false;
     fabric.Object.prototype.cornerColor='#C2B7DA';
     fabric.Object.prototype.cornerSize=13;
@@ -22,6 +24,7 @@ function Draw(obj,setting){
     fabric.Object.prototype.hasBorders= false;
     fabric.Object.prototype.padding=0;
     fabric.Object.prototype.paintFirst='stroke';
+    //根据像素选择
     fabric.Object.prototype.perPixelTargetFind=true;
 }
 Draw.prototype={
@@ -43,13 +46,12 @@ Draw.prototype={
         Postil=new fabric.Rect({
 	                  left: x1,
 	                  top:  y1,
-	                  stroke:'#0000ff',
-	                  strokeWidth:this.lineW,
+	                  stroke:this.color,
+	                  strokeWidth:this.lineW/zoom,
 	                  borderOpacityWhenMoving:1,
 	                  width: 0,
 	                  height: 0
 	                });
-	    
 	    return this.setState(Postil,true,false);
     },
     rect:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
@@ -66,8 +68,8 @@ Draw.prototype={
     	var y1=pointArr[0].y;
         Postil=new fabric.Line([x1,y1,x1,y1],
                 {
-                 stroke: '#0000ff',
-                 strokeWidth: this.lineW
+                 stroke: this.color,
+                 strokeWidth: this.lineW/zoom
 	            });
 	    return this.setState(Postil,true,false);
     },
@@ -88,8 +90,8 @@ Draw.prototype={
            top:  y1,
            rx:0,
            ry:0,
-           stroke:'#0000ff',
-           strokeWidth:this.lineW,
+           stroke:this.color,
+           strokeWidth:this.lineW/zoom,
            borderOpacityWhenMoving:1
 	    });
 	    return this.setState(Postil,true,false);
@@ -109,8 +111,8 @@ Draw.prototype={
         Postil=new fabric.Circle({
 	       left: x1,
            top:  y1,
-           stroke:'#0000ff',
-           strokeWidth:this.lineW,
+           stroke:this.color,
+           strokeWidth:this.lineW/zoom,
            borderOpacityWhenMoving:1,
            lockUniScaling:true,
            radius: 0
@@ -133,8 +135,8 @@ Draw.prototype={
     		points.push({x:x1+i*0.01,y:y1+i*0.01});
     	}
     	Postil = new fabric.Polygon(points, {
-		    stroke:'#0000ff',
-            strokeWidth:this.lineW,
+		    stroke:this.color,
+            strokeWidth:this.lineW/zoom,
             borderOpacityWhenMoving:1
 		});
 		return this.setState(Postil,true,false);
@@ -176,7 +178,7 @@ Draw.prototype={
     	switch (i){
     	   case 0:{
     	   	  groupPostil = this.makeGroup(x1,y1);
-    	      canvas.add(groupPostil);
+    	      canvas.add(this.setState(groupPostil,true,false));
     	      line2=this.setState(this.makeLine(canvas,Postil,i,x1,y1),true,false);
     	      Postil=this.setState(this.makeCircle(x1,y1,line1,line2,line3,lineType),false,true);
     	      break;
@@ -233,8 +235,9 @@ Draw.prototype={
     	switch (i){
     	   case 0:{
     	   	  groupPostil = this.makeGroup(x1,y1);
+    	   	  this.setState(groupPostil,true,false);
     	      canvas.add(groupPostil.set({'originX':'left','originY':'top'}));
-    	   	  line1= new fabric.Path('M 0 0 Q 1, 1, 2, 2',{stroke: '#0000ff',strokeWidth: this.lineW,selectable: false});
+    	   	  line1= new fabric.Path('M 0 0 Q 1, 1, 2, 2',{stroke: this.color,strokeWidth: this.lineW/zoom,selectable: false});
     	   	  line1.path[0][1]=x1-groupPostil.left;
     	   	  line1.path[0][2]=y1-groupPostil.top;
     	   	  line1.path[1][1]=x1-groupPostil.left;
@@ -268,8 +271,6 @@ Draw.prototype={
     },
     arcp1:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
     	var zoom= this.zoom();
-    	console.info(groupPostil.top);
-    	console.info(groupPostil.left);
     	switch (i){
     	   case 1:{
     	   	    groupPostil.item(0).path[0][1]=pointArr[0].x;
@@ -302,14 +303,14 @@ Draw.prototype={
     	switch (i){
     	   case 0:{
     	   	  groupPostil = this.makeGroup(x1,y1);
-    	      canvas.add(groupPostil);
+    	      canvas.add(this.setState(groupPostil,true,false));
     	   	  var x1=pointArr[0].x;
     	   	  var y1=pointArr[0].y;
     	   	  line1=new fabric.Circle({
 			       left: x1,
 		           top:  y1,
-		           stroke:'#0000ff',
-		           strokeWidth:this.lineW,
+		           stroke:this.color,
+		           strokeWidth:this.lineW/zoom,
 		           borderOpacityWhenMoving:1,
 		           lockUniScaling:true,
 		           selectable: false,
@@ -336,7 +337,7 @@ Draw.prototype={
     	      break;
     	   };
     	   case 2:{
-    	      line1=groupPostil.item(0);;
+    	      line1=groupPostil.item(0);
     	      var x1=pointArr[0].x;
     	   	  var y1=pointArr[0].y;
     	   	  var x2=pointArr[1].x;
@@ -392,14 +393,14 @@ Draw.prototype={
     	switch (i){
     	   case 0:{
     	   	  groupPostil = this.makeGroup(x1,y1);
-    	      canvas.add(groupPostil);
+    	      canvas.add(this.setState(groupPostil,true,false));
     	   	  var x1=pointArr[0].x;
     	   	  var y1=pointArr[0].y;
     	   	  line1=new fabric.Circle({
 			       left: x1,
 		           top:  y1,
-		           stroke:'#0000ff',
-		           strokeWidth:this.lineW,
+		           stroke:this.color,
+		           strokeWidth:this.lineW/zoom,
 		           borderOpacityWhenMoving:1,
 		           lockUniScaling:true,
 		           selectable: false,
@@ -483,7 +484,7 @@ Draw.prototype={
     	    line1=groupPostil.item(j).line2;
     	}else{
     		groupPostil = this.makeGroup(x1,y1);
-    	    canvas.add(groupPostil);
+    	    canvas.add(this.setState(groupPostil,true,false));
     	}
     	line2=this.setState(this.makeLine(canvas,Postil,i,x1,y1),true,false);
     	Postil= this.setState(this.makeCircle(x1,y1,line1,line2,line3,lineType),false,true);
@@ -586,7 +587,7 @@ Draw.prototype={
 	    var c = new fabric.Circle({
 		      left: left,
 		      top: top,
-		      radius: 5/zoom,
+		      radius: 6/zoom,
 		      fill: '#C2B7DA',
 		      strokeWidth: 0
 	    });
@@ -628,8 +629,8 @@ Draw.prototype={
 	    var zoom= this.zoom();
         Postil=new fabric.Line([x1,y1,x1,y1],
                 {
-                 stroke: '#0000ff',
-                 strokeWidth: this.lineW,
+                 stroke: this.color,
+                 strokeWidth: this.lineW/zoom,
                  selectable: true
 	            });
 	    return Postil;
@@ -643,8 +644,12 @@ Draw.prototype={
     },
     setState:function(p,w,s){
     	if(p!=null){
+    	  var prop={};
     	  p.linewState=w;
     	  p.sizeState=s; 
+    	  p.lineW=this.lineW;
+    	  prop.propType=this.type;
+    	  p.prop=prop;
     	}
     	return p;
     },
