@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import com.platform.project.olo.model.Postil;
 import com.platform.project.olo.model.Subject;
 import com.platform.project.olo.service.ISubjectService;
+import com.platform.project.sys.model.Role;
+import com.platform.project.sys.model.User;
+import com.platform.project.sys.model.UserRole;
 import com.platform.project.sys.service.BaseService;
 import com.platform.util.EmptyUtils;
 import com.platform.util.ExtractFile;
@@ -75,16 +78,46 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 		return ExtractFile.getSliceTileData(level,x,y,sliceNo);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public boolean savePostil(String postil,String sliceNo) throws ServiceException {
-		jdbcTemplate.execute("update tb_postil set b='"+postil+"' where sliceNo="+sliceNo);
+	public boolean savePostil(String postil,String sliceNo,String userName,String noteBL) throws ServiceException {
+		
+        List<Object> list= hibernateDao.queryByHql("from "+User.class.getName()+" where encode='"+userName+"'");
+		
+		if(EmptyUtils.isNotEmpty(list)){
+		     
+			User user=(User)list.get(0);
+			
+			Integer note=0;
+			
+			if(noteBL.equals("true")){
+				
+				 note=1;
+			}
+			jdbcTemplate.execute("insert into tb_postil values(null,'"+postil+"',"+sliceNo+","+user.getId()+")");
+			//jdbcTemplate.execute("update tb_postil set b='"+postil+"' where sliceNo="+sliceNo);
+
+		}
+		
 		return true;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Object loadPostil(String sliceNo) throws ServiceException {
-		List<Object> l= hibernateDao.queryByHql("from "+Postil.class.getName()+" where sliceNo="+sliceNo);
+	public Object loadPostil(String sliceNo,String userName) throws ServiceException {
+		
+        List<Object> list= hibernateDao.queryByHql("from "+User.class.getName()+" where encode='"+userName+"'");
+		
+        List<Object> l=null;
+        
+		if(EmptyUtils.isNotEmpty(list)){
+		     
+			User user=(User)list.get(0);
+			
+			l= hibernateDao.queryByHql("from "+Postil.class.getName()+" where sliceNo="+sliceNo+" and userId="+user.getId());
+
+		}
+		
 		return l;
 	}
 
@@ -92,6 +125,24 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	public void uploadFile(File file) throws ServiceException {
 		// TODO 自动生成的方法存根
 		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Integer loginUser(String userName) throws ServiceException {
+		
+		List<Object> list= hibernateDao.queryByHql("from "+User.class.getName()+" where encode='"+userName+"'");
+		
+		if(EmptyUtils.isNotEmpty(list)){
+		     
+			User user=(User)list.get(0);
+			
+			List<Object> l= hibernateDao.queryByHql("select r.id from "+UserRole.class.getName()+" u,"+Role.class.getName()+" r where u.roleId=r.id and u.userId="+user.getId());
+			
+			return Integer.parseInt(l.get(0).toString());
+
+		}
+		return 0;
 	}
 	
 	

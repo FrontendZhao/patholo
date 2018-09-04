@@ -488,13 +488,25 @@ function edit(){
     	$('#editColor').colorpicker({'container':true});
 }
 function loadPostil(){
+	console.info(55555);
     $.ajax({
     	     url:WEB_ROOT+'/olo/subject!doLoadPostil.do',
     	     data:{'sliceNo':sliceinfo.ID},
     	     contentType: 'application/json',
     	     dataType:'json',
     	     success:function(msg){
-    	        canvas.loadFromJSON(msg[0].b);
+    	     	if(msg!=null){
+    	     		console.info(msg);
+    	     		for (var i = 0; i < msg.length; i++) {
+    	     			var obj=JSON.parse(msg[i].b);
+    	     			console.info(obj);
+    	     			canvas.add(new fabric.Circle(JSON.parse(msg[i].b)));
+    	     			
+    	     		}
+    	     	   
+    	     	   canvas.renderAll();
+    	     	}
+    	        
     	     }
         	     
      })

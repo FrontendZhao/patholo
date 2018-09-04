@@ -11,7 +11,20 @@ $(function(){
     	}
     	
     })
-    initPic();
+    $.ajax({
+		async:false,
+		url:WEB_ROOT+'/olo/subject!doFindSliceInfo.do',
+		data:{'sliceNo':100001},
+		success:function(sliceInfo){
+			if(sliceInfo==null){
+				
+			  return false;
+			}
+			 sliceinfo=sliceInfo;
+			 //生成图片
+			 initPic();
+		}
+	})
 
 	//动态加载在线实例
 	/*$.ajax({

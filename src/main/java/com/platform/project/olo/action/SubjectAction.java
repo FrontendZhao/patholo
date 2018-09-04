@@ -108,7 +108,14 @@ public class SubjectAction extends BaseAction {
 	
 	public void doSavePostil(){
 		try {
-			writeJson(subjectService.savePostil(getValue("postil"),getValue("sliceNo")));
+			Object obj= getSession().getAttribute("username");
+			
+			if(EmptyUtils.isNotEmpty(obj)){
+				
+				writeJson(subjectService.savePostil(getValue("postil"),getValue("sliceNo"),obj.toString(),getValue("noteBL")));
+
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -116,7 +123,15 @@ public class SubjectAction extends BaseAction {
 	
 	public void doLoadPostil(){
 		try {
-			writeJson(subjectService.loadPostil(getValue("sliceNo")));
+			
+            Object obj= getSession().getAttribute("username");
+			
+			if(EmptyUtils.isNotEmpty(obj)){
+				
+			       writeJson(subjectService.loadPostil(getValue("sliceNo"),obj.toString()));
+			}else{
+				   writeJson(null);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -136,7 +151,29 @@ public class SubjectAction extends BaseAction {
 	public void doLoginBL(){
 		try {
 			Object obj= getSession().getAttribute("username");
-			writeJson(EmptyUtils.isNotEmpty(obj));
+			if(EmptyUtils.isNotEmpty(obj)){
+				writeJson(obj);
+			}else{
+				writeJson(false);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void doLoginUser(){
+		try {
+			Object obj= getSession().getAttribute("username");
+			
+			if(!EmptyUtils.isNotEmpty(obj)){
+				
+				writeJson(0);
+			}else{
+				
+				writeJson(subjectService.loginUser(obj.toString()));
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

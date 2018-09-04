@@ -46,16 +46,21 @@ public interface ISubjectService {
 	/**
 	 * 批注序列化
 	 */
-	public boolean savePostil(String postil,String sliceNo) throws ServiceException;
+	public boolean savePostil(String postil,String sliceNo,String userName,String noteBL) throws ServiceException;
 	/**
 	 * 加载批注
 	 * @param sliceNo
 	 * @return
 	 * @throws ServiceException
 	 */
-	public Object loadPostil(String sliceNo) throws ServiceException;
+	public Object loadPostil(String sliceNo,String userName) throws ServiceException;
 	/**
 	 * 上传批注图片
 	 */
 	public void uploadFile(File file) throws ServiceException;
+	
+	/**
+	 * 获取权限
+	 */
+	public Integer loginUser(String userName) throws ServiceException;
 }

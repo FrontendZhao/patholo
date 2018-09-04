@@ -12,7 +12,7 @@ import com.platform.project.sys.spring.SpringUtil;
 
 public class ExtractFile{
   static{
-    System.loadLibrary("libmds");
+    System.loadLibrary("libmds.so");
   }
   ExtractFile(String filePath)
   {

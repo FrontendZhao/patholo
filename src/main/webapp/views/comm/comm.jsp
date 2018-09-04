@@ -29,7 +29,7 @@
 					   </div>
 					   <div class="collapse navbar-collapse" id="example-navbar-collapse">
 					      <ul class="nav navbar-nav navbar-right">
-					         <li class="icon-bar"><a href="${ctx}/views/users/login.jsp" target="_blank" >登陆</a></li>
+					         <li class="icon-bar"><a id="loginName" href="${ctx}/views/users/login.jsp" >登陆</a><a id="userName"></a></li>
 					         <li class="icon-bar"><a href="${ctx}/views/FAQ/help.jsp"  target="_blank"  >帮助</a></li>
 					         <li class="dropdown">
 					            <a href="#" class="dropdown-toggle" data-toggle="dropdown">

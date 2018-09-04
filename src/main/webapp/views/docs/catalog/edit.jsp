@@ -14,9 +14,8 @@
 				<ul id="myTab" class="nav nav-tabs">
 					<li class="active"><a href="#edit" data-toggle="tab">图形信息</a></li>
 					<li><a href="#prop" data-toggle="tab">测量信息</a></li>
-					<li><a href="#videoID" data-toggle="tab">视频教学</a></li>
-					<li><a href="#photo" data-toggle="tab">图文释义</a></li>
 					<li><a href="#textID" data-toggle="tab">文本说明</a></li>
+					<li><a href="#videoID" id="videoTitle" data-toggle="tab" style="display: none;">视频教学</a></li>
 				</ul>
 				<div id="myTabContent" class="tab-content">
 				
@@ -73,10 +72,18 @@
 									         </td>
 									      </tr>
 									      
-									      <tr>
+									      <!-- <tr>
 									         <td>描述:</td>
 									         <td>
 										         <textarea class="form-control" rows="3"></textarea>
+									         </td>
+									      </tr> -->
+									      <tr>
+									         <td>标准批注:</td>
+									         <td>
+									                <div class="bootstrap-switch-square">
+									                     <input type="checkbox" data-toggle="switch" disabled="disabled" id="switchID" />
+									                </div> 
 									         </td>
 									      </tr>
 									   </tbody>
@@ -119,46 +126,7 @@
 						      
 						 </div>
 					</div>
-					<div class="tab-pane fade" id="photo" style="padding: 20px;">
-						<div class="row">
-                        <div class="col-md-3">
-                           <a href="/filePath/科目/医学形态学实验/第二章/大动脉/images/1.jpg" target="_Blank" class="thumbnail">
-                             <img src="/filePath/科目/医学形态学实验/第二章/大动脉/images/1.jpg" 
-                              alt="">
-                           </a>
-                        </div>
-                        <div class="col-md-3">
-                           <a href="/filePath/科目/医学形态学实验/第二章/大动脉/images/2.jpg" target="_Blank" class="thumbnail">
-                              <img src="/filePath/科目/医学形态学实验/第二章/大动脉/images/2.jpg" 
-                              alt="">
-                           </a>
-                        </div>
-                        <div class="col-md-3">
-                           <a href="/filePath/科目/医学形态学实验/第二章/大动脉/images/3.jpg" target="_Blank" class="thumbnail">
-                              <img src="/filePath/科目/医学形态学实验/第二章/大动脉/images/3.jpg" 
-                              alt="">
-                           </a>
-                        </div>
-                        <div class="col-md-3">
-                           <a href="/filePath/科目/医学形态学实验/第二章/大动脉/images/4.jpg" target="_Blank" class="thumbnail">
-                              <img src="/filePath/科目/医学形态学实验/第二章/大动脉/images/4.jpg" 
-                              alt="">
-                           </a>
-                        </div>
-                        <div class="col-md-3">
-                           <a href="/filePath/科目/医学形态学实验/第二章/大动脉/images/5.jpg" target="_Blank" class="thumbnail">
-                              <img src="/filePath/科目/医学形态学实验/第二章/大动脉/images/5.jpg" 
-                              alt="">
-                           </a>
-                        </div>
-                     </div>
-                     <div class="form-group">
-						      <label for="inputfileImg">图像上传:</label>
-						      <input type="file" id="inputfileImg" accept="image/*">
-						      
-				      </div>
-
-					</div>
+					
 					<div class="tab-pane fade" id="textID">
 						<textarea cols="80" id="editor1" name="editor1" rows="10" data-sample="1" data-sample-short="">
 				      aaaaaaaaaaaa
@@ -170,13 +138,13 @@
 
 			        
 		         <div class="modal-footer">
-		            <button id="save" type="button" class="btn btn-primary">
+		            <button id="save" type="button" class="btn btn-primary" data-dismiss="modal">
 		                                         提交
 		            </button>
 		            <button type="button" class="btn btn-primary" 
 		               data-dismiss="modal">取消
 		            </button>
-		            <button id="yingyong" type="button" class="btn btn-primary">
+		            <button id="yingyong" type="button" class="btn btn-primary" data-dismiss="modal">
 		                                         应用
 		            </button>
 		         </div>
@@ -184,7 +152,11 @@
 <script src="${ctx}/resources/reference/jquery/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="${ctx}/views/docs/catalog/js/prop.js"></script>
 <script type="text/javascript">
+
 $(function(){
+	
+	init();
+	
 	CKEDITOR.replace( 'editor1');
 	console.info(selObject);
 	 $('#editColorPicker').colorpicker({
@@ -209,9 +181,10 @@ var prop=new Prop({'obj':selObject});
 
 </script>
 <script type="text/javascript">
+var n=0;
 $(function(){
+	
 	$('#inputfileImg').change(function(msg){
-		console.log(99);
 		//fd.append("upfile", $("#inputfileImg").get(0).files[0]);//上传的文件file
         $.ajax({
              url: WEB_ROOT+'/olo/subject!doUploadFile.do',
@@ -227,21 +200,85 @@ $(function(){
 	})
 	
 	$('#save').click(function(){
+		var da=null;
 		$.ajax({
+			async:false,
             url: WEB_ROOT+'/olo/subject!doLoginBL.do',
             type: "POST",
             success: function(data) {
-            	console.info(data);
                 if(data){
                 	
+                	da=data;
+                	
+                	savePostil();
+                	
                 }else{
-                	window.open(WEB_ROOT+"/views/users/login.jsp");
+                	
+                	
                 }
             }
        })
+       if(da==null){
+    	   
+    	   window.open(WEB_ROOT+"/views/users/login.jsp","_blank");
+       }
 		
 	})
+	if(n==2){
+		$('#switchID').removeAttr("disabled");
+	}
+	$('#switchID').change(function(){
+		
+		if($(this).prop("checked")){
+			
+			$('#videoTitle').css('display', 'block');
+		}else{
+			$('#videoTitle').css('display', 'none');
+		}
+	})
+	
 })
+function init(){
+	
+	findUser();
+}
+function findUser(){
+	$.ajax({
+		async:false,
+        url: WEB_ROOT+'/olo/subject!doLoginUser.do',
+        type: "POST",
+        success: function(data) {
+            n=data;
+        }
+   })
+}
+function savePostil(){
+	
+	var zoom= viewer.viewport.getZoom(true);
+	
+	var postil=selObject.toObject(); //JSON.stringify(canvas);
+	
+	console.info(JSON.stringify(postil));
+	
+	var noteBL= $('#switchID').prop("checked");
+	
+	console.info(noteBL);
+	
+    if(postil!='undefined' && postil!=''){
+    
+    	 $.ajax({
+    	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
+    	     data:{'postil':JSON.stringify(postil),'sliceNo':sliceinfo.ID,'noteBL':noteBL},
+    	     contentType: 'application/json',
+    	     dataType:'json',
+    	     success:function(success){
+    	        console.info(success);
+    	     }
+    	     
+    	 })
+    }
+	canvas.renderAll();
+}
 </script>
 </body>
 </html>
