@@ -183,4 +183,27 @@ public class SubjectAction extends BaseAction {
 			e.printStackTrace();
 		}
 	}
+	
+	public void doSaveCkeditop(){
+		try {
+			String aa=getValue("postil");
+			getSession().setAttribute("Ckeditop", aa);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void doloadCkeditop(){
+		try {
+			Object obj= getSession().getAttribute("Ckeditop");
+			
+			if(EmptyUtils.isNotEmpty(obj)){
+			    writeJson(obj);	
+			}else{
+				writeJson(null);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

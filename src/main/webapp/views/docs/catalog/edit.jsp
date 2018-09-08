@@ -135,8 +135,7 @@
 					
 					<div class="tab-pane fade" id="textID">
 						<textarea cols="80" id="editor1" name="editor1" rows="10" data-sample="1" data-sample-short="">
-				      aaaaaaaaaaaa
-			</textarea>
+			            </textarea>
 
 					</div>
 				</div>
@@ -158,12 +157,12 @@
 <script src="${ctx}/resources/reference/jquery/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="${ctx}/views/docs/catalog/js/prop.js"></script>
 <script type="text/javascript">
-
+var myeditor;
 $(function(){
 	
 	init();
 	
-	CKEDITOR.replace( 'editor1');
+	myeditor= CKEDITOR.replace( 'editor1');
 	console.info(selObject);
 	 $('#editColorPicker').colorpicker({
 		container:true,
@@ -181,6 +180,19 @@ $(function(){
 		canvas.renderAll();
 		
 	}); 
+	$.ajax({
+		 async:false,
+  	     url:WEB_ROOT+'/olo/subject!doloadCkeditop.do',
+  	     contentType: 'application/json',
+  	     success:function(msg){
+  	    	 console.info(msg);
+  	    	 if(msg!=null){
+  	    		myeditor.setData(msg);
+  	    	 }
+  	     }
+  	     
+  	 })
+	
 	
 })
 console.info(selObject);
@@ -276,7 +288,7 @@ function savePostil(){
 	
     if(postil!='undefined' && postil!=''){
     
-    	 $.ajax({
+    	 /* $.ajax({
     	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
     	     data:{'postil':JSON.stringify(postil),'sliceNo':sliceinfo.ID,'noteBL':noteBL},
     	     contentType: 'application/json',
@@ -285,9 +297,25 @@ function savePostil(){
     	        console.info(success);
     	     }
     	     
-    	 })
+    	 }) */
+    	OnSave();
+    	 
     }
 	canvas.renderAll();
+}
+function OnSave(){
+	if(CKEDITOR.instances.editor1.getData()==""){
+	    alert("内容不能为空！");
+	    return false;
+	}else {
+		var data=CKEDITOR.instances.editor1.getData();
+		$.ajax({
+			 type:'post',
+	   	     url:WEB_ROOT+'/olo/subject!doSaveCkeditop.do',
+	   	     data:{'postil':data}
+	   	 })
+	    console.info(CKEDITOR.instances.editor1.getData());
+	}
 }
 </script>
 </body>

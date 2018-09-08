@@ -13,7 +13,7 @@ import com.platform.project.sys.spring.SpringUtil;
 public class ExtractFile{
   static{
 	System.out.println(System.getProperty("java.library.path"));
-    System.loadLibrary("mds");
+    System.loadLibrary(SpringUtil.getProperty("java_library_hongfei"));
     
   }
   ExtractFile(String filePath)
