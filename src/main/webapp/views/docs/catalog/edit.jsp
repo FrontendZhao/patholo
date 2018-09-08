@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 </style>
-<link href="${ctx}/resources/reference/jquery/colorpicker/dist/css/bootstrap-colorpicker.min.css"  type="text/css" rel="stylesheet" media="all" >
 </head>
 <body>
 
@@ -153,8 +152,6 @@
 		                                         应用
 		            </button>
 		         </div>
-<script src="${ctx}/resources/reference/jquery/colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-<script src="${ctx}/resources/reference/jquery/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="${ctx}/views/docs/catalog/js/prop.js"></script>
 <script type="text/javascript">
 var myeditor;

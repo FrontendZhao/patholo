@@ -6,11 +6,21 @@
 <c:set var="ctx"  value="${pageContext.request.contextPath}" />
 <input type="hidden" id="input_hidden_ctx" name="ctx" value="${ctx}" />
 <link href="${ctx}/resources/reference/jquery/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all"> 
+<link href="${ctx}/resources/reference/jquery/colorpicker/dist/css/bootstrap-colorpicker.min.css"  type="text/css" rel="stylesheet" media="all" >
 <%-- <link href="${ctx}/resources/reference/jquery/FlatUI/dist/css/flat-ui.min.css" type="text/css" rel="stylesheet" media="all">  --%>
 <script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
 <script src="${ctx}/resources/reference/jquery/bootstrap/js/bootstrap.min.js"></script>
 <%-- <script src="${ctx}/resources/reference/jquery/FlatUI/dist/scripts/flat-ui.min.js"></script> --%>
 <script src="${ctx}/resources/reference/jquery/jquery-ui.min.js"></script>
+
+
+<script src="${ctx}/resources/reference/jquery/openseadragon/openseadragon.min.js"></script> 
+<script src="${ctx}/resources/reference/jquery/openseadragon/openseadragon-fabricjs-overlay.js"></script>
+<script src="${ctx}/resources/reference/jquery/openseadragon/fabric.adapted.js"></script>
+
+
+<script src="${ctx}/resources/reference/jquery/colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<script src="${ctx}/resources/reference/jquery/ckeditor/ckeditor.js"></script>
 <!-- 全局变量定义 -->
 <script type="text/javascript">
 	var WEB_ROOT = $('#input_hidden_ctx').val();

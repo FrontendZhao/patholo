@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/slice.css"  type="text/css" rel="stylesheet" media="all" >
-<link href="${ctx}/resources/reference/jquery/colorpicker/dist/css/bootstrap-colorpicker.min.css"  type="text/css" rel="stylesheet" media="all" >
 <link href="${ctx}/resources/reference/jquery/ContextJS/css/context.standalone.css"  type="text/css" rel="stylesheet" media="all" >
 <%-- <link href="${ctx}/resources/reference/jquery/jcrop/css/jquery.Jcrop.min.css"  type="text/css" rel="stylesheet" media="all" > --%>
 </head> 
@@ -100,10 +99,7 @@
 </div>
 
 
-<script src="${ctx}/resources/reference/jquery/openseadragon/openseadragon.min.js"></script> 
-<script src="${ctx}/resources/reference/jquery/openseadragon/openseadragon-fabricjs-overlay.js"></script>
-<script src="${ctx}/resources/reference/jquery/openseadragon/fabric.adapted.js"></script>
-<script src="${ctx}/resources/reference/jquery/colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+
 <%-- <script src="${ctx}/resources/reference/jquery/jcrop/jquery.Jcrop.min.js"></script>
 <script src="${ctx}/resources/reference/jquery/html2canvas/html2canvas.min.js"></script> --%>
 <script src="${ctx}/resources/reference/jquery/ContextJS/js/context.js"></script>
