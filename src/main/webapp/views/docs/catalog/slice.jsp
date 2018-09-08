@@ -9,7 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/slice.css"  type="text/css" rel="stylesheet" media="all" >
 <link href="${ctx}/resources/reference/jquery/ContextJS/css/context.standalone.css"  type="text/css" rel="stylesheet" media="all" >
-<%-- <link href="${ctx}/resources/reference/jquery/jcrop/css/jquery.Jcrop.min.css"  type="text/css" rel="stylesheet" media="all" > --%>
 </head> 
 <body>
  <div class="panel panel-default">
@@ -93,7 +92,152 @@
 <div class="modal about-modal w3-agileits fade" id="commModal" aria-hidden="true" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
+				  
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#edit" data-toggle="tab">图形信息</a></li>
+					<li><a href="#prop" data-toggle="tab">测量信息</a></li>
+					<li><a id="textTitleID" href="#textID" data-toggle="tab">文本说明</a></li>
+					<li><a href="#videoID" id="videoTitle" data-toggle="tab" style="display: none;">视频教学</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
 				
+					<div class="tab-pane fade in active" id="edit">
+					         <div class="modal-body">
+						         <table class="table-condensed">
+									   <tbody>
+									   
+									      <tr>
+									         <td>类型:</td>
+									         <td>
+										         <select id="propType" style="width: 340">
+									                 <option value="line">直线</option>
+									                 <option value="curv">曲线</option>
+									                 <option value="roun">圆型</option>
+									                 <option value="elli">椭圆</option>
+									                 <option value="rect">矩形</option>
+									                 <option value="poly">正多边形</option>
+									                 <option value="angp">折线</option>
+									                 <option value="arcp1">贝塞尔曲线</option>
+									                 <option value="arcp">圆弧</option>
+									                 <option value="roup">封闭折线</option>
+									             </select>
+									         </td>
+									      </tr>
+									   
+									      <tr>
+									         <td>线宽:</td>
+									         <td>
+									             <select id="strokeW" style="width: 340">
+									                 <option value="1">1</option>
+									                 <option value="2">2</option>
+									                 <option value="3">3</option>
+									                 <option value="4">4</option>
+									                 <option value="5">5</option>
+									                 <option value="6">6</option>
+									                 <option value="7">7</option>
+									                 <option value="8">8</option>
+									                 <option value="9">9</option>
+									                 <option value="10">10</option>
+									                 <option value="20">20</option>
+									             </select>
+											 </td>
+									      </tr>
+									   
+									      <tr>
+									         <td>名字:</td>
+									         <td>
+										         <input type="text" style="width: 340"  id="name" >
+											 </td>
+									      </tr>
+									      
+									      <tr>
+									         <td>颜色:</td>
+									         <td>
+										         <div id="editColorPicker" class="input-group colorpicker-component" >
+											         <span class="input-group-addon"><i></i></span>
+											         <input id="editColor"  type="text" class="form-control" style="width: 300" value="#0000ff"/>
+											     </div>
+									         </td>
+									      </tr>
+									      
+									      <!-- <tr>
+									         <td>描述:</td>
+									         <td>
+										         <textarea class="form-control" rows="3"></textarea>
+									         </td>
+									      </tr> -->
+									      <tr>
+									         <td>标准批注:</td>
+									         <td>
+									                <div class="bootstrap-switch-square">
+									                     <input type="checkbox" data-toggle="switch" disabled="disabled" id="switchID" />
+									                </div> 
+									         </td>
+									      </tr>
+									   </tbody>
+									</table>
+					         
+					            
+					         </div>
+					</div>
+					<div class="tab-pane fade" id="prop">
+						         <div class="modal-body">
+						         <div class="row">
+                                     <div class="col-md-6">
+                                          <div class="form-group" id="width" >
+										      <label   class="control-label"></label>
+										   </div>
+										   <div class="form-group" id="height"  >
+										      <label   class="control-label"></label>
+										   </div>
+										   <div class="form-group" id="girth" >
+										      <label   class="control-label"></label>
+										   </div>
+										   <div class="form-group" id="area" >
+										      <label   class="control-label"></label>
+										   </div>
+                                     </div>
+                                     <!-- <div class="col-md-6">
+                                           <div id="openSeadProp" style="width: 500px;height: 500px;"></div>
+                                     </div> -->
+                                  </div>
+			
+						         </div>
+					</div>
+					<div class="tab-pane fade" id="videoID">
+						<video id="video" controls="controls"  width="400">
+				            <source src="/filePath/科目/医学形态学实验/第二章/大动脉/video/1.mp4" type="video/mp4" />
+				         </video>
+				         <div class="form-group">
+						      <label for="inputfileVideo">视频上传:</label>
+						      <input type="file" id="inputfileVideo" accept="audio/*,video/*">
+						      
+						 </div>
+					</div>
+					
+					<div class="tab-pane fade" id="textID">
+						<textarea cols="80" id="editor1" name="editor1" rows="10" data-sample="1" data-sample-short="">
+			            </textarea>
+
+					</div>
+				</div>
+
+
+			        
+		         <div class="modal-footer">
+		            <button id="save" type="button" class="btn btn-primary" data-dismiss="modal">
+		                                         提交
+		            </button>
+		            <button type="button" class="btn btn-primary" 
+		               data-dismiss="modal">取消
+		            </button>
+		            <button id="yingyong" type="button" class="btn btn-primary" data-dismiss="modal">
+		                                         应用
+		            </button>
+		         </div>
+
+
+				  
 			</div>
 		</div>
 </div>
@@ -106,5 +250,7 @@
 <script src="${ctx}/views/docs/catalog/js/control.js"></script>
 <script src="${ctx}/views/docs/catalog/js/draw.js"></script>
 <script src="${ctx}/views/docs/catalog/js/slice.js"></script>
+<script src="${ctx}/views/docs/catalog/js/edit.js"></script>
+<script src="${ctx}/views/docs/catalog/js/prop.js"></script>
 </body>
 </html>

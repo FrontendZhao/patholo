@@ -192,19 +192,6 @@ $(function(){
 	  	     
 	  	 })
 	})
-	
-	
-	
-})
-console.info(selObject);
-var prop=new Prop({'obj':selObject});
-    prop[selObject.prop.propType]();
-
-</script>
-<script type="text/javascript">
-var n=0;
-$(function(){
-	
 	$('#inputfileImg').change(function(msg){
 		//fd.append("upfile", $("#inputfileImg").get(0).files[0]);//上传的文件file
         $.ajax({
@@ -258,7 +245,15 @@ $(function(){
 		}
 	})
 	
+	
 })
+console.info(selObject);
+var prop=new Prop({'obj':selObject});
+    prop[selObject.prop.propType]();
+
+</script>
+<script type="text/javascript">
+var n=0;
 function init(){
 	
 	findUser();

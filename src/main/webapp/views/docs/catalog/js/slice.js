@@ -5,7 +5,7 @@ $(function(){
     
 	$(document).on("show.bs.modal", ".modal", function(){
 	    $(this).draggable({
-	//        handle: ".modal-header"   // 只能点击头部拖动
+	         handle: ".modal-header"   // 只能点击头部拖动
 	    });
 	    $(this).css("overflow", "hidden"); // 防止出现滚动条，出现的话，你会把滚动条一起拖着走的
 	});
@@ -427,14 +427,14 @@ function onRightMouse(){
 			selObject= canvas.getActiveObject();
 			//context.attach('#openSeadragon', loadRightArray(selObject));
 			if(selObject==undefined){
+				setTimeout(initModal,300)
 				$('#commModal').modal({
-						    remote:WEB_ROOT+'/views/docs/catalog/prop.jsp',
-						    target:'_parent'
+						    //remote:WEB_ROOT+'/views/docs/catalog/prop.jsp'
 				})
 		    }else{
-		        $('#commModal').modal({
-						    remote:WEB_ROOT+'/views/docs/catalog/edit.jsp',
-						    target:'_parent'
+		        setTimeout(initModal,300)
+				$('#commModal').modal({
+						    //remote:WEB_ROOT+'/views/docs/catalog/prop.jsp'
 				})
 		    }
 		    return false;
