@@ -14,7 +14,7 @@
 				<ul id="myTab" class="nav nav-tabs">
 					<li class="active"><a href="#edit" data-toggle="tab">图形信息</a></li>
 					<li><a href="#prop" data-toggle="tab">测量信息</a></li>
-					<li><a href="#textID" data-toggle="tab">文本说明</a></li>
+					<li><a id="textTitleID" href="#textID" data-toggle="tab">文本说明</a></li>
 					<li><a href="#videoID" id="videoTitle" data-toggle="tab" style="display: none;">视频教学</a></li>
 				</ul>
 				<div id="myTabContent" class="tab-content">
@@ -180,18 +180,22 @@ $(function(){
 		canvas.renderAll();
 		
 	}); 
-	$.ajax({
-		 async:false,
-  	     url:WEB_ROOT+'/olo/subject!doloadCkeditop.do',
-  	     contentType: 'application/json',
-  	     success:function(msg){
-  	    	 console.info(msg);
-  	    	 if(msg!=null){
-  	    		myeditor.setData(msg);
-  	    	 }
-  	     }
-  	     
-  	 })
+	$('#textTitleID').click(function(){
+		console.info(3333);
+		$.ajax({
+			 async:false,
+	  	     url:WEB_ROOT+'/olo/subject!doloadCkeditop.do',
+	  	     contentType: 'application/json',
+	  	     success:function(msg){
+	  	    	 console.info(msg);
+	  	    	 if(msg!=null){
+	  	    		myeditor.setData(msg);
+	  	    	 }
+	  	     }
+	  	     
+	  	 })
+	})
+	
 	
 	
 })
