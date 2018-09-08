@@ -12,7 +12,9 @@ import com.platform.project.sys.spring.SpringUtil;
 
 public class ExtractFile{
   static{
-    System.loadLibrary("libmds.so");
+	System.out.println(System.getProperty("java.library.path"));
+    System.loadLibrary("mds");
+    
   }
   ExtractFile(String filePath)
   {
@@ -55,9 +57,7 @@ public class ExtractFile{
 			Object newClass=application.getAttribute(sliceNo);
 			String slicePath= SpringUtil.getProperty("example_file_path");
 			if(!EmptyUtils.isNotEmpty(newClass) && (new File(slicePath+"/科目/"+path+".mds").exists())){
-				System.out.println(666);
 				newClass=new ExtractFile(slicePath+"/科目/"+path+".mds");
-				System.out.println(777);
 				application.setAttribute(sliceNo,newClass);
 				//((ExtractFile)newClass).ReleaseMDSFile();
 			}
@@ -73,10 +73,8 @@ public class ExtractFile{
 		}
 		byte [] b=null;
 		try {
-			System.out.println(888);
 			ExtractFile newClass=(ExtractFile)application.getAttribute(sliceNo);
 			b=newClass.GetTileData(Integer.parseInt(level),Integer.parseInt(x),Integer.parseInt(y));
-			System.out.println(999);
 		} catch (Exception e) {
 			log.warn(level+","+x+","+y);
 			//e.printStackTrace();

@@ -51,7 +51,7 @@
 <script type="text/javascript">
 	var WEB_ROOT = $('#input_hidden_ctx').val();
 	//解析xml
-	function getXmlDom(xmlPath){
+	 function getXmlDom(xmlPath){
 		var p=new Object();
 	     $.ajax({
 	          url:xmlPath,
@@ -79,5 +79,5 @@
 	          }
 	     })
 	     return p;
-	}
+	} 
 </script>

@@ -27,17 +27,17 @@
 									      <tr>
 									         <td>类型:</td>
 									         <td>
-										         <select  style="width: 340">
-									                 <option value="1">直线</option>
-									                 <option value="2">曲线</option>
-									                 <option value="5">圆型</option>
-									                 <option value="10">椭圆</option>
-									                 <option value="20">矩形</option>
-									                 <option value="20">正多边形</option>
-									                 <option value="20">折线</option>
-									                 <option value="20">贝塞尔曲线</option>
-									                 <option value="20">圆弧</option>
-									                 <option value="20">封闭折线</option>
+										         <select id="propType" style="width: 340">
+									                 <option value="line">直线</option>
+									                 <option value="curv">曲线</option>
+									                 <option value="roun">圆型</option>
+									                 <option value="elli">椭圆</option>
+									                 <option value="rect">矩形</option>
+									                 <option value="poly">正多边形</option>
+									                 <option value="angp">折线</option>
+									                 <option value="arcp1">贝塞尔曲线</option>
+									                 <option value="arcp">圆弧</option>
+									                 <option value="roup">封闭折线</option>
 									             </select>
 									         </td>
 									      </tr>
@@ -48,7 +48,13 @@
 									             <select id="strokeW" style="width: 340">
 									                 <option value="1">1</option>
 									                 <option value="2">2</option>
+									                 <option value="3">3</option>
+									                 <option value="4">4</option>
 									                 <option value="5">5</option>
+									                 <option value="6">6</option>
+									                 <option value="7">7</option>
+									                 <option value="8">8</option>
+									                 <option value="9">9</option>
 									                 <option value="10">10</option>
 									                 <option value="20">20</option>
 									             </select>
@@ -164,6 +170,8 @@ $(function(){
 		color:selObject.stroke
 	});
 	 selObject.lineW && $('#strokeW').val(selObject.lineW);
+	 selObject.prop && $('#propType').val(selObject.prop.propType);
+
 	$('#yingyong').click(function(){
 		var zoom= viewer.viewport.getZoom(true);
 		var linew=$('#strokeW').val();
@@ -241,6 +249,8 @@ $(function(){
 function init(){
 	
 	findUser();
+	
+	console.info(selObject);
 }
 function findUser(){
 	$.ajax({

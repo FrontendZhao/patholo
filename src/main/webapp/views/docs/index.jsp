@@ -48,7 +48,7 @@
 			<div class="services-agileinfo">
 				<div class="col-sm-3 col-xs-6 wthree-services-grid">
 					<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=0" target="_blank" ><img src="/filePath/在线实例/血细胞/1/DSI0/0.050945/0000_0000" 
+						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=0" target="_blank" ><img src="images/0000_0000.jpg" 
          alt="图片找不到啦" class="img-thumbnail" ></a>
 					</div>
 					<div class="wthree-services-info">
@@ -58,7 +58,7 @@
 				</div>
 				<div class="col-sm-3 col-xs-6 wthree-services-grid">
 												<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=1" target="_blank"><img src="/filePath/在线实例/大动脉/1/DSI0/0.008904/0000_0000" 
+						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=1" target="_blank"><img src="images/0000_0000.png" 
          alt="图片找不到啦" class="img-thumbnail"  ></a>
 					</div>
 					<div class="wthree-services-info">
@@ -68,7 +68,7 @@
 				</div>
 				<div class="col-sm-3 col-xs-6 wthree-services-grid">
 					<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=0" target="_blank" ><img src="/filePath/在线实例/血细胞/1/DSI0/0.050945/0000_0000" 
+						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=0" target="_blank" ><img src="images/0000_0000.jpg" 
          alt="图片找不到啦" class="img-thumbnail" ></a>
 					</div>
 					<div class="wthree-services-info">
@@ -78,7 +78,7 @@
 				</div>
 				<div class="col-sm-3 col-xs-6 wthree-services-grid">
 					<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=1" target="_blank"><img src="/filePath/在线实例/大动脉/1/DSI0/0.008904/0000_0000" 
+						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=1" target="_blank"><img src="images/0000_0000.png" 
          alt="图片找不到啦" class="img-thumbnail"  ></a>
 					</div>
 					<div class="wthree-services-info">

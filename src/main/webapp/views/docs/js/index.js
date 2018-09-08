@@ -5,7 +5,7 @@ $(function(){
     	url:WEB_ROOT+'/olo/subject!doFindSubjectData.do',
     	success:function(msg){
     		$.each(msg,function(i,val){
-    			$('.gallery-grids').append('<div id="subject_'+val.id+'" class="col-sm-2 col-xs-3 col-xs-offset-2 col-sm-offset-1 gallery-grid"><div class="grid effect-apollo"><a  href="../docs/catalog/subject.jsp?subNo='+val.id+'" target="_blank" ><img src="/filePath/科目/'+val.name+'/'+val.name+'.png" alt="图片找不到啦"  /><div class="figcaption"><p>'+val.synopsis+'</p></div>	</a></div></div>');
+    			$('.gallery-grids').append('<div id="subject_'+val.id+'" class="col-sm-2 col-xs-3 col-xs-offset-2 col-sm-offset-1 gallery-grid"><div class="grid effect-apollo"><a  href="../docs/catalog/subject.jsp?subNo='+val.id+'" ><img src="/filePath/科目/'+val.name+'/'+val.name+'.png" alt="图片找不到啦"  /><div class="figcaption"><p>'+val.synopsis+'</p></div>	</a></div></div>');
     		});
     		$('.gallery-grids').append('<div class="clearfix"></div>');
     	}
@@ -31,6 +31,7 @@ $(function(){
 		async:false,
 		url:WEB_ROOT+'/olo/subject!doFindSliceName.do',
 		success:function(msg){
+			console.info(msg);
 			$.each(msg,function(i,val){
 				var p= getXmlDom('/filePath/EXAMPLE/'+val+'/1/DSI0/MoticDigitalSlideImage');
 				$('.services-agileinfo').append('<div class="col-sm-3 col-xs-6 wthree-services-grid">'
@@ -54,6 +55,7 @@ function initPic(){
 				
 			  return false;
 			}
+			$('#services').find('img').prop('src','data:image/png;base64,'+sliceInfo[0])
 			console.info(sliceInfo);
 		}
 	})*/
@@ -69,7 +71,7 @@ function initPic(){
 	    //保存切片属性的xml路径（等同于下面的image标签），fileImage为tomcat的server里配置的虚拟路径
 	    //tileSources: '/fileImage/24581213_9.xml',
 	    //图像旋转按钮
-	    showRotationControl:false,
+	    showRotationControl:true,
 	    //home按钮填充视窗
 	    homeFillsViewer:true,
 	    //设置图像必须留着窗口中
@@ -85,7 +87,7 @@ function initPic(){
 		defaultZoomLevel:1,
 		imageLoaderLimit:1,
 		gestureSettingsMouse:{
-		    scrollToZoom:false
+		    scrollToZoom:true
 		},
 	    tileSources:   {
 	    	width:24392,

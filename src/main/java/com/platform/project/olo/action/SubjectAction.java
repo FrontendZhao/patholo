@@ -85,10 +85,15 @@ public class SubjectAction extends BaseAction {
 			
 			byte [][] b=new byte[thumb.length][];
 			
-			for (int i = 0; i < thumb.length; i++) {
+			b[0]=ExtractFile.getSliceThumbnail(thumbnailhigh, thumb[0]);
+			b[1]=b[0];
+			b[2]=b[0];
+			b[3]=b[0];
+			
+			/*for (int i = 0; i < thumb.length; i++) {
 				
 				 b[i]=ExtractFile.getSliceThumbnail(thumbnailhigh, thumb[i]);
-			} ;
+			} ;*/
 			writeJson(b);
 		} catch (Exception e) {
 			e.printStackTrace();
