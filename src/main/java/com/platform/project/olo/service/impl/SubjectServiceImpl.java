@@ -8,6 +8,7 @@ import java.util.Map;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Service;
 
+import com.platform.db.Page;
 import com.platform.project.olo.model.Postil;
 import com.platform.project.olo.model.Subject;
 import com.platform.project.olo.service.ISubjectService;
@@ -28,7 +29,8 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 
 	@Override
 	public List<?> findCatalogData(String subNo) throws ServiceException {
-		String sql="select ID,NAME,PID from tb_subject where ID=? and visible=1 union select ID,NAME,PID from tb_catalog where pid=? and visible=1";
+		
+		String sql="select ID,NAME,PID from tb_subject where ID=? and visible=1 union select ID,NAME,PID from tb_catalog1 where pid=? and visible=1";
 		return hibernateDao.queryList(sql,new Object[]{subNo,subNo});
 	}
 
@@ -40,7 +42,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 
 	@Override
 	public List<?> findSliceNames() throws ServiceException {
-		String filePath= "D:\\切片\\在线实例";//SpringUtil.getProperty("example_file_path");
+		String filePath= "D:\\slice\\example";//SpringUtil.getProperty("example_file_path");
 		File[] files = new File(filePath).listFiles();
 		List<String> list=new ArrayList<>();
 		for (int i = 0; i < files.length; i++) {
@@ -51,7 +53,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 
 	@Override
 	public Object findSliceInfo(String sliceNo) throws ServiceException {
-		String sql="select t.id ID,t.name NAME,t.path PATH,t.pid PID,t.visible VISIBLE,t.sortid SORTID,c.name CNAME,s.name SNAME from tb_slice t,tb_catalog c,tb_subject s where t.pid=c.id and c.pid=s.id and t.id=?";
+		String sql="select t.id ID,t.name NAME,t.path PATH,t.pid PID,t.visible VISIBLE,t.sortid SORTID,c.name CNAME,s.name SNAME from tb_slice t,tb_catalog1 c,tb_subject s where t.pid=c.id and c.pid=s.id and t.id=?";
 		Map<String, Object> map=hibernateDao.queryMap(sql, new Object[]{sliceNo});
 		String path="";
 		if(!EmptyUtils.isNotEmpty(map)){
@@ -69,7 +71,6 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 			map.put("HEIGHT", extractFile.ImageHeight);
 			map.put("MAXLEVEL", extractFile.maxLevel);
 		}
-		
 		return map;
 	}
 	@Override
@@ -143,6 +144,74 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 
 		}
 		return 0;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Map findSubjectPageData(String subNo,String pageNo) throws ServiceException {
+		
+		String nodeSql="select ID,NAME,PID from tb_catalog1 where pid in (select id from tb_catalog1 where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
+		
+		String sql="select ID,NAME,PID from tb_catalog1 where id=? and visible=1";
+		
+		List<?> nodeList= hibernateDao.queryList(nodeSql, new Object[]{subNo});
+		
+		int index=Integer.parseInt(pageNo);
+		
+		Object obj= nodeList.get(index-1);
+		
+		Map map= null;
+		
+		Map m=null;
+		
+		if(EmptyUtils.isNotNull(obj)){
+			
+			m=(Map)obj;
+			
+			map= hibernateDao.queryMap(sql,new Object[]{m.get("PID")});
+			
+			m.put("CHILD",findChildNode(m)) ;
+		}
+		
+		if(EmptyUtils.isNotNull(map)){
+			
+			
+			map.put("CHILD",new Object[]{m}) ;
+		}
+				
+		return map;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List findChildNode(Map m){
+		
+		String sql="select ID,NAME,PID from tb_catalog1 where pid=? and visible=1 order by sortid";
+		
+		List<?> list=hibernateDao.queryList(sql,new Object[]{m.get("ID")});
+		
+		if(EmptyUtils.isNotEmpty(list)){
+			
+            for (Object object : list) {
+				
+				Map map=(Map)object;
+				
+				findChildNode(map);
+				
+			}
+		}	
+			
+	    m.put("CHILD", list);
+		return list;
+	}
+
+	@Override
+	public Map findSubjectPageTotal(String subNo) throws ServiceException {
+		
+        String sql="select count(*) as TOTAL from tb_catalog1 where pid in (select id from tb_catalog1 where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
+		
+		Map map= hibernateDao.queryMap(sql,new Object[]{subNo});
+		
+		return map;
 	}
 	
 	

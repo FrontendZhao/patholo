@@ -26,7 +26,6 @@ function initModal(){
 		
 	}); 
 	$('#textTitleID').click(function(){
-		console.info(3333);
 		$.ajax({
 			 async:true,
 	  	     url:WEB_ROOT+'/olo/subject!doloadCkeditop.do',

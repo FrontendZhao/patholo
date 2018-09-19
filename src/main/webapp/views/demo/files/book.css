@@ -1,0 +1,354 @@
+﻿/* Basic sample */
+
+body{
+	overflow:hidden;
+	background-color:#fcfcfc;
+    background-image:url("../../images/wood_bg.jpg");
+	margin:0;
+	padding:0;
+}
+
+.flipbook-viewport{
+	overflow:hidden;
+	width:100%;
+	height:100%;
+}
+
+.flipbook-viewport .container{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:auto;
+}
+
+.flipbook-viewport .flipbook{
+	width:820px;
+	height:620px;
+	left:-410px;
+	top:-310px;
+}
+
+.flipbook-viewport .page{
+	width:410px;
+	height:620px;
+	background-color:white;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+
+.flipbook .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.flipbook-viewport .page img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin:0;
+}
+
+.flipbook-viewport .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}
+
+.flipbook .loader{
+	background-image:url(../../images/loader.gif);
+	width:22px;
+	height:22px;
+	position:absolute;
+	top:299px;
+	left:194px;
+}
+
+.flipbook .even .page-body {
+    margin: 49px 0px 49px 49px;
+    overflow:hidden;
+}
+
+.flipbook .odd .page-body {
+    margin: 49px 49px 49px 0px;
+    overflow:hidden;
+}
+
+.page-body-with-title {
+    margin-top:37px !important;
+}
+
+/* Page title */
+.flipbook .page-body .page-title {
+     height:43px;
+     margin-bottom:25px;
+ }
+
+.flipbook .even .page-body .page-title {
+     background-image:url(images/cover_title_left.png);
+ }
+
+.flipbook .odd .page-body .page-title {
+     background-image:url(images/cover_title_right.png);
+ }
+
+/* chapters */
+.flipbook .even .page-body .page-content {
+    margin-right:20px;
+}
+
+.flipbook .odd .page-body .page-content {
+    margin-left:20px;
+}
+
+.grade-title {
+    background-color:#f1f1f1;
+    height:30px;
+    margin-bottom:4px;
+    border:solid;
+    border-width:1px;
+    border-color:#bfbfbf;
+}
+
+.grade-title-text {
+    color:white;
+    background-color:#a4a4a4;
+    font-size:15px;
+    font-weight:bold;
+    height:21px;
+    padding-top:5px;
+    margin:2px;
+    text-align:center;
+}
+
+.chapter-title {
+    background-color:#f1f1f1;
+    height:30px;
+    margin-bottom:2px;
+    margin-top:8px;
+    border:solid;
+    border-width:1px;
+    border-color:#bfbfbf;
+}
+
+.chapter-title-no {
+    float:left;
+    color:white;
+    background-color:#a4a4a4;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
+    width:26px;
+    height:21px;
+    padding-top:5px;
+    margin:2px;
+    
+}
+
+.chapter-title-text {
+    float:left;
+    color:white;
+    background-color:#a4a4a4;
+    font-size:15px;
+    font-weight:bold;
+    width:301px;
+    height:21px;
+    padding-top:5px;
+    padding-left:4px;
+    margin:2px;
+}
+
+/* Section*/
+
+.section {
+    background-color:#f1f1f1;
+    margin-bottom:2px;    
+    border:solid;
+    border-width:1px;
+    border-color:#bfbfbf;
+    font-size:12px;
+}
+
+.section-top-padding {
+    padding-top:15px;
+}
+
+/* section title*/
+
+.section-title {
+    padding-left:5px;
+    margin-top:12px;
+    margin-bottom:10px;
+}
+
+.section-title li{
+    list-style:none;
+    list-style-position:inside;
+    height:15px;
+    line-height:15px;
+    text-indent:20px;
+    background-repeat:no-repeat;
+}
+
+.order-1 {
+    background-image:url(../../images/order_1.png);
+}
+
+.order-2 {
+    background-image:url(../../images/order_2.png);
+}
+
+.order-3 {
+    background-image:url(../../images/order_3.png);
+}
+
+.order-4 {
+    background-image:url(../../images/order_4.png);
+}
+
+.order-5 {
+    background-image:url(../../images/order_5.png);
+}
+.order-6 {
+    background-image:url(../../images/order_6.png);
+}
+.order-7 {
+    background-image:url(../../images/order_7.png);
+}
+.order-8 {
+    background-image:url(../../images/order_8.png);
+}
+.order-9 {
+    background-image:url(../../images/order_9.png);
+}
+.order-10 {
+    background-image:url(../../images/order_10.png);
+}
+.order-11 {
+    background-image:url(../../images/order_11.png);
+}
+.order-12 {
+    background-image:url(../../images/order_12.png);
+}
+.order-13 {
+    background-image:url(../../images/order_13.png);
+}
+.order-14 {
+    background-image:url(../../images/order_14.png);
+}
+.order-15 {
+    background-image:url(../../images/order_15.png);
+}
+.order-16 {
+    background-image:url(../../images/order_16.png);
+}
+.order-17 {
+    background-image:url(../../images/order_17.png);
+}
+.order-18 {
+    background-image:url(../../images/order_18.png);
+}
+.order-19 {
+    background-image:url(../../images/order_19.png);
+}
+.order-20 {
+    background-image:url(../../images/order_20.png);
+}
+.order-21 {
+    background-image:url(../../images/order_21.png);
+}
+.order-22 {
+    background-image:url(../../images/order_22.png);
+}
+.order-23 {
+    background-image:url(../../images/order_23.png);
+}
+.order-24 {
+    background-image:url(../../images/order_24.png);
+}
+.order-25 {
+    background-image:url(../../images/order_25.png);
+}
+.order-26 {
+    background-image:url(../../images/order_26.png);
+}
+
+.section-title li a {
+    font-size:12px;
+    text-decoration:none;
+}
+
+/* Section sub title*/
+.section-sub-title {
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding:0px;
+}
+.section-sub-title li {
+    list-style:none;
+    margin-bottom:10px;
+}
+
+.section-sub-title-h li {
+    display:inline-block;
+    width:150px;
+}
+
+.disabled-item {
+    color:gray;
+}
+
+/* Section slides*/
+.section-slides {
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding:0px;
+}
+
+.section-slides li {
+    list-style:none;
+    list-style-position:inside;
+    display:inline-block;
+    width:150px;
+    margin-bottom:12px;    
+    background-image:url(images/list_item.jpg);
+    background-repeat:no-repeat;
+    background-position-y:5px;
+    text-indent:10px;
+}
+
+.li-v {
+    display:list-item !important;
+    width:auto !important;
+}
+
+.section-slides li a {
+    text-decoration:none;
+    color:black;
+}
+
+.section-slide-layout-large li{
+    margin-bottom:20px;
+}
+
+.section-slide-layout-small li {
+    margin-bottom:5px;
+}
+
+
+ 
+

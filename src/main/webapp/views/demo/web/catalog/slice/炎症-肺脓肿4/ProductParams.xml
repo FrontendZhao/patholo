@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root version="1.0">
+  <Product>
+    <Name></Name>
+    <ShootDate>2015-01-08 09:59:25:0000</ShootDate>
+    <CameraCount>1</CameraCount>
+    <PhotoAmountPerCamera>50</PhotoAmountPerCamera>
+    <OrgResolution>
+      <Width>5184</Width>
+      <Height>3456</Height>
+    </OrgResolution>
+    <ProdResolution>
+      <Width>2048</Width>
+      <Height>1365</Height>
+    </ProdResolution>
+    <Fps>5</Fps>
+  </Product>
+</Root>

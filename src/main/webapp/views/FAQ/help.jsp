@@ -1,19 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@include file="../init/base.jsp" %>
-	<jsp:include page="${ctx}/views/comm/comm.jsp"></jsp:include>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <title>FAQ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
 <link type="text/css" rel="stylesheet" href="css/common.css"  media="all">
 <link type="text/css" rel="stylesheet" href="css/helpcenter.css"  media="all">
-<script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core CSS -->
+<link href="${ctx}/resources/reference/jquery/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<!-- Dropdownhover CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap-dropdownhover.min.css" type="text/css" rel="stylesheet" media="all">
+<!-- fonts awesome -->
+<link href="${ctx}/resources/reference/jquery/bootstrap/css/font-awesome.css" type="text/css" rel="stylesheet" media="all" />
+<!-- Plugin CSS -->
+<link rel="stylesheet" href="assets/css/animate.min.css" type="text/css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+<title>河北医科大学</title>
 <script src="js/helpcenter.js"></script>
 </head> 
 <body>
+<!-- Preloader -->
+<div id="preloader">
+	<div id="loading">
+	</div>
+</div>
+<header>
+	<!-- top-menu -->
+	<div class="top-menu">
+		<!-- top-header -->
+		<div class="top-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="phone dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="fa fa-globe" aria-hidden="true"></i> 语言 : 中文 </a>
+							 <ul class="dropdown-menu">
+								 <li><a href="#">English</a></li>
+								<li><a href="#">中文</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="social">
+							<ul>
+								<li><a href="${ctx}/views/users/login.jsp">登录</a></li>
+								<li>|</li>
+								<li><a href="${ctx}/views/FAQ/help.jsp">关于</a></li>
+								<li>|</li>
+								<li><a href="${ctx}/views/FAQ/help.jsp">帮助</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /top-header -->
+		<!-- mainNav -->
+		<div id="mainNav" class="navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-inverse navbar-default">
+
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="${ctx}/views/docs/index.jsp"><img src="assets/img/logo.png" alt="logo"></a>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeIn fadeInLeft fadeInUp fadeInRight">
+							<ul class="nav navbar-nav">
+								<li><a href="${ctx}/views/docs/index.jsp">主页</a></li>
+								<li><a href="about.html">虚拟仿真实验教学系统</a></li>
+								<li><a href="contact.html"><span></span>虚拟仿真实验在线考试系统</a></li>
+							</ul>
+							<!-- /.navbar-collapse -->
+						</div>
+
+					</nav>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- /mainNav -->
+	</div>
+	<!-- /top-menu -->
+
+	
+
+</header>
+
 <div class="faqSty">
 
 
@@ -118,5 +209,24 @@
 	<div class="cb"></div>
 </div>
 </div>
+<!-- jQuery -->
+<script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="${ctx}/resources/reference/jquery/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-dropdownhover.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="assets/js/jquery.easing.min.js"></script>
+<script src="assets/js/jquery.fittext.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/modernizr.js"></script>
+<!-- Modernizr -->
+<script src="assets/js/main.js"></script>
+<!-- Resource jQuery -->
+<!--  countTo JavaScript  -->
+<script type="text/javascript" src="assets/js/jquery.countTo.js"></script>
+<!-- owl carousel -->
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<!--  Custom Theme JavaScript  -->
+<script src="assets/js/custom.js"></script>
 </body>
 </html>

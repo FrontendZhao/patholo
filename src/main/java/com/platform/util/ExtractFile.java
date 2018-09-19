@@ -56,8 +56,8 @@ public class ExtractFile{
 			ServletContext application=ServletActionContext.getServletContext();
 			Object newClass=application.getAttribute(sliceNo);
 			String slicePath= SpringUtil.getProperty("example_file_path");
-			if(!EmptyUtils.isNotEmpty(newClass) && (new File(slicePath+"/科目/"+path+".mds").exists())){
-				newClass=new ExtractFile(slicePath+"/科目/"+path+".mds");
+			if(!EmptyUtils.isNotEmpty(newClass) && (new File(slicePath+"/subject/"+path+".mds").exists())){
+				newClass=new ExtractFile(slicePath+"/subject/"+path+".mds");
 				application.setAttribute(sliceNo,newClass);
 				//((ExtractFile)newClass).ReleaseMDSFile();
 			}

@@ -1,227 +1,596 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<%@include file="../init/base.jsp" %>
-	<jsp:include page="${ctx}/views/comm/comm.jsp"></jsp:include>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+ <c:set var="ctx"  value="${pageContext.request.contextPath}" />
+<input type="hidden" id="input_hidden_ctx" name="ctx" value="${ctx}" />
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-<title>数字切片考核系统</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<link href="${ctx}/views/docs/css/style.css" type="text/css" rel="stylesheet" media="all">  
-</head> 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap Core CSS -->
+<link href="${ctx}/resources/reference/jquery/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<!-- Dropdownhover CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap-dropdownhover.min.css" type="text/css" rel="stylesheet" media="all">
+<!-- fonts awesome -->
+<link href="${ctx}/resources/reference/jquery/bootstrap/css/font-awesome.css" type="text/css" rel="stylesheet" media="all" />
+<!-- Plugin CSS -->
+<link rel="stylesheet" href="assets/css/animate.min.css" type="text/css" rel="stylesheet" media="all" >
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" rel="stylesheet" media="all" >
+<!-- Owl Carousel Assets -->
+<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet">
+<title>河北医科大学</title>
+</head>
 <body>
-    <!-- navigation -->
-	<div class="top-nav">
-		<nav class="navbar navbar-default">
+<!-- Preloader -->
+<div id="preloader">
+	<div id="loading">
+	</div>
+</div>
+<header>
+	<!-- top-menu -->
+	<div class="top-menu">
+		<!-- top-header -->
+		<div class="top-header">
 			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">切换</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="phone dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="fa fa-globe" aria-hidden="true"></i> 语言 : 中文 </a>
+							 <ul class="dropdown-menu">
+								 <li><a href="#">English</a></li>
+								<li><a href="#">中文</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="social">
+							<ul>
+								<li><a id="loginName" href="${ctx}/views/users/login.jsp">登录</a><a id="userName"></a></li>
+								<li>|</li>
+								<li><a href="#" data-toggle="modal" data-target="#myModal">关于</a></li>
+								<li>|</li>
+								<li><a href="${ctx}/views/FAQ/help.jsp">帮助</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-center cl-effect-15">
-						<li><a href="${ctx}/views/docs/index.jsp" >首页</a></li>
-						<li><a href="#gallery" class="scroll" >科目</a></li>
-						<li><a href="#about" class="scroll" >用户管理</a></li>					
-						<li><a href="#gallery" class="scroll" >考核</a></li>
-						<li><a href="#about" class="scroll" >关于</a></li>			
-					</ul>	
-					<div class="clearfix"> </div>
+			</div>
+
+		</div>
+		<!-- /top-header -->
+		<!-- mainNav -->
+		<div id="mainNav" class="navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-inverse navbar-default">
+
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="${ctx}/views/docs/index.jsp"><img src="assets/img/logo.png" alt="logo"></a>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeIn fadeInLeft fadeInUp fadeInRight">
+							<ul class="nav navbar-nav">
+								<li><a href="${ctx}/views/docs/index.jsp">主页</a></li>
+								<li><a href="${ctx}/views/docs/catalog/book/book.jsp">虚拟仿真实验教学系统</a></li>
+								<li><a href="${ctx}/views/check/dist.jsp"><span></span>虚拟仿真实验在线考试系统</a></li>
+							</ul>
+							<!-- /.navbar-collapse -->
+						</div>
+
+					</nav>
 				</div>
-			</div>	
-		</nav>		
+			</div>
+
+
+		</div>
+		<!-- /mainNav -->
 	</div>
-    <!-- banner -->
-	<div id="openSeadragon1" class="opensead"></div>	
-	<!-- //banner -->
-	
-	<!-- services -->
-	<div id="services" class="services jarallax">
-		<div class="container"> 
-			<h3 class="agileits-title">在线实例</h3> 
-			<div class="services-agileinfo">
-				<div class="col-sm-3 col-xs-6 wthree-services-grid">
-					<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=0" target="_blank" ><img src="images/0000_0000.jpg" 
-         alt="图片找不到啦" class="img-thumbnail" ></a>
+	<!-- /top-menu -->
+
+	<div class="header-text">
+		<div class="col-xs-12 col-sm-5 col-md-5">
+		</div>
+		<div class="header-bg col-xs-12 col-sm-7 col-md-7">
+			<h1>河北医科大学病理学虚拟仿真实验室</h1>
+			<p>该虚拟仿真实验教学系统在更加真实的呈现大体标本和镜下切片同时，建立完整的考核切片库，切片库中的病例具备完整临床信息、大体特点和全景数字化切片，模拟临床病理诊断，使学生通过对系统中病例的学习及自我考核，掌握一定的病理诊断技能。这种实验教学系统克服了传统临床实践教学资源有限的不足，使学生更真实地进行病理诊断，收到良好的学习效果。线上虚拟教学系统有良好的开放性，可方便地扩充和更新教学资源，方便加入新的病例和病理学资料。本实验也计划在建立和完善虚拟仿真教学病例和考核病例库的基础上，可以逐步加入临床病理工作中的其他相关内容，如标本的取材、免疫组织化学检测和分子病理检测的选择和判读。今后在充分完善炎症性疾病病理虚拟仿真教学系统的基础上，可以延伸建立更多其他病种的虚拟仿真教学系统，如肿瘤、血液循环障碍等供学生使用。通过虚拟教学系统的学习，使学生掌握疾病的病理学特点及病理学诊断，为将来的临床工作打下坚实的基础。 </p>
+			<a href="#" class="header-btn">虚拟仿真实验室介绍</a>
+		</div>
+	</div>
+
+</header>
+<section class="for-box">
+	<!-- .for-box -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft  animated">
+				<div class="clr1">
+					<div class="for-box-crecl">
+						<i class="fa fa-users" aria-hidden="true"></i>
 					</div>
-					<div class="wthree-services-info">
-						<h5>实例1</h5>
-						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
-					</div>
+					<h2>
+						互动教学<br/> Students
+					</h2>
 				</div>
-				<div class="col-sm-3 col-xs-6 wthree-services-grid">
-												<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=1" target="_blank"><img src="images/0000_0000.png" 
-         alt="图片找不到啦" class="img-thumbnail"  ></a>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInLeft  animated">
+				<div class="clr1">
+					<div class="for-box-crecl">
+						<i class="fa fa-bookmark" aria-hidden="true"></i>
 					</div>
-					<div class="wthree-services-info">
-						<h5>实例2</h5>
-						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
-					</div>
+					<h2>
+						课程安排<br/>courses
+					</h2>
 				</div>
-				<div class="col-sm-3 col-xs-6 wthree-services-grid">
-					<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=0" target="_blank" ><img src="images/0000_0000.jpg" 
-         alt="图片找不到啦" class="img-thumbnail" ></a>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInRight  animated">
+				<div class="clr1">
+					<div class="for-box-crecl">
+						<i class="fa fa-phone" aria-hidden="true"></i>
 					</div>
-					<div class="wthree-services-info">
-						<h5>实例3</h5>
-						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
-					</div>
+					<h2>
+						呼叫指导<br/> anytime
+					</h2>
 				</div>
-				<div class="col-sm-3 col-xs-6 wthree-services-grid">
-					<div class="wthree-services-icon">
-						<a href="${ctx}/views/docs/exam/example.jsp?exampleNo=1" target="_blank"><img src="images/0000_0000.png" 
-         alt="图片找不到啦" class="img-thumbnail"  ></a>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 wow fadeInRight  animated">
+				<div class="clr1">
+					<div class="for-box-crecl">
+						<i class="fa fa-line-chart" aria-hidden="true"></i>
 					</div>
-					<div class="wthree-services-info">
-						<h5>实例4</h5>
-						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
-					</div>
+					<h2>
+						信息统计<br/>on you sutdy
+					</h2>
 				</div>
-				
-				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!-- //services -->
-	
-	
-	
-	<!-- gallery -->
-	<div id="gallery" class="gallery">
-		<div class="container">
-			<h3 class="agileits-title w3title1">科目</h3> 
-			<div class="gallery-grids">
-				
+	<!-- /.for-box -->
+</section>
+
+<section class="viewed-courses">
+	<!-- .viewed-courses -->
+	<div class="container">
+		<div class="row">
+			<div class="tittle">
+				<h2>显微形态学虚拟仿真实验中心</h2>
+			</div>
+			<div class="row subject"></div>
+		</div>
+	</div>
+	<!-- /.viewed-courses -->
+</section>
+
+<section class="px-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>学生通过使用该虚拟仿真实验系统，可提高学习兴趣，增加学习的主动性，加强了基础理论知识的掌握和病理阅片能力。<br/> 该实验项目对于实践类知识的掌握获益更加明显，传统教材仅提供文字表述和少量病理图片，而该系统提供的病理诊断模拟界面，让学生有一种身临其境的学习体验，利于知识的掌握。尤其是考核病例库，模拟临床病理诊断，使学生掌握了临床病理诊断的基本流程，掌握病理阅片能力。该系统给学生创造了良好的学习环境，也解决了部分病理切片匮乏的困境。</h2>
+				<a href="#" class="button">虚拟仿真实验教学创新中心</a>
 			</div>
 		</div>
 	</div>
-	<!-- //gallery -->
-	<!-- 教师简介 -->
-	<div id="about" class="welcome">
-		<div class="container">
-			<h3 class="agileits-title">教师简介</h3>
-			<!-- <h4>教学经验丰富，专业知识扎实，授课体系清晰，善于学科之间联系及应用，深知学生所需，能够将内容前后联系，不断带领学生复习巩固，提倡边学边掌握，带领学生运用理解掌握法，深受学员信赖和喜爱 </h4> -->
-			<h4>In education, a teacher is a person who provides schooling for others. A teacher who facilitates education for an individual student may also be described as a personal tutor or profession at a school or other place of formal education. </h4>
-			<p class="w-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida mauris non mi gravida, at sollicitudin odio efficitur. Mauris ex nulla, aliquam ornare facilisis nec convallis pulvinar a non nunc non leo sollicitudin</p>
+</section>
+
+<section class="instructor-container">
+	<!-- .instructor-container -->
+	<div class="container">
+		<div class="tittle">
+			<h2>
+				虚拟实验教学案例展示
+				<span class="customNavigation">
+					<a class="btn prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+					<a class="btn next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				</span>
+			</h2>
 		</div>
-	</div>
-	<div class="team jarallax">
-		<div class="carousel-example">
-			<!-- FLEXIBLE BOOTSTRAP CAROUSEL -->
-			<div id="simple-content-carousel" class="carousel flexible slide" data-ride="carousel" data-interval="10000" data-wrap="true">
-				
-				<div class="items itemp">
-					<div class="flex-item">
-						<div class="agile_team_grid">
-					<div class="view w3-agile-view">
-						<img src="images/test1.jpg" alt=" " class="img-responsive" />
-						<div class="w3lmask">
-							<h5>Stellawil</h5>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p> 
-							 
+		<div class="row">
+			<div class="owl-demo-outer">
+				<!-- #owl-demo -->
+				<div id="owl-demo" class="owl-carousel owl-theme">
+					<div class="item">
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img1.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+										显微虚拟案例展示一<br/>
+									<span>案例信息：</span>
+								  </a>
+								</h4>
+								<p>
+									反复头痛一年余，MRI 显示左侧脑膜瘤。术中见左侧蝶骨嵴脑肿瘤，质地中等，血供丰富，侵入颅骨，破坏脑膜。临床诊断：左蝶骨嵴脑膜瘤。巨检：灰红带部分脑膜结节状肿物，3.5cm×3.5cm×0.8cm。
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img2.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+										显微虚拟案例展示二<br/>
+									<span>案例信息：</span>
+								  </a>
+								</h4>
+								<p>
+									发现右大腿后方肿块半年余。无疼痛，下肢麻木，半年来肿块未消退，遂来我院就诊。MRI示：右大腿下段后侧软组织占位，考虑良性可能性大。
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img3.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+										显微虚拟案例展示三<br/>
+									<span>案例信息：</span>
+								  </a>
+								</h4>
+								<p>
+									颈部、腋下、腹股沟肿块，最大者直径4-5cm，并逐渐肿大。骨髓穿刺：符合急性髓系白血病，M2a型。巨检：右颈部活检淋巴结一枚，体积1.9cm×1.4cm×1.1cm，切面实性灰白色，略呈分叶状。镜检：HE切片1枚。
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img4.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									3D旋转大体病例案例展示一<br/>
+									<span>案例信息：</span>
+								  </a>
+								</h4>
+								<p>
+									白喉（Diphtheria）标本来自幼儿尸体检材料（包括舌、咽、气管、支气管和肺脏组织），于气管和支气管粘膜可见灰白色或黑褐色（出血）之膜状物卷曲欲脱落。
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img5.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+										3D旋转大体病例案例展示二<br/>
+									<span>案例信息：</span>
+								  </a>
+								</h4>
+								<p>
+									肺脓肿（Abscess）：肺切面可见多个散在的大小不等的灰白色区域，即为脓肿。脓肿与周围组织界限清楚，腔内部分脓性渗出物已流失而呈脓腔
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img6.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									3D旋转大体病例案例展示三<br/>
+									<span>案例信息：</span>
+								  </a>
+								</h4>
+								<p>
+									肝脓肿（Abscess of liver）肝切面可见多个散在的大小不等的黄白色区域，即为脓肿。脓肿与周围肝组织界限清楚，腔内脓性渗出物已流失而呈脓腔
+
+								</p>
+							</div>
+							<!-- /.instructor -->
 						</div>
 					</div>
-				</div>
-						
-					</div>
-				
-					<div class="flex-item">
-						<div class="agile_team_grid">
-					<div class="view w3-agile-view">
-						<img src="images/test2.jpg" alt=" " class="img-responsive" />
-						<div class="w3lmask">
-							<h5>Stellawil</h5>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p> 
+					<div class="item">
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img1.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									Felicia Richi Brown<br/>
+									<span>Instructor, Ui/Ux Design</span>
+								  </a>
+								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img2.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									Felicia Richi Brown<br/>
+									<span>Instructor, Ui/Ux Design</span>
+								  </a>
+								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img3.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									Felicia Richi Brown<br/>
+									<span>Instructor, Ui/Ux Design</span>
+								  </a>
+								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img4.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									Felicia Richi Brown<br/>
+									<span>Instructor, Ui/Ux Design</span>
+								  </a>
+								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img5.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									Felicia Richi Brown<br/>
+									<span>Instructor, Ui/Ux Design</span>
+								  </a>
+								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+								</p>
+							</div>
+							<!-- /.instructor -->
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<!-- .instructor -->
+							<div class="instructor">
+								<div class="instructor-img">
+									<img src="assets/img/instructor-img6.jpg" alt="instructor-img1" />
+								</div>
+								<h4>
+									<a href="#">
+									Felicia Richi Brown<br/>
+									<span>Instructor, Ui/Ux Design</span>
+								  </a>
+								</h4>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+								</p>
+							</div>
+							<!-- /.instructor -->
 						</div>
 					</div>
+
+					<!-- /#owl-demo -->
 				</div>
-					</div>
-					
-					<div class="flex-item">
-						<div class="agile_team_grid">
-					<div class="view w3-agile-view">
-						<img src="images/test3.jpg" alt=" " class="img-responsive" />
-						<div class="w3lmask">
-							<h5>Stellawil</h5>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p> 
-						</div>
-					</div>
-				</div>
-					</div>
-					<div class="flex-item">
-						<div class="agile_team_grid">
-					<div class="view w3-agile-view">
-						<img src="images/test1.jpg" alt=" " class="img-responsive" />
-						<div class="w3lmask">
-							<h5>Stellawil</h5>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p> 
-						</div>
-					</div>
-				</div>
-						
-					</div>
-					<div class="flex-item">
-						<div class="agile_team_grid">
-					<div class="view w3-agile-view">
-						<img src="images/test2.jpg" alt=" " class="img-responsive" />
-						<div class="w3lmask">
-							<h5>Stellawil</h5>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p> 
-						</div>
-					</div>
-				</div>
-						
-					</div>
-					<div class="flex-item">
-						<div class="agile_team_grid">
-					<div class="view w3-agile-view">
-						<img src="images/test3.jpg" alt=" " class="img-responsive" />
-						<div class="w3lmask">
-							<h5>Stellawil</h5>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p> 
-						</div>
-					</div>
-				</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="carousel-inner" role="listbox">
-					
-				</div>
-				
-				<a class="left carousel-control" href="#simple-content-carousel" role="button" data-slide="prev">
-					<span class="fa fa-angle-left" aria-hidden="true"></span>
-					<span class="sr-only">上一张</span>
-				</a>
-				<a class="right carousel-control" href="#simple-content-carousel" role="button" data-slide="next">
-					<span class="fa fa-angle-right" aria-hidden="true"></span>
-					<span class="sr-only">下一张</span>
-				</a>
 			</div>
-		  </div>
-	   </div>
-	
-	<!-- //教师简介 -->
-	<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<h3><a href="index.html">Entity</a></h3>
-			<p>Copyright &copy; 2018.宏图技术小组.</p>
 		</div>
 	</div>
-	<!-- //footer -->	
-	
-<script src="${ctx}/views/docs/js/index.js"></script>
+	<!-- /.instructor-container -->
+</section>
+
+<section class="price-container">
+	<!-- .price-container -->
+	<div class="container">
+		<div class="tittle">
+			<h2>在线考试信息发布</h2>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<!-- .price-box -->
+				<div class="price-box">
+					<div class="price-tittle">
+						考试安排一
+					</div>
+					<div class="price-text">
+						<div class="price-no">
+							<sub>考试科目：病理学</sub>
+						</div>
+						<p>考试时间：<br> 2018年12月15日上午8:30-10:00</p>
+						<p>考    场：<br> 显微形态学虚拟仿真实验中心-第二教室</p>
+						<p>考试形式： 机考-闭卷</p>
+						<a href="${ctx}/views/check/dist.jsp">进入考试系统</a>
+					</div>
+				</div>
+				<!-- .price-box -->
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<!-- .price-box -->
+				<div class="price-box active">
+					<div class="price-tittle">
+						考试安排二
+					</div>
+					<div class="price-text">
+						<div class="price-no">
+							<sub>考试科目：组织学</sub>
+						</div>
+						<p>考试时间：<br> 2018年12月18日上午8:30-10:00</p>
+						<p>考    场：<br> 显微形态学虚拟仿真实验中心-第一教室</p>
+						<p>考试形式： 机考-闭卷</p>
+						<a href="${ctx}/views/check/dist.jsp">进入考试系统</a>
+					</div>
+				</div>
+				<!-- .price-box -->
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<!-- .price-box -->
+				<div class="price-box">
+					<div class="price-tittle">
+						考试安排三
+					</div>
+					<div class="price-text">
+						<div class="price-no">
+							<sub>考试科目：寄生虫学</sub>
+						</div>
+						<p>考试时间：<br> 2018年12月19日上午8:30-10:00</p>
+						<p>考    场：<br> 显微形态学虚拟仿真实验中心-第二教室</p>
+						<p>考试形式： 机考-闭卷</p>
+						<a href="${ctx}/views/check/dist.jsp">进入考试系统</a>
+					</div>
+				</div>
+				<!-- .price-box -->
+			</div>
+		</div>
+	</div>
+	<!-- /.price-container -->
+</section>
+
+<section class="px-bg2">
+	<!-- .Subscribe -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="subscribe">
+					<h2>将病例资料、图片及视频上传至服务器，并呈现在特定的交互系统中，供学生在自己的笔记本上自主地浏览学习。在完成所有的学习内容后，学生可在虚拟切片库中进行阅片、分析、诊断及自测，巩固学习的效果。</h2>
+					<a href="#" class="button">虚拟仿真知识互动</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.Subscribe -->
+</section>
+
+
+<!-- START FOOTER SECTION -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="flog"><a href="${ctx}/views/docs/index.jsp"><img src="assets/img/logo.png" alt="f-logo" /></a></div>
+			</div>
+			<div class="col-12-12 col-sm-6 col-md-6">
+				<span class="地址">地址：河北省石家庄市<br>
+				 街道： 中山东路361号<br>邮编：050000
+				 </span>
+			</div>
+			<div class="col-12-12 col-sm-6 col-md-6">
+				<span class="phone">电话 : +86 0311 86265724 <br>
+					Fax : +86 0311 86265725<br>
+					E-mail:zhaosongheb@sohu.com</span>
+			</div>
+
+				<div class="copyright">
+					<span class="copyright"> 版权所有 &copy; 2017.河北医科大学-病理教研室<br>
+					.技术支持：<a target="_blank" href="http://59.110.215.223:8080/">宏图技术小组</a></span>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="modal about-modal w3-agileits fade" id="myModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				  <div class="modal-header">
+		             <button type="button" class="close" data-dismiss="modal" 
+		                aria-hidden="true">×
+		             </button>
+		             <h4 class="modal-title" id="myModalLabel">
+                                                                          关于
+                     </h4>
+		             
+		          </div>
+		          <div class="modal-body">
+		                            <h5>切片 qiēpiàn</h5> 
+						               <p>
+						                    1. [slice]∶从物品上切出的扁薄部分
+				                            2.[section]∶适于显微镜检验的极薄片
+						               </p>
+						               <p>
+				切片（qiepian）玻片标本的一种。供光学显微镜或电子显微镜观察的动植物组织薄片。因要求不同，可用刀片进行徒手切片，也可将组织块包埋于石蜡或火棉胶中或以低温冰冻，用切片机切片。切成5～10微米薄片，供光学显微镜观察。用环氧树脂或甲基丙烯酸包埋组织块切制的超薄切片，其厚度在20～50纳米，专供在电子显微镜下观察。一般教学用的如根尖、茎的切片通称石蜡切片。
+				切片：是在切片机上进行.切片的厚度因需要而定,一般在5-7微米(μm)左右.
+				制作切片时应迅速前后多次切割，且每次切割后必须用刀片浸一下水，从中挑选最薄的一片，以便观察。</p>
+		          
+		               
+               
+		          </div>
+			</div>
+		</div>
+</div>
+<!-- jQuery -->
+<script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="${ctx}/resources/reference/jquery/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-dropdownhover.min.js"></script>
+<!-- Plugin JavaScript -->
+ <!-- 移动到顶部 -->
+ <script src="${ctx}/resources/reference/jquery/bootstrap/js/move-top.js"></script>
+<script src="assets/js/jquery.easing.min.js"></script>
+<script src="assets/js/jquery.fittext.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/modernizr.js"></script>
+<!-- Modernizr -->
+<script src="assets/js/main.js"></script>
+<!-- Resource jQuery -->
+<!--  countTo JavaScript  -->
+<script type="text/javascript" src="assets/js/jquery.countTo.js"></script>
+<!-- owl carousel -->
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<!--  Custom Theme JavaScript  -->
+<script src="assets/js/custom.js"></script>
+<script src="js/index.js"  ></script>
 </body>
 </html>

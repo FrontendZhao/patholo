@@ -2,8 +2,11 @@ package com.platform.project.olo.service;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.service.spi.ServiceException;
+
+import com.platform.db.Page;
 
 public interface ISubjectService {
 
@@ -63,4 +66,13 @@ public interface ISubjectService {
 	 * 获取权限
 	 */
 	public Integer loginUser(String userName) throws ServiceException;
+	
+	/**
+	 * 获取目录和章节
+	 */
+	public Map findSubjectPageData(String subNo,String pageNo)throws ServiceException;
+	/**
+	 * 获取章节总数
+	 */
+	public Map findSubjectPageTotal(String subNo) throws ServiceException;
 }

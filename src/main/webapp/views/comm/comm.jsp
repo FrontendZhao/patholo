@@ -14,7 +14,7 @@
 			<div class="agile_header_grid" > 
 			
 				<div class="header-mdl agileits-logo navbar-left"><!-- header-two --> 
-					<h1><a  href="${ctx}/views/docs/index.jsp">Physic</a></h1>
+					<h1><a  href="${ctx}/views/docs/index.jsp">河北医科大学</a></h1>
 				</div>
 				<div class="navbar-right">
 					 <nav class="navbar navbar-default" id="example-navbar-menuchild" role="navigation">
@@ -48,6 +48,7 @@
 				<div class="clearfix"> </div>
 			</div>  
 		</div>	
+		
 	</div>	
 	<!-- //header -->
 	<div class="modal about-modal w3-agileits fade" id="commModal" tabindex="-1" role="dialog">

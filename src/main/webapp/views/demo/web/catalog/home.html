@@ -1,0 +1,1368 @@
+﻿<!doctype html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>目录</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./js/zx.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<h2>目录</h2>
+  <div class="row">
+    
+    <div class="col-md-12">
+      <div id="treeview-checkable" class=""></div>
+    </div>
+  </div>
+
+  <script src="js/jquery-2.1.0.min.js"></script>
+  <script src="js/bootstrap-treeview.js"></script>
+<script>
+function myFunction(name)
+{
+if(name == 1)
+window.open("slice/炎症-白喉2/H5展示/ShowH5.html");
+else if(name ==2)
+window.open("slice/炎症-肺脓肿4/H5展示/ShowH5.html");
+else if(name ==3)
+window.open("slice/炎症-肝脓肿/H5展示/ShowH5.html");
+
+}
+</script>
+  <script type="text/javascript">
+
+    var defaultData =[
+  {
+    "permission_id": 1,
+    "parent_permission_id": 0,
+    "text": "第一章 绪论",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-desktop",
+    "level": 0,
+    "nodes": [
+      {
+        "permission_id": 2,
+        "parent_permission_id": 1,
+        "text": "病理学研究方法",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-sitemap",
+        "level": 1,
+        "nodes": [
+          {
+            "permission_id": 7,
+            "parent_permission_id": 2,
+            "text": "尸体解剖",
+            "permission_url": "permission/permission_list",
+            "tag": "",
+            "small_icon_name": "fa fa-list",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(7);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 12,
+            "parent_permission_id": 2,
+            "text": "活体组织检查",
+            "permission_url": "permission/get_permission_json",
+            "tag": "",
+            "small_icon_name": "fa fa-home",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(12);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 13,
+            "parent_permission_id": 2,
+            "text": "细胞培养",
+            "permission_url": "permission/permission_edit",
+            "tag": "",
+            "small_icon_name": "fa fa-home",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(13);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          }
+        ],
+        "tags": 5,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(2);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;"
+      }
+    ],
+    "tags": 3,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(1);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 4,
+    "parent_permission_id": 0,
+    "text": "第二章 细胞、组织的适应和损伤",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-newspaper-o",
+    "level": 0,
+    "nodes": [
+      {
+        "permission_id": 5,
+        "parent_permission_id": 4,
+        "text": "适应",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-list-alt",
+        "level": 1,
+        "nodes": [
+          {
+            "permission_id": 8,
+            "parent_permission_id": 5,
+            "text": "萎缩",
+            "permission_url": "news/news_category",
+            "tag": "",
+            "small_icon_name": "fa fa-book",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(8);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 11,
+            "parent_permission_id": 5,
+            "text": "肥大",
+            "permission_url": "news/get_news_category_json",
+            "tag": "",
+            "small_icon_name": "fa fa-home",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(11);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 39,
+            "parent_permission_id": 5,
+            "text": "增生",
+            "permission_url": "news/news_list",
+            "tag": "",
+            "small_icon_name": "fa fa-list",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(39);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 40,
+            "parent_permission_id": 5,
+            "text": "化生",
+            "permission_url": "news/news_add",
+            "tag": "",
+            "small_icon_name": "fa fa-home",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(40);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          }
+        ],
+        "tags": 4,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(5);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 5,
+        "parent_permission_id": 4,
+        "text": "损伤",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-list-alt",
+        "level": 1,
+        "nodes": [
+          {
+            "permission_id": 8,
+            "parent_permission_id": 5,
+            "text": "可逆性损伤（变性）",
+            "permission_url": "news/news_category",
+            "tag": "",
+            "small_icon_name": "fa fa-book",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(8);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 11,
+            "parent_permission_id": 5,
+            "text": "不可逆性损伤",
+            "permission_url": "news/get_news_category_json",
+            "tag": "",
+            "small_icon_name": "fa fa-home",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(11);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 39,
+            "parent_permission_id": 5,
+            "text": "坏死",
+            "permission_url": "news/news_list",
+            "tag": "",
+            "small_icon_name": "fa fa-list",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(39);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 40,
+            "parent_permission_id": 5,
+            "text": "凋亡",
+            "permission_url": "news/news_add",
+            "tag": "",
+            "small_icon_name": "fa fa-home",
+            "level": 2,
+            "tags": 0,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(40);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          }
+        ],
+        "tags": 4,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(5);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "tags": 1,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(4);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 48,
+    "parent_permission_id": 0,
+    "text": "第三章 再生与修复",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-shopping-cart",
+    "level": 0,
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "再生",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "纤维性修复",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "tags": 2,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(48);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第四章 局部血液循环障碍",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "充血、出血",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "血栓形成",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "栓塞",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "梗死",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 50,
+    "parent_permission_id": 0,
+    "text": "第五章 炎症",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-weixin",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "炎症的基本病理变化",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "炎症的血液动力学改变",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "炎症的形态学类型",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "nodes": [
+          {
+            "permission_id": 51,
+            "parent_permission_id": 48,
+            "text": "变质性炎",
+            "permission_url": "",
+            "tag": "",
+            "small_icon_name": "fa fa-paperclip",
+            "nodes": [
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "[镜下显微]乙型脑炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              }
+              ],
+            "level": 3,
+            "tags": 1,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 54,
+            "parent_permission_id": 48,
+            "text": "渗出性炎",
+            "permission_url": "",
+            "tag": "",
+            "small_icon_name": "fa fa-codepen",
+            "nodes": [
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "[大体解剖]阿米巴肝脓肿",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "[镜下显微]阿米巴肝脓肿",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "浆液性炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "纤维素性炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "nodes":[
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[大体解剖]白喉",
+                    "permission_url": "www.baidu.com",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"myFunction(1);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[镜下显微]白喉",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[大体解剖]纤维性心包炎",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[大体解剖]细菌性疟疾",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[镜下显微]细菌性疟疾",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  }
+                ],
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "化脓性炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "nodes":[
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "脓肿",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "nodes":[
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[大体解剖]肝脓肿",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 6,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"myFunction(3);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      },
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[镜下显微]肝脓肿",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 6,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      },
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[大体解剖]肺脓肿",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 6,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"myFunction(2);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      }
+                    ],
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[镜下显微]蜂窝织炎",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[大体解剖]表面化脓和积农",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  }
+                ],
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "出血性炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "急性增生性炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "nodes":[
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[大体解剖]伤寒",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "[镜下显微]伤寒",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  }
+                ],
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              },
+              {
+                "permission_id": 51,
+                "parent_permission_id": 48,
+                "text": "惯性增生性炎",
+                "permission_url": "",
+                "tag": "",
+                "small_icon_name": "fa fa-paperclip",
+                "nodes":[
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "非特异性慢性炎",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "nodes":[
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[大体解剖]鼻息肉",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 6,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      },
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[镜下显微]鼻息肉",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 6,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      },
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "一般慢性炎症",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 6,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      }
+                    ],
+                    "level": 5,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  },
+                  {
+                    "permission_id": 51,
+                    "parent_permission_id": 48,
+                    "text": "肉芽肿性炎",
+                    "permission_url": "",
+                    "tag": "",
+                    "small_icon_name": "fa fa-paperclip",
+                    "nodes":[
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[大体解剖]增生性肠结核",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 5,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      },
+                      {
+                        "permission_id": 51,
+                        "parent_permission_id": 48,
+                        "text": "[镜下显微]淋巴结结核",
+                        "permission_url": "",
+                        "tag": "",
+                        "small_icon_name": "fa fa-paperclip",
+                        "level": 5,
+                        "tags": 1,
+                        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">学习</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                      }
+                    ],
+                    "level": 4,
+                    "tags": 1,
+                    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+                  }
+                ],
+                "level": 4,
+                "tags": 1,
+                "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+              }
+            ],
+            "level": 3,
+            "tags": 2,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          },
+          {
+            "permission_id": 54,
+            "parent_permission_id": 48,
+            "text": "增生性炎",
+            "permission_url": "",
+            "tag": "",
+            "small_icon_name": "fa fa-codepen",
+            "level": 3,
+            "tags": 2,
+            "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+          }
+        ],
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "炎症的经过和结局",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(50);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp; </span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第六章 肿瘤",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "肿瘤的形态和异型性",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "肿瘤的生长于扩散",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "常见肿瘤举例",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第七章 免疫性疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "自身免疫病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "免疫缺陷病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第八章 心血管系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "动脉粥样硬化及冠心病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "高血压病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "风湿病及心脏瓣膜病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第九章 呼吸系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "慢性阻塞性肺疾病及肺心病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "肺炎",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "呼吸系统常见肿瘤",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十章 消化系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "食管疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "胃肠疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "肝胆疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十一章 淋巴造血系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "淋巴反应性病变",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "淋巴样肿瘤",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "髓样肿瘤",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十二章 泌尿系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "肾小球疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "肾小管和肾间疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十三章 生殖系统和乳腺疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "子宫疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "滋养层细胞疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "卵巢肿瘤",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "乳腺疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十四章 内分泌系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "甲状腺疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "胰岛疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十五章 神经系统疾病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "感染性疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "脱髓鞘及变性疾病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十六章 传染病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "结核",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "仿寒",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "细菌性痢疾",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  },
+  {
+    "permission_id": 49,
+    "parent_permission_id": 0,
+    "text": "第十七章 寄生虫病",
+    "permission_url": "",
+    "tag": "",
+    "small_icon_name": "fa fa-link",
+    "nodes": [
+      {
+        "permission_id": 51,
+        "parent_permission_id": 48,
+        "text": "阿米巴病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-paperclip",
+        "level": 2,
+        "tags": 1,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(51);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      },
+      {
+        "permission_id": 54,
+        "parent_permission_id": 48,
+        "text": "血吸虫病",
+        "permission_url": "",
+        "tag": "",
+        "small_icon_name": "fa fa-codepen",
+        "level": 2,
+        "tags": 2,
+        "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(54);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+      }
+    ],
+    "level": 0,
+    "tags": 0,
+    "after_html": "<span class=\"button_z\"><button type=\"button\" class=\"btn btn btn-info btn-xs\" onclick=\"edit(49);\">进入</button>&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  }
+];
+            
+
+    var $checkableTree = $('#treeview-checkable').treeview({
+      data: defaultData,
+      showIcon: false,
+      showCheckbox: true,
+      selectedBackColor: '#ffffcc',
+      selectedColor: '#000000',
+      showTags: true,
+      onNodeChecked: function (event, node) {
+        $('#checkable-output').prepend('<p>' + node.text + ' was checked</p>');
+        // console.log(event);
+        // console.log(node.nodes);
+
+        // $.each(node.nodes, function (index, value, array) {
+        //   console.log(value);
+
+        // });
+        checkAllParent(node);
+        // checkAllSon(node);
+      },
+      onNodeUnchecked: function (event, node) {
+        $('#checkable-output').prepend('<p>' + node.text + ' was unchecked</p>');
+
+        uncheckAllParent(node);
+        uncheckAllSon(node);
+      }
+
+    });
+    $('#treeview-checkable').on('nodeSelected', function (event, data) {
+      // Your logic goes here 
+      //   console.log('222222222222222222');
+      console.log(data.id);
+    });
+
+
+
+    var nodeCheckedSilent = false;
+    function nodeChecked(event, node) {
+      if (nodeCheckedSilent) {
+        return;
+      }
+      nodeCheckedSilent = true;
+      checkAllParent(node);
+      checkAllSon(node);
+      nodeCheckedSilent = false;
+    }
+
+    var nodeUncheckedSilent = false;
+    function nodeUnchecked(event, node) {
+      if (nodeUncheckedSilent)
+        return;
+      nodeUncheckedSilent = true;
+      uncheckAllParent(node);
+      uncheckAllSon(node);
+      nodeUncheckedSilent = false;
+    }
+
+    //选中全部父节点  
+    function checkAllParent(node) {
+      $('#treeview-checkable').treeview('checkNode', node.nodeId, { silent: true });
+      var parentNode = $('#treeview-checkable').treeview('getParent', node.nodeId);
+      if (!("nodeId" in parentNode)) {
+        return;
+      } else {
+        checkAllParent(parentNode);
+      }
+    }
+    //取消全部父节点  
+    function uncheckAllParent(node) {
+      $('#treeview-checkable').treeview('uncheckNode', node.nodeId, { silent: true });
+      var siblings = $('#treeview-checkable').treeview('getSiblings', node.nodeId);
+      var parentNode = $('#treeview-checkable').treeview('getParent', node.nodeId);
+      if (!("nodeId" in parentNode)) {
+        return;
+      }
+      var isAllUnchecked = true;  //是否全部没选中  
+      for (var i in siblings) {
+        if (siblings[i].state.checked) {
+          isAllUnchecked = false;
+          break;
+        }
+      }
+      if (isAllUnchecked) {
+        uncheckAllParent(parentNode);
+      }
+
+    }
+
+    //级联选中所有子节点  
+    function checkAllSon(node) {
+      $('#treeview-checkable').treeview('checkNode', node.nodeId, { silent: true });
+      if (node.nodes != null && node.nodes.length > 0) {
+        for (var i in node.nodes) {
+          checkAllSon(node.nodes[i]);
+        }
+      }
+    }
+    //级联取消所有子节点  
+    function uncheckAllSon(node) {
+      $('#treeview-checkable').treeview('uncheckNode', node.nodeId, { silent: true });
+      if (node.nodes != null && node.nodes.length > 0) {
+        for (var i in node.nodes) {
+          uncheckAllSon(node.nodes[i]);
+        }
+      }
+    }  
+  </script>
+
+</body>
+
+</html>

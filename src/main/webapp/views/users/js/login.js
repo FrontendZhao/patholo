@@ -10,7 +10,6 @@ $(function(){
 			}
 	});
 	$('#sign_in_button').click(function(){
-	    console.info(99);
 	    //判断用户名和密码是否输入完整
 		var j_username = $('input[name="name"]').val().trim();
 		if( j_username == '' ){
@@ -27,7 +26,6 @@ $(function(){
 			url: WEB_ROOT+'/sys/login!doCheckLogin.do',
 			data:{'j_username': j_username, 'j_password': j_password},
 			success: function(result){
-				console.info(result);
 				if( result ){
 					$('<form>').appendTo('body')
 					.attr({'action': WEB_ROOT+'/sys/login!doLogin.do', 'method':'post'})

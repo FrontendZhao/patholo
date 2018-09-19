@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="tb_catalog")
+@Table(name="tb_catalog1")
 public class CataLog  implements Serializable {
 
 	@Id
@@ -29,7 +29,23 @@ public class CataLog  implements Serializable {
 	private Boolean visible;
 	@Column
 	private Integer sortId;
+	@Column
+	private Integer chapsort;
+	@Column
+	private Integer nodesort;
 	
+	public Integer getNodesort() {
+		return nodesort;
+	}
+	public void setNodesort(Integer nodesort) {
+		this.nodesort = nodesort;
+	}
+	public Integer getChapsort() {
+		return chapsort;
+	}
+	public void setChapsort(Integer chapsort) {
+		this.chapsort = chapsort;
+	}
 	public Integer getId() {
 		return id;
 	}

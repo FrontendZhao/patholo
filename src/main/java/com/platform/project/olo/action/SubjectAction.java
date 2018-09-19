@@ -206,4 +206,22 @@ public class SubjectAction extends BaseAction {
 			e.printStackTrace();
 		}
 	}
+	
+	public void doFindSubjectPageData(){
+		try {
+			writeJson(subjectService.findSubjectPageData(getValue("subNo"),getValue("pageID")));
+			
+		} catch (Exception e) {
+	        e.printStackTrace();
+		}
+	}
+	
+	public void doFindSubjectPageTotal(){
+		try {
+			writeJson(subjectService.findSubjectPageTotal(getValue("subNo")));
+			
+		} catch (Exception e) {
+	        e.printStackTrace();
+		}
+	}
 }

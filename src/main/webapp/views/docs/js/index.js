@@ -1,17 +1,49 @@
+var WEB_ROOT = $('#input_hidden_ctx').val();
 $(function(){
+	console.info(WEB_ROOT);
     //移动到顶部
     $().UItoTop({ easingType: 'easeOutQuart' });
-    $.ajax({
+    
+    userShow();
+   $.ajax({
     	url:WEB_ROOT+'/olo/subject!doFindSubjectData.do',
     	success:function(msg){
-    		$.each(msg,function(i,val){
-    			$('.gallery-grids').append('<div id="subject_'+val.id+'" class="col-sm-2 col-xs-3 col-xs-offset-2 col-sm-offset-1 gallery-grid"><div class="grid effect-apollo"><a  href="../docs/catalog/subject.jsp?subNo='+val.id+'" ><img src="/filePath/科目/'+val.name+'/'+val.name+'.png" alt="图片找不到啦"  /><div class="figcaption"><p>'+val.synopsis+'</p></div>	</a></div></div>');
+    		/*$.each(msg,function(i,val){
+    			$('.gallery-grids').append('<div id="subject_'+val.id+'" class="col-sm-2 col-xs-3 col-xs-offset-2 col-sm-offset-1 gallery-grid"><div class="grid effect-apollo"><a  href="../docs/catalog/subject/subject1.jsp?subNo='+val.id+'" ><img src="/filePath/科目/'+val.name+'/'+val.name+'.png" alt="图片找不到啦"  /><div class="figcaption"><p>'+val.synopsis+'</p></div>	</a></div></div>');
     		});
-    		$('.gallery-grids').append('<div class="clearfix"></div>');
+    		$('.gallery-grids').append('<div class="clearfix"></div>');*/
+    		
+    		
+    		$.each(msg,function(i,val){
+    			if(i<=3){
+    				var content='<div class="col-xs-12 col-sm-3 col-md-3"><div class="viewed-courses-box"><div class="viewed-courses-img grid effect-apollo">' +
+    				'<a href="'+WEB_ROOT+'/views/docs/catalog/subject/subject1.jsp?subNo='+val.id+'"  target="_blank"><img src="/filePath/subject/'+val.id+'/'+val.id+'.jpg" alt="图片找不到啦"><div class="figcaption"><p>'+val.synopsis+'</p></div></a></div><div class="viewed-courses-text">' +
+    				'<a href="'+WEB_ROOT+'/views/docs/catalog/subject/subject1.jsp?subNo='+val.id+'"  target="_blank"><h6>'+val.name+'</h6></a><p> '+val.synopsis+'</p>' +
+    				'<div class="star">' +
+    				'<i class="fa fa-star" aria-hidden="true"></i>' +
+    				'<i class="fa fa-star" aria-hidden="true"></i>' +
+    				'<i class="fa fa-star" aria-hidden="true"></i>' +
+    				'<i class="fa fa-star" aria-hidden="true"></i>' +
+    				'<i class="fa fa-star-o" aria-hidden="true"></i>' +
+    				'</div><div class="price">切片数量：58 </div></div>' +
+    				'</div></div>';
+    			     $('.viewed-courses .subject').append(content);
+    			}
+    			
+    		});
+    		$('.viewed-courses .subject').append('<div class="col-md-12"><a href="'+WEB_ROOT+'/views/docs/catalog/book/book.jsp" class="button">更多课程</a></div>');
+    		
+					
+				
+    		
+    	
+					
+    	
+    	    
     	}
     	
     })
-    $.ajax({
+    /*$.ajax({
 		async:false,
 		url:WEB_ROOT+'/olo/subject!doFindSliceInfo.do',
 		data:{'sliceNo':100001},
@@ -24,7 +56,7 @@ $(function(){
 			 //生成图片
 			 initPic();
 		}
-	})
+	})*/
 
 	//动态加载在线实例
 	/*$.ajax({
@@ -45,6 +77,22 @@ $(function(){
 
 
 })
+function userShow(){
+     $.ajax({
+            url: WEB_ROOT+'/olo/subject!doLoginBL.do',
+            type: "POST",
+            success: function(data) {
+                if(data){
+                	$('#loginName').hide();
+                	$('#userName').show();
+                	$('#userName').html(data);
+                }else{
+                	$('#userName').hide();
+                	$('#loginName').show();
+                }
+            }
+       })
+}
 function initPic(){
 
 	/*$.ajax({
