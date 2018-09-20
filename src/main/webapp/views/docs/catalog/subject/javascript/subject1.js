@@ -49,8 +49,23 @@ function loadContent(msg){
 					     c+="<ul class='section-slides section-slide-layout-large'>"
 					     
 					     for (var l = 0; l < msg.CHILD[i].CHILD[j].CHILD.length; l++) {
+					     	
+					     	   if(msg.CHILD[i].CHILD[j].CHILD[l].SLICEFLAG=="1"){
+					     	       
+					     	   	   	 c+="<li><a target='_blank' href='"+WEB_ROOT+"/views/docs/catalog/slice.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].ID+"'>"+(l+1)+". "+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</a></li>";
+
+					     	   }
+					     	   if(msg.CHILD[i].CHILD[j].CHILD[l].SLICEFLAG=="2"){
+					     	       
+					     	   	   	 c+="<li><a target='_blank' href='"+WEB_ROOT+"/views/demo/spin.jsp'>"+(l+1)+". "+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</a></li>";
+
+					     	   }
+					     	   if(msg.CHILD[i].CHILD[j].CHILD[l].SLICEFLAG=="0"){
+					     	       
+					     	   	   	 c+="<li>"+(l+1)+". "+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</li>";
+
+					     	   }
 					
-					            c+="<li><a target='_blank' href='../slice.jsp?sliceNo=100001'>"+(l+1)+". "+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</a></li>";
 					
 				         }
 				         

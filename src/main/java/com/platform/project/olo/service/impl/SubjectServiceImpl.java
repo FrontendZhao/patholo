@@ -2,6 +2,7 @@ package com.platform.project.olo.service.impl;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,23 +54,28 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 
 	@Override
 	public Object findSliceInfo(String sliceNo) throws ServiceException {
-		String sql="select t.id ID,t.name NAME,t.path PATH,t.pid PID,t.visible VISIBLE,t.sortid SORTID,c.name CNAME,s.name SNAME from tb_slice t,tb_catalog1 c,tb_subject s where t.pid=c.id and c.pid=s.id and t.id=?";
+		/*String sql="select t.id ID,t.name NAME,t.path PATH,t.pid PID,t.visible VISIBLE,t.sortid SORTID,c.name CNAME,s.name SNAME from tb_slice t,tb_catalog1 c,tb_subject s where t.pid=c.id and c.pid=s.id and t.id=?";
 		Map<String, Object> map=hibernateDao.queryMap(sql, new Object[]{sliceNo});
-		String path="";
+		
 		if(!EmptyUtils.isNotEmpty(map)){
 			return null;
-		}
-		if(EmptyUtils.isNotEmpty(map.get("SNAME")) && EmptyUtils.isNotEmpty(map.get("CNAME")) && EmptyUtils.isNotEmpty(map.get("NAME"))){
+		}*/
+		String path="";
+		Map<String, Object> map=new HashMap<String, Object>();
+		/*if(EmptyUtils.isNotEmpty(map.get("SNAME")) && EmptyUtils.isNotEmpty(map.get("CNAME")) && EmptyUtils.isNotEmpty(map.get("NAME"))){
 			path+=map.get("SNAME").toString()+"/"+map.get("CNAME").toString()+"/"+map.get("NAME").toString()+"/"+map.get("NAME").toString();
 		}else{
 			return null;
-		}
+		}*/
+		path+="2/1023/1035/1050/1053/1053";
 		Object obj=ExtractFile.getSliceTileData(path,sliceNo);
 		if(EmptyUtils.isNotEmpty(obj)){
 			ExtractFile extractFile=(ExtractFile)obj;
 			map.put("WIDTH", extractFile.ImageWidth);
 			map.put("HEIGHT", extractFile.ImageHeight);
 			map.put("MAXLEVEL", extractFile.maxLevel);
+			map.put("NAME", "乙型脑炎");
+			map.put("ID", sliceNo);
 		}
 		return map;
 	}
@@ -150,9 +156,9 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@Override
 	public Map findSubjectPageData(String subNo,String pageNo) throws ServiceException {
 		
-		String nodeSql="select ID,NAME,PID from tb_catalog1 where pid in (select id from tb_catalog1 where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
+		String nodeSql="select ID,NAME,PID,SLICEFLAG from tb_catalog1 where pid in (select id from tb_catalog1 where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
 		
-		String sql="select ID,NAME,PID from tb_catalog1 where id=? and visible=1";
+		String sql="select ID,NAME,PID,SLICEFLAG from tb_catalog1 where id=? and visible=1";
 		
 		List<?> nodeList= hibernateDao.queryList(nodeSql, new Object[]{subNo});
 		
@@ -185,7 +191,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@SuppressWarnings("unchecked")
 	public List findChildNode(Map m){
 		
-		String sql="select ID,NAME,PID from tb_catalog1 where pid=? and visible=1 order by sortid";
+		String sql="select ID,NAME,PID,SLICEFLAG from tb_catalog1 where pid=? and visible=1 order by sortid";
 		
 		List<?> list=hibernateDao.queryList(sql,new Object[]{m.get("ID")});
 		
