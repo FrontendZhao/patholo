@@ -20,7 +20,7 @@ public class CataLog  implements Serializable {
 	@Column
 	private String name;
 	@Column
-	private String path;
+	private String category;
 	@Column
 	private Integer pid;
 	@Column
@@ -33,7 +33,24 @@ public class CataLog  implements Serializable {
 	private Integer chapsort;
 	@Column
 	private Integer nodesort;
+	@Column
+	private Integer sliceFlag;
+	@Column
+	private String idcode;
 	
+	
+	public Integer getSliceFlag() {
+		return sliceFlag;
+	}
+	public String getIdcode() {
+		return idcode;
+	}
+	public void setSliceFlag(Integer sliceFlag) {
+		this.sliceFlag = sliceFlag;
+	}
+	public void setIdcode(String idcode) {
+		this.idcode = idcode;
+	}
 	public Integer getNodesort() {
 		return nodesort;
 	}
@@ -58,12 +75,6 @@ public class CataLog  implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPath() {
-		return path;
-	}
-	public void setPath(String path) {
-		this.path = path;
-	}
 	public Integer getPid() {
 		return pid;
 	}
@@ -87,6 +98,12 @@ public class CataLog  implements Serializable {
 	}
 	public void setSortId(Integer sortId) {
 		this.sortId = sortId;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	

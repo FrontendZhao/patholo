@@ -1,66 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
-<html>
-	<style type = "text/css">
-		#CanvasBG
-		{
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			margin: 0px;
-			border: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 0;
-		}
-		
-		#CanvasUI
-		{
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			margin: 0px;
-			border: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-		}
-		
-		#Log 
-		{
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			background-color: #ff0000;
-			font-size: 300%;
-			z-index: 2;
-		}
-	</style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
 
-	<head>
-		<meta charset="utf-8" ></meta>
-		<script src="H5Player/Core.js" type="text/javascript" ></script>
-		<title>血液循环障碍-出血性肺梗死</title>
-	</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="monitor-signature" content="monitor:player:html5">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="Keywords" content="" />
+<script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
+<title>目录</title>
+			
+</head>
 	
-	<body>
-		<p id = "Log"></p>
-		
-		<img id = "Thumbnail" src = "Thumbnail.jpg" style = "width:0px; height:0px; overflow:hidden;"></img>
-
-		<canvas id="CanvasBG">非常抱歉！您的浏览器不支持Html5体验，请使用其它浏览器尝试。</canvas>
-		<canvas id="CanvasUI" ontouchstart="TouchDown(event)" ontouchmove="TouchMove(event)" ontouchend="TouchUp(event)"onmousedown="MouseDown(event)" onmousemove="MouseMove(event)" onmouseup="MouseUp(event)" onmousewheel="MouseWheel(event)"></canvas>
-		<script type="text/javascript">
-			var bgR = 233;
-			var bgG = 228;
-			var bgB = 226;
-			var fps = 5;
-			window.onload = function(e) 
-			{	
-				Initialize();
-				LoadPhotos("H5Src/", 1, 50, 3072, 2048);
+<body>
+<c:set var="ctx"  value="${pageContext.request.contextPath}" />
+<input type="hidden" id="input_hidden_ctx" name="ctx" value="${ctx}" />
+<!-- bootstrap -->
+<script type="text/javascript">
+	var WEB_ROOT = $('#input_hidden_ctx').val();
+	$(function(){
+		$.ajax({
+			url:WEB_ROOT+'/olo/subject!doFindSpin.do',
+			data:{'id':getQueryString('sliceNo')},
+			success:function(msg){
+				console.info(msg);
+				if(msg){
+					$('#iframeID').attr('src','/filePath/subject/'+msg.idcode+'/ShowH5.html');
+				}else{
+					$('#iframeID').attr('src',WEB_ROOT+'/views/comm/error.jsp');
+				}
+				
 			}
-		</script>
-	</body>
+		})
+	})
+function getQueryString(name) {  
+       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+       var r = window.location.search.substr(1).match(reg); 
+       if (r != null) return unescape(r[2]);  
+       return null;  
+}
+</script>
+		<iframe id="iframeID"  frameborder="0"  src="" style="border:0; width:100%;height:800px;" ></iframe>
+</body>
 </html>

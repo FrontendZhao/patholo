@@ -1,5 +1,6 @@
 var sliceinfo,viewer,canvas,selObject;
 $(function(){
+	
 	//初始化
 	init();
     
@@ -9,6 +10,7 @@ $(function(){
 	    });
 	    $(this).css("overflow", "hidden"); // 防止出现滚动条，出现的话，你会把滚动条一起拖着走的
 	});
+	
 
 
 })
@@ -52,7 +54,7 @@ function doLoadOpenseadPNG(){
 
 function initPic(){
 	var self = this;
-    $(".panel-title").html(sliceinfo.NAME);
+    $(".panel-title").html(sliceinfo.name);
     
 	//var p= getXmlDom('/filePath/科目/'+sliceInfo.SNAME+'/'+sliceInfo.CNAME+'/'+sliceInfo.NAME+'/1/DSI0/MoticDigitalSlideImage');
 	if(!sliceinfo.WIDTH){
@@ -98,7 +100,7 @@ function initPic(){
 			height:sliceinfo.HEIGHT,
 			tileSize:256,
 	        getTileUrl:function(level,x,y){
-	        	return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceinfo.ID;
+	        	return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceinfo.id;
 	        }
         }]
 	});
@@ -402,7 +404,7 @@ function initPostil(){
         
         	 $.ajax({
         	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
-        	     data:{'postil':postil,'sliceNo':sliceinfo.ID},
+        	     data:{'postil':postil,'sliceNo':sliceinfo.id},
         	     contentType: 'application/json',
         	     dataType:'json',
         	     success:function(success){
@@ -490,7 +492,7 @@ function loadPostil(){
 	console.info(55555);
     $.ajax({
     	     url:WEB_ROOT+'/olo/subject!doLoadPostil.do',
-    	     data:{'sliceNo':sliceinfo.ID},
+    	     data:{'sliceNo':sliceinfo.id},
     	     contentType: 'application/json',
     	     dataType:'json',
     	     success:function(msg){

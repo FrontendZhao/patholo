@@ -10,6 +10,7 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Service;
 
 import com.platform.db.Page;
+import com.platform.project.olo.model.CataLog;
 import com.platform.project.olo.model.Postil;
 import com.platform.project.olo.model.Subject;
 import com.platform.project.olo.service.ISubjectService;
@@ -17,6 +18,7 @@ import com.platform.project.sys.model.Role;
 import com.platform.project.sys.model.User;
 import com.platform.project.sys.model.UserRole;
 import com.platform.project.sys.service.BaseService;
+import com.platform.project.sys.spring.SpringUtil;
 import com.platform.util.EmptyUtils;
 import com.platform.util.ExtractFile;
 
@@ -54,30 +56,80 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 
 	@Override
 	public Object findSliceInfo(String sliceNo) throws ServiceException {
-		/*String sql="select t.id ID,t.name NAME,t.path PATH,t.pid PID,t.visible VISIBLE,t.sortid SORTID,c.name CNAME,s.name SNAME from tb_slice t,tb_catalog1 c,tb_subject s where t.pid=c.id and c.pid=s.id and t.id=?";
+		
+		String sql="select * from tb_catalog1 where id=? and visible=1";
+		
 		Map<String, Object> map=hibernateDao.queryMap(sql, new Object[]{sliceNo});
 		
 		if(!EmptyUtils.isNotEmpty(map)){
 			return null;
-		}*/
+		}
+		
 		String path="";
-		Map<String, Object> map=new HashMap<String, Object>();
-		/*if(EmptyUtils.isNotEmpty(map.get("SNAME")) && EmptyUtils.isNotEmpty(map.get("CNAME")) && EmptyUtils.isNotEmpty(map.get("NAME"))){
-			path+=map.get("SNAME").toString()+"/"+map.get("CNAME").toString()+"/"+map.get("NAME").toString()+"/"+map.get("NAME").toString();
+		
+		if(EmptyUtils.isNotEmpty(map.get("idcode"))){
+			
+			path+=map.get("idcode").toString()+"/"+sliceNo;
 		}else{
 			return null;
-		}*/
-		path+="2/1023/1035/1050/1053/1053";
+		}
+		
 		Object obj=ExtractFile.getSliceTileData(path,sliceNo);
+		
 		if(EmptyUtils.isNotEmpty(obj)){
 			ExtractFile extractFile=(ExtractFile)obj;
 			map.put("WIDTH", extractFile.ImageWidth);
 			map.put("HEIGHT", extractFile.ImageHeight);
 			map.put("MAXLEVEL", extractFile.maxLevel);
-			map.put("NAME", "乙型脑炎");
-			map.put("ID", sliceNo);
 		}
 		return map;
+	}
+	
+	@SuppressWarnings({ "unused", "unchecked" })
+	@Override
+	public Object saveSlicePath(Integer id){
+		
+		List<CataLog> list= hibernateDao.queryByHql("from "+CataLog.class.getName());
+		
+		for (CataLog obj : list) {
+			Boolean bl=true;
+			String path="";
+			Integer ids=obj.getPid();
+			while (bl) {
+				CataLog c=hibernateDao.get(CataLog.class, ids);
+				
+				if(EmptyUtils.isNotEmpty(c)){
+					bl=true;
+					path=c.getId()+"/"+path;
+					ids=c.getPid();
+				}else{
+					bl=false;
+					path=id+"/"+path+obj.getId();
+				}
+			}
+			hibernateDao.updateByHql("update "+CataLog.class.getName()+" set idcode='"+path+"' where id="+obj.getId());
+			
+			 //Object o= findPid(obj.getId(), path);
+			 
+			 System.out.println(path);
+		}
+		
+		return null;
+	}
+	public Object findPid(Integer id,String path){
+		
+		CataLog c=hibernateDao.get(CataLog.class, id);
+		
+		if(EmptyUtils.isNotEmpty(c)){
+			
+			path=c.getId()+"/"+path;
+			
+		}else{
+			
+			path=id+"/"+path;
+		}
+		return path;
+		
 	}
 	@Override
 	public byte[] tileUrlSlice(String level, String x, String y,
@@ -218,6 +270,20 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 		Map map= hibernateDao.queryMap(sql,new Object[]{subNo});
 		
 		return map;
+	}
+
+	@Override
+	public Object findSpin(String id) throws ServiceException {
+		
+		CataLog c=hibernateDao.get(CataLog.class, Integer.parseInt(id));
+		return c;
+	}
+
+	@Override
+	public Object findSubjectFirst(String subNo) throws ServiceException {
+		
+		return hibernateDao.get(CataLog.class, Integer.parseInt(subNo));
+		
 	}
 	
 	

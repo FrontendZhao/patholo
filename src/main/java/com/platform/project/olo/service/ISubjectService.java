@@ -71,8 +71,17 @@ public interface ISubjectService {
 	 * 获取目录和章节
 	 */
 	public Map findSubjectPageData(String subNo,String pageNo)throws ServiceException;
+	
+	/**
+	 * 获取封面路径
+	 */
+	public Object findSubjectFirst(String subNo)throws ServiceException;
 	/**
 	 * 获取章节总数
 	 */
 	public Map findSubjectPageTotal(String subNo) throws ServiceException;
+	
+	public Object saveSlicePath(Integer id) throws ServiceException;
+	
+	public Object findSpin(String id) throws ServiceException;
 }

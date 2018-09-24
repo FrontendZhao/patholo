@@ -206,15 +206,17 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img1.jpg" alt="instructor-img1" />
 								</div>
 								<h4>
-									<a href="#">
+									
 										显微虚拟案例展示一<br/>
 									<span>案例信息：</span>
-								  </a>
+								  
 								</h4>
+								</a>
 								<p>
 									反复头痛一年余，MRI 显示左侧脑膜瘤。术中见左侧蝶骨嵴脑肿瘤，质地中等，血供丰富，侵入颅骨，破坏脑膜。临床诊断：左蝶骨嵴脑膜瘤。巨检：灰红带部分脑膜结节状肿物，3.5cm×3.5cm×0.8cm。
 								</p>
@@ -224,6 +226,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1063">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img2.jpg" alt="instructor-img1" />
 								</div>
@@ -231,8 +234,8 @@
 									<a href="#">
 										显微虚拟案例展示二<br/>
 									<span>案例信息：</span>
-								  </a>
 								</h4>
+								</a>
 								<p>
 									发现右大腿后方肿块半年余。无疼痛，下肢麻木，半年来肿块未消退，遂来我院就诊。MRI示：右大腿下段后侧软组织占位，考虑良性可能性大。
 								</p>
@@ -242,6 +245,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1070">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img3.jpg" alt="instructor-img1" />
 								</div>
@@ -249,8 +253,8 @@
 									<a href="#">
 										显微虚拟案例展示三<br/>
 									<span>案例信息：</span>
-								  </a>
 								</h4>
+								</a>
 								<p>
 									颈部、腋下、腹股沟肿块，最大者直径4-5cm，并逐渐肿大。骨髓穿刺：符合急性髓系白血病，M2a型。巨检：右颈部活检淋巴结一枚，体积1.9cm×1.4cm×1.1cm，切面实性灰白色，略呈分叶状。镜检：HE切片1枚。
 								</p>
@@ -260,6 +264,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1061">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img4.jpg" alt="instructor-img1" />
 								</div>
@@ -267,8 +272,8 @@
 									<a href="#">
 									3D旋转大体病例案例展示一<br/>
 									<span>案例信息：</span>
-								  </a>
 								</h4>
+								</a>
 								<p>
 									白喉（Diphtheria）标本来自幼儿尸体检材料（包括舌、咽、气管、支气管和肺脏组织），于气管和支气管粘膜可见灰白色或黑褐色（出血）之膜状物卷曲欲脱落。
 								</p>
@@ -278,6 +283,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1071">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img5.jpg" alt="instructor-img1" />
 								</div>
@@ -285,8 +291,8 @@
 									<a href="#">
 										3D旋转大体病例案例展示二<br/>
 									<span>案例信息：</span>
-								  </a>
 								</h4>
+								</a>
 								<p>
 									肺脓肿（Abscess）：肺切面可见多个散在的大小不等的灰白色区域，即为脓肿。脓肿与周围组织界限清楚，腔内部分脓性渗出物已流失而呈脓腔
 								</p>
@@ -296,6 +302,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1031">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img6.jpg" alt="instructor-img1" />
 								</div>
@@ -303,8 +310,8 @@
 									<a href="#">
 									3D旋转大体病例案例展示三<br/>
 									<span>案例信息：</span>
-								  </a>
 								</h4>
+								</a>
 								<p>
 									肝脓肿（Abscess of liver）肝切面可见多个散在的大小不等的黄白色区域，即为脓肿。脓肿与周围肝组织界限清楚，腔内脓性渗出物已流失而呈脓腔
 
@@ -314,92 +321,21 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-								<div class="instructor-img">
-									<img src="assets/img/instructor-img1.jpg" alt="instructor-img1" />
-								</div>
-								<h4>
-									<a href="#">
-									Felicia Richi Brown<br/>
-									<span>Instructor, Ui/Ux Design</span>
-								  </a>
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
-								</p>
-							</div>
-							<!-- /.instructor -->
-						</div>
-						<div class="col-xs-12 col-sm-4 col-md-4">
-							<!-- .instructor -->
-							<div class="instructor">
-								<div class="instructor-img">
-									<img src="assets/img/instructor-img2.jpg" alt="instructor-img1" />
-								</div>
-								<h4>
-									<a href="#">
-									Felicia Richi Brown<br/>
-									<span>Instructor, Ui/Ux Design</span>
-								  </a>
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
-								</p>
-							</div>
-							<!-- /.instructor -->
-						</div>
-						<div class="col-xs-12 col-sm-4 col-md-4">
-							<!-- .instructor -->
-							<div class="instructor">
-								<div class="instructor-img">
-									<img src="assets/img/instructor-img3.jpg" alt="instructor-img1" />
-								</div>
-								<h4>
-									<a href="#">
-									Felicia Richi Brown<br/>
-									<span>Instructor, Ui/Ux Design</span>
-								  </a>
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
-								</p>
-							</div>
-							<!-- /.instructor -->
-						</div>
-						<div class="col-xs-12 col-sm-4 col-md-4">
-							<!-- .instructor -->
-							<div class="instructor">
-								<div class="instructor-img">
-									<img src="assets/img/instructor-img4.jpg" alt="instructor-img1" />
-								</div>
-								<h4>
-									<a href="#">
-									Felicia Richi Brown<br/>
-									<span>Instructor, Ui/Ux Design</span>
-								  </a>
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
-								</p>
-							</div>
-							<!-- /.instructor -->
-						</div>
-						<div class="col-xs-12 col-sm-4 col-md-4">
-							<!-- .instructor -->
-							<div class="instructor">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1066">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img5.jpg" alt="instructor-img1" />
 								</div>
 								<h4>
 									<a href="#">
-									Felicia Richi Brown<br/>
-									<span>Instructor, Ui/Ux Design</span>
-								  </a>
+										3D旋转大体病例案例展示四<br/>
+									<span>案例信息：</span>
 								</h4>
+								</a>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+									肺脓肿（Abscess）：肺切面可见多个散在的大小不等的灰白色区域，即为脓肿。脓肿与周围组织界限清楚，腔内部分脓性渗出物已流失而呈脓腔
 								</p>
 							</div>
 							<!-- /.instructor -->
@@ -407,17 +343,19 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1062">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img6.jpg" alt="instructor-img1" />
 								</div>
 								<h4>
 									<a href="#">
-									Felicia Richi Brown<br/>
-									<span>Instructor, Ui/Ux Design</span>
-								  </a>
+									3D旋转大体病例案例展示五<br/>
+									<span>案例信息：</span>
 								</h4>
+								</a>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisc elit. Praesent tellus urna, faucibus vel hendrerit Lorem ipsum dolor sit amet, consectetura Praesent tellus urna, fau
+									肝脓肿（Abscess of liver）肝切面可见多个散在的大小不等的黄白色区域，即为脓肿。脓肿与周围肝组织界限清楚，腔内脓性渗出物已流失而呈脓腔
+
 								</p>
 							</div>
 							<!-- /.instructor -->

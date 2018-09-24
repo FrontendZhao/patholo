@@ -207,6 +207,15 @@ public class SubjectAction extends BaseAction {
 		}
 	}
 	
+	public void doFindSubjectFirst(){
+		try {
+			
+			writeJson(subjectService.findSubjectFirst(getValue("subNo")));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void doFindSubjectPageData(){
 		try {
 			writeJson(subjectService.findSubjectPageData(getValue("subNo"),getValue("pageID")));
@@ -222,6 +231,18 @@ public class SubjectAction extends BaseAction {
 			
 		} catch (Exception e) {
 	        e.printStackTrace();
+		}
+	}
+	
+	public void doTest(){
+		subjectService.saveSlicePath(2);
+	}
+	
+	public void doFindSpin(){
+		try {
+			writeJson(subjectService.findSpin(getValue("id")));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
