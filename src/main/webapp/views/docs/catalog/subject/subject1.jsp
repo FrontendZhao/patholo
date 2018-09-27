@@ -20,7 +20,16 @@
 <script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
 
 <script src="javascript/config.js"></script>
-
+<style type="text/css">
+	body {
+		min-width: 1200px;
+	}
+@media (max-width: 785px) {
+   body{
+        min-width: 610px;
+   }
+}
+</style>
 </head>	
 <body>
 <c:set var="ctx"  value="${pageContext.request.contextPath}" />

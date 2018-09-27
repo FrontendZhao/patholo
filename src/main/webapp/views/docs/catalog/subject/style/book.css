@@ -107,8 +107,9 @@
 
 .grade-title {
     background-color:#f1f1f1;
-    height:30px;
+    height:40px;
     margin-bottom:4px;
+    margin-top:20px;
     border:solid;
     border-width:1px;
     border-color:#bfbfbf;
@@ -117,9 +118,9 @@
 .grade-title-text {
     color:white;
     background-color:#a4a4a4;
-    font-size:15px;
+    font-size:21px;
     font-weight:bold;
-    height:21px;
+    height:31px;
     padding-top:5px;
     margin:2px;
     text-align:center;
@@ -127,7 +128,7 @@
 
 .chapter-title {
     background-color:#f1f1f1;
-    height:30px;
+    height:40px;
     margin-bottom:2px;
     margin-top:8px;
     border:solid;
@@ -138,89 +139,41 @@
     float:left;
     color:white;
     background-color:#a4a4a4;
-    font-size:15px;
+    font-size:24px;
     font-weight:bold;
     text-align:center;
-    width:7%;
-    height:21px;
+    width:10%;
+    height:31px;
     padding-top:5px;
     margin:2px;
     
 }
-@media(max-width:1920px){
-	.chapter-title-no {
-	    float:left;
-	    color:white;
-	    background-color:#a4a4a4;
-	    font-size:15px;
-	    font-weight:bold;
-	    text-align:center;
-	    width:8.5%;
-	    height:21px;
-	    padding-top:5px;
-	    margin:2px;
-    
-    }
-}
-@media(max-width:1600px){
-	.chapter-title-no {
-	    float:left;
-	    color:white;
-	    background-color:#a4a4a4;
-	    font-size:15px;
-	    font-weight:bold;
-	    text-align:center;
-	    width:8%;
-	    height:21px;
-	    padding-top:5px;
-	    margin:2px;
-    
-    }
-}
-@media(max-width:1280px){
-	.chapter-title-no {
-	    float:left;
-	    color:white;
-	    background-color:#a4a4a4;
-	    font-size:15px;
-	    font-weight:bold;
-	    text-align:center;
-	    width:7%;
-	    height:21px;
-	    padding-top:5px;
-	    margin:2px;
-    
-    }
-}
-@media(max-width:1080px){
-	.chapter-title-no {
-	    float:left;
-	    color:white;
-	    background-color:#a4a4a4;
-	    font-size:15px;
-	    font-weight:bold;
-	    text-align:center;
-	    width:6%;
-	    height:21px;
-	    padding-top:5px;
-	    margin:2px;
-    
-    }
-}
+
 
 .chapter-title-text {
     float:left;
     color:white;
     background-color:#a4a4a4;
-    font-size:15px;
+    font-size:16px;
     font-weight:bold;
-    width:89%;
-    height:21px;
+    width:87.5%;
+    height:31px;
     padding-top:5px;
     padding-left:4px;
     margin:2px;
 }
-
+.chapter-title-text-child {
+    float:left;
+    color:white;
+    background-color:#a4a4a4;
+    font-size:14px;
+    font-weight:bold;
+    width:98.5%;
+    height:31px;
+    padding-top:5px;
+    padding-left:4px;
+    margin:2px;
+}
 /* Section*/
 
 .section {
@@ -266,26 +219,26 @@
 }
 
 .order-4 {
-    background-image:url(../../images/order_4.png);
+    background-image:url(images/order_4.png);
 }
 
 .order-5 {
-    background-image:url(../../images/order_5.png);
+    background-image:url(images/order_5.png);
 }
 .order-6 {
-    background-image:url(../../images/order_6.png);
+    background-image:url(images/order_6.png);
 }
 .order-7 {
-    background-image:url(../../images/order_7.png);
+    background-image:url(images/order_7.png);
 }
 .order-8 {
-    background-image:url(../../images/order_8.png);
+    background-image:url(images/order_8.png);
 }
 .order-9 {
-    background-image:url(../../images/order_9.png);
+    background-image:url(images/order_9.png);
 }
 .order-10 {
-    background-image:url(../../images/order_10.png);
+    background-image:url(images/order_10.png);
 }
 .order-11 {
     background-image:url(../../images/order_11.png);
@@ -367,14 +320,14 @@
     margin-left:20px;
     margin-top:5px;
     margin-bottom:5px;
-    padding:0px;
+    padding:10px;
 }
 
 .section-slides li {
     list-style:none;
     list-style-position:inside;
     display:inline-block;
-    width:150px;
+    width:220px;
     margin-bottom:12px;    
     background-image:url(images/list_item.jpg);
     background-repeat:no-repeat;

@@ -17,7 +17,7 @@ function loadSubject(pageNo){
 			url:WEB_ROOT+'/olo/subject!doFindSubjectPageData.do',
 			data:{'subNo':getQueryString('subNo'),'pageID':pageNo-1},
 			success:function(msg){
-				content=loadContent(msg);
+				content=loadContent(msg,pageNo-1);
 			}
 		})
 	}
@@ -33,119 +33,8 @@ function loadSubject(pageNo){
     	}
 	})*/
 }
-function loadContent(msg){
-     var c= "<div class='flipbook' style='position: relative; width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); margin-left: 0px;'>" +
-     		"<div class='own-size page p2 even' style='width: 100%; height: 100%; float: left; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;'>" +
-			"<div class='page-body page-body-with-title'><div class='page-title'></div>" +
-			"<div class='page-content' >";
-			
-			if(msg){
-			     
-				c+="<div class='grade-title'><div class='grade-title-text'>"+msg.NAME+"</div></div>";
-				
-				for (var i = 0; i < msg.CHILD.length; i++) {
-					
-					c+="<div class='chapter-title'><div class='chapter-title-no'>"+(i+1)+"</div><div class='chapter-title-text'>"+msg.CHILD[i].NAME+"</div></div>";
-					
-					for (var j = 0; j < msg.CHILD[i].CHILD.length; j++) {
-					
-					     c+="<div class='section'><ul class='section-title'><li class='order-"+(j+1)+"'>"+msg.CHILD[i].CHILD[j].NAME+"</li></ul>";
-					
-					     c+="<ul class='section-slides section-slide-layout-large'>"
-					     
-					     var a="",b="",g=1;
-					     
-					     for (var l = 0; l < msg.CHILD[i].CHILD[j].CHILD.length; l++) {
-					     	
-					     	   
-					     	
-					     	   if(msg.CHILD[i].CHILD[j].CHILD[l].SLICEFLAG=="1"){
-					     	       
-					     	   	   	 a+="<li><a target='_blank' href='"+WEB_ROOT+"/views/docs/catalog/slice.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].ID+"'> "+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</a></li>";
-
-					     	   }
-					     	   if(msg.CHILD[i].CHILD[j].CHILD[l].SLICEFLAG=="2"){
-					     	       
-					     	   	   	 a+="<li><a target='_blank' href='"+WEB_ROOT+"/views/demo/spin.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].ID+"'> "+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</a></li>";
-
-					     	   }
-					     	   if(msg.CHILD[i].CHILD[j].CHILD[l].SLICEFLAG=="0"){
-					     	   	
-					     	   	     
-					     	   	     if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD!=undefined && msg.CHILD[i].CHILD[j].CHILD[l].CHILD.length!=0){
-					     	   	         
-					     	   	     	 b+="<ul class='section-title'><li><strong>"+(j+1)+"."+(g)+" </strong>"+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</li></ul><ul class='section-slides section-slide-layout-large'>";
-					     	   	     	 
-					     	   	     	 var e="",f="",k=1;
-					     	   	     	 for (var t = 0; t < msg.CHILD[i].CHILD[j].CHILD[l].CHILD.length; t++) {
-					     	   	     	       
-					     	   	     	 	   if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].SLICEFLAG=="1"){
-					     	       
-									     	   	   	 e+="<li><a target='_blank' href='"+WEB_ROOT+"/views/docs/catalog/slice.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].ID+"'> "+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].NAME+"</a></li>";
-				
-									     	   }
-									     	   if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].SLICEFLAG=="2"){
-									     	       
-									     	   	   	 e+="<li><a target='_blank' href='"+WEB_ROOT+"/views/demo/spin.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].ID+"'> "+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].NAME+"</a></li>";
-				
-									     	   }
-									     	   if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].SLICEFLAG=="0"){
-									     	   	
-									     	         if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD!=undefined && msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD.length!=0){
-									     	         
-									     	               f+="<ul class='section-title'><li><strong>"+(j+1)+"."+g+"."+(k++)+" </strong>"+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].NAME+"</li></ul><ul class='section-slides section-slide-layout-large'>";
-									     	               
-									     	               for (var o = 0; o < msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD.length; o++) {
-					     	   	     	       
-										     	   	     	 	   if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].SLICEFLAG=="1"){
-										     	       
-														     	   	   	 f+="<li><a target='_blank' href='"+WEB_ROOT+"/views/docs/catalog/slice.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].ID+"'> "+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].NAME+"</a></li>";
-									
-														     	   }
-														     	   if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].SLICEFLAG=="2"){
-														     	       
-														     	   	   	 f+="<li><a target='_blank' href='"+WEB_ROOT+"/views/demo/spin.jsp?sliceNo="+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].ID+"'> "+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].NAME+"</a></li>";
-									
-														     	   }
-														     	   if(msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].SLICEFLAG=="0"){
-														                f+="<li>"+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].CHILD[o].NAME+"</li>";
-
-														     	   }
-														   }
-														   
-														   f+="</ul>";
-
-									     	         }else{
-					     	   	     	
-									     	   	     	   f+="<ul class='section-title'><li><strong>"+(j+1)+"."+g+"."+(k++)+" </strong>"+msg.CHILD[i].CHILD[j].CHILD[l].CHILD[t].NAME+"</li></ul>";
-									     	   	     }
-
-									     	   
-									     	   }
-					     	   	     	 	
-					     	   	     	 
-					     	   	     	 }
-					     	   	     	 b+=e+f+"</ul>";
-					     	   	     	 g++;
-					     	   	     }else{
-					     	   	     	
-					     	   	     	 b+="<ul class='section-title'><li><strong>"+(j+1)+"."+(g++)+"</strong>"+msg.CHILD[i].CHILD[j].CHILD[l].NAME+"</li></ul>";
-					     	   	     }
-
-					     	   }
-					
-				         }
-				         
-				         c+=a+b+"</ul></div>";
-					
-				    }
-					
-				}
-				
-			}else{
-			     c+="<h3>未查到目录</h3>";
-			}
-			c+="</div></div></div></div>";
+function loadContent(msg,pageNo){
+     var c="<iframe  frameborder='0'  src='"+WEB_ROOT +"/views/docs/catalog/subject/demo"+pageNo+".jsp' style='border:0; width:100%;height:100%;' ></iframe>";
 			return c;
 }
 function loadPageTotal(){

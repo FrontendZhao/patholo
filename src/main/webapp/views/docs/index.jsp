@@ -66,6 +66,51 @@
 
 		</div>
 		<!-- /top-header -->
+		<div id="myCarousel" class="carousel slide" style="position: relative;">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" 
+         class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active">
+         <img src="img/1.jpg"  alt="First slide">
+      </div>
+      <div class="item">
+         <img src="img/2.jpg"  alt="Second slide">
+      </div>
+      <div class="item">
+         <img src="img/3.jpg"  alt="Third slide">
+      </div>
+      <div class="item">
+         <img src="img/4.jpg"  alt="four slide">
+      </div>
+      <div class="item">
+         <img src="img/5.jpg"  alt="five slide">
+      </div>
+      <div class="item">
+         <img src="img/6.jpg"  alt="six slide">
+      </div>
+   </div>
+   <div style="text-align:center; position: absolute;bottom: 0px;right: 5%">
+          <div class="header-text">
+				<div class="col-xs-12 col-sm-5 col-md-5">
+				</div>
+				<div class="header-bg col-xs-12 col-sm-7 col-md-7" style="opacity:0;">
+					<h1>河北医科大学病理学虚拟仿真实验室</h1>
+					<p>该虚拟仿真实验教学系统在更加真实的呈现大体标本和镜下切片同时，建立完整的考核切片库，切片库中的病例具备完整临床信息、大体特点和全景数字化切片，模拟临床病理诊断，使学生通过对系统中病例的学习及自我考核，掌握一定的病理诊断技能。这种实验教学系统克服了传统临床实践教学资源有限的不足，使学生更真实地进行病理诊断，收到良好的学习效果。线上虚拟教学系统有良好的开放性，可方便地扩充和更新教学资源，方便加入新的病例和病理学资料。本实验也计划在建立和完善虚拟仿真教学病例和考核病例库的基础上，可以逐步加入临床病理工作中的其他相关内容，如标本的取材、免疫组织化学检测和分子病理检测的选择和判读。今后在充分完善炎症性疾病病理虚拟仿真教学系统的基础上，可以延伸建立更多其他病种的虚拟仿真教学系统，如肿瘤、血液循环障碍等供学生使用。通过虚拟教学系统的学习，使学生掌握疾病的病理学特点及病理学诊断，为将来的临床工作打下坚实的基础。 </p>
+					
+				</div>
+				<a href="javascript:void(0)" id="rrr" style="position: relative ;bottom: 10%;left:60%" class="header-btn">虚拟仿真实验室介绍</a>
+	     </div>
+   </div>
+</div>
 		<!-- mainNav -->
 		<div id="mainNav" class="navbar-fixed-top">
 			<div class="container">
@@ -102,15 +147,7 @@
 	</div>
 	<!-- /top-menu -->
 
-	<div class="header-text">
-		<div class="col-xs-12 col-sm-5 col-md-5">
-		</div>
-		<div class="header-bg col-xs-12 col-sm-7 col-md-7">
-			<h1>河北医科大学病理学虚拟仿真实验室</h1>
-			<p>该虚拟仿真实验教学系统在更加真实的呈现大体标本和镜下切片同时，建立完整的考核切片库，切片库中的病例具备完整临床信息、大体特点和全景数字化切片，模拟临床病理诊断，使学生通过对系统中病例的学习及自我考核，掌握一定的病理诊断技能。这种实验教学系统克服了传统临床实践教学资源有限的不足，使学生更真实地进行病理诊断，收到良好的学习效果。线上虚拟教学系统有良好的开放性，可方便地扩充和更新教学资源，方便加入新的病例和病理学资料。本实验也计划在建立和完善虚拟仿真教学病例和考核病例库的基础上，可以逐步加入临床病理工作中的其他相关内容，如标本的取材、免疫组织化学检测和分子病理检测的选择和判读。今后在充分完善炎症性疾病病理虚拟仿真教学系统的基础上，可以延伸建立更多其他病种的虚拟仿真教学系统，如肿瘤、血液循环障碍等供学生使用。通过虚拟教学系统的学习，使学生掌握疾病的病理学特点及病理学诊断，为将来的临床工作打下坚实的基础。 </p>
-			<a href="#" class="header-btn">虚拟仿真实验室介绍</a>
-		</div>
-	</div>
+	
 
 </header>
 <section class="for-box">

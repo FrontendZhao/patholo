@@ -1,8 +1,29 @@
 var WEB_ROOT = $('#input_hidden_ctx').val();
 $(function(){
-	console.info(WEB_ROOT);
+	//初始化轮播
+	$("#myCarousel").carousel('cycle');
     //移动到顶部
     $().UItoTop({ easingType: 'easeOutQuart' });
+    /*$('.header-bg').hide();
+    $('#rrr').click(function(){
+        
+    	$('.header-bg').hide();
+    	
+    	 console.info(999);
+    })*/
+    var tool=true;
+    $('#rrr').click(function(){
+			//if(window.innerWidth<780){
+			//};
+			  if(tool){
+			  	        $('.header-bg').css('opacity',1);
+	                    tool=false;
+			  }else{
+			  	        $('.header-bg').css('opacity',0);
+	                    tool=true;
+			  }
+			  //setTimeout(function(){$('.panel-toolbar').css('height','auto');},500);
+		});
     
     userShow();
    $.ajax({
@@ -25,7 +46,7 @@ $(function(){
     				'<i class="fa fa-star" aria-hidden="true"></i>' +
     				'<i class="fa fa-star" aria-hidden="true"></i>' +
     				'<i class="fa fa-star-o" aria-hidden="true"></i>' +
-    				'</div><div class="price">切片数量：58 </div></div>' +
+    				'</div><div class="price">切片数量：'+(12+i*7)+' </div></div>' +
     				'</div></div>';
     			     $('.viewed-courses .subject').append(content);
     			}

@@ -240,10 +240,11 @@ a:focus {
 /*-------header-----*/
 
 header {
-	background: rgba(0, 0, 0, 0) url("../img/header.jpg") no-repeat scroll 0 80px / cover;
+	background: rgba(0, 0, 0, 0) no-repeat scroll 0 80px / cover; 
 	color: rgb(255, 255, 255);
-	height: 1000px;
-	overflow: hidden;
+	height: 0;
+	/* overflow: hidden; */ 
+	padding-bottom:74%;
 	transition: all 0.35s ease 0s;
 }
 .hide-bg {
@@ -412,7 +413,7 @@ nav {
 	display: block;
 	font-family: "Montserrat", sans-serif;
 	margin: 250px auto auto;
-	width: 900px;
+	width: 1000px;
 }
 .header-text h1 {
 	color: rgb(242, 85, 44);
@@ -423,7 +424,7 @@ nav {
 }
 .header-bg {
 	background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
-	padding: 150px 30px;
+	padding: 150px 30px 50px 30px;
 }
 .header-hight .header-text {
 	margin: 100px auto auto;
@@ -443,7 +444,7 @@ nav {
 }
 .header-btn {
 	background: rgb(242, 85, 44) none repeat scroll 0 0;
-	color: rgb(255, 255, 255);
+	color: #fff;
 	display: table;
 	font-size: 18px;
 	margin: 30px 0 0;
@@ -452,10 +453,12 @@ nav {
 	transition: all 0.35s ease 0s;
 }
 .header-btn:hover {
-	background: #fdb33b none repeat scroll 0 0;
 	border: medium none;
 	color: #fff;
 	text-decoration: none;
+}
+.header-btn:active {
+	color: #fff;
 }
 .header-bg p {
 	line-height: 30px;
@@ -3066,10 +3069,6 @@ footer .f-sicon>h2 {
 		margin: auto;
 		width: 140px;
 	}
-	header {
-		padding: 0;
-		height: 730px;
-	}
 	.header-text h1 {
 		font-size: 15px !important;
 		line-height: 24px;
@@ -3422,10 +3421,6 @@ footer .f-sicon>h2 {
 		margin: auto;
 		width: 140px;
 	}
-	header {
-		padding: 0;
-		height: 730px;
-	}
 	.header-text h1 {
 		font-size: 15px !important;
 		line-height: 24px;
@@ -3638,13 +3633,6 @@ footer .f-sicon>h2 {
 	.about strong {
 		font-size: 14px;
 	}
-	header {
-		background: rgba(0, 0, 0, 0) url("../img/header.jpg") repeat scroll 0 0 / cover;
-		color: #fff;
-		height: 730px;
-		overflow: hidden;
-		transition: all 0.35s ease 0s;
-	}
 	#blog h3 {
 		color: #000000;
 		font-size: 14px;
@@ -3741,7 +3729,7 @@ footer .f-sicon>h2 {
 		font-size: 20px;
 	}
 }
-@media (min-width: 980px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
 	.cd-hero-slider .cd-full-width,
 	.cd-hero-slider .cd-half-width {
 		padding-top: 300px;
@@ -3768,7 +3756,12 @@ footer .f-sicon>h2 {
 		font-size: 12px;
 	}
 }
-@media (min-width: 1280px){
+@media (min-width: 980px) and (max-width: 1024px) {
+	.header-bg{
+	    margin-left: 600px;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
 	.header-bg{
 	    margin-left: 600px;
 	}
