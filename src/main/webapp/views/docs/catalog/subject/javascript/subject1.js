@@ -35,6 +35,12 @@ function loadSubject(pageNo){
 }
 function loadContent(msg,pageNo){
      var c="<iframe  frameborder='0'  src='"+WEB_ROOT +"/views/docs/catalog/subject/demo"+pageNo+".jsp' style='border:0; width:100%;height:100%;' ></iframe>";
+     if((pageNo+1)%2==0){
+        c+="<strong style='position: absolute ;bottom: 2%;left: 3%;z-index:100000;font-size:12px;'>"+(pageNo+1)+"</strong>"
+     }else{
+        c+="<strong style='position: absolute ;bottom: 2%;right: 3%;z-index:100000;font-size:12px;'>"+(pageNo+1)+"</strong>"
+     }
+     
 			return c;
 }
 function loadPageTotal(){

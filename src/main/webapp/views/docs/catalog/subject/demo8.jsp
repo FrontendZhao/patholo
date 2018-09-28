@@ -27,8 +27,8 @@
 										<div class='chapter-title-text'>炎症的经过和结局</div>
 									</div>
 									<div class='section'>
-										<ul class='section-title'>
-											<li class='order-11'></li>
+										<ul class='section-title'> 
+											<li class='order-11'> </li>
 										</ul>
 										<ul class='section-sub-title section-sub-title-h'>
 											<li class='disabled-item'></li>

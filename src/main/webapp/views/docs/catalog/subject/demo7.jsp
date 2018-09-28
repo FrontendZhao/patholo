@@ -25,13 +25,13 @@
 										<ul class='section-slides section-slide-layout-large'>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1071'>[大体3D]肺脓肿</a></li>
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1065'>[镜下显微]蜂窝织炎</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1071'>[大体3D]表面化脓和积农</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1071'>[大体3D]表面化脓和积脓</a></li>
 											
 										</ul>
 										
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.6     渗出性炎-出血性炎</div>
+										<div class='chapter-title-text-child'>5.3.2     渗出性炎-出血性炎</div>
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
@@ -43,7 +43,7 @@
 										
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.7     增生性炎-急性增生性炎</div>
+										<div class='chapter-title-text-child'>5.3.3     增生性炎-急性增生性炎</div>
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
@@ -53,7 +53,7 @@
 										
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.8     增生性炎-慢性增生性炎</div>
+										<div class='chapter-title-text-child'>5.3.3     增生性炎-慢性增生性炎</div>
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>

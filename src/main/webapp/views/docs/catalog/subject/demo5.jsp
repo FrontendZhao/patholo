@@ -68,6 +68,9 @@
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]乙型脑炎</a></li>
+											<li class='disabled-item'></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴肝脓肿</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]阿米巴肝脓肿</a></li>
 										</ul>
 										<ul class='section-sub-title section-sub-title-h'>
 											<li class='disabled-item'></li>

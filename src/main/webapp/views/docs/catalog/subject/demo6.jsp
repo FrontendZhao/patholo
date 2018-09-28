@@ -20,21 +20,16 @@
 			<div class='page-body page-body-with-title'><div class='page-title'></div>
 			<div class='page-content' style='overflow:hidden;height:572px;' >
 									
+									
 									<div class='chapter-title' style="margin-top: 20px;">
-										<div class='chapter-title-text-child'>5.3.2     渗出性炎</div>
+										<div class='chapter-title-text-child'>5.3.2     渗出性炎-浆液性炎</div>
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴肝脓肿</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]阿米巴肝脓肿</a></li>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
 										</ul>
-										
-									</div>
-									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.3     渗出性炎-浆液性炎</div>
-									</div>
-									<div class='section'>
-										<ul class='section-slides section-slide-layout-large'>
 										<ul class='section-sub-title section-sub-title-h'>
 											<li class='disabled-item'></li>
 											<li class='disabled-item'></li>
@@ -47,29 +42,44 @@
 										
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.4     渗出性炎-纤维素性炎</div>
+										<div class='chapter-title-text-child'>5.3.2     渗出性炎-纤维素性炎</div>
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1061'>[大体3D]白喉</a></li>
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1077'>[镜下显微]白喉</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1078'>[大体3D]细菌性疟疾</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1063'>[镜下显微]细菌性疟疾</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]纤维性心包炎</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1078'>[大体3D]细菌性痢疾</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1063'>[镜下显微]细菌性痢疾</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]纤维素性心包炎</a></li>
 											
 											
 										</ul>
 										
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.5     渗出性炎-化脓性炎</div>
+										<div class='chapter-title-text-child'>5.3.2     渗出性炎-化脓性炎</div>
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1079'>[大体3D]肝脓肿</a></li>
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1070'>[镜下显微]肝脓肿</a></li>
 										</ul>
-										
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
 									</div>
 								</div>
 							</div>
