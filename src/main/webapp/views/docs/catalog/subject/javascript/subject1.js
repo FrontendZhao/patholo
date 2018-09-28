@@ -1,6 +1,6 @@
 var sendvisitinfo = function(type,page){};
 
-bookConfig.totalPageCount=loadPageTotal();
+bookConfig.totalPageCount=19;//loadPageTotal();
 
 $(function(){
 	

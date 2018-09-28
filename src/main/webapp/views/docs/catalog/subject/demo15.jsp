@@ -21,14 +21,37 @@
 			<div class='page-content' style='overflow:hidden;height:572px;' >
 									
 									
-									
-									
+									<div class='chapter-title' style="margin-top: 20px;">
+										<div class='chapter-title-no'>14.2</div>
+										<div class='chapter-title-text'>胰岛疾病</div>
+									</div>
+									<div class='section'>
+										<ul class='section-title'>
+											<li class='order-11'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+									</div>
 									<div class='grade-title'>
-										<div class='grade-title-text'>第七章 免疫性疾病</div>
+										<div class='grade-title-text'>第十五章 神经系统疾病</div>
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-no'>7.1</div>
-										<div class='chapter-title-text'>自身免疫病</div>
+										<div class='chapter-title-no'>15.1</div>
+										<div class='chapter-title-text'>感染性疾病</div>
 									</div>
 									<div class='section'>
 										<ul class='section-title'>
@@ -45,29 +68,8 @@
 										
 									</div>
 									<div class='chapter-title'>
-										<div class='chapter-title-no'>7.2</div>
-										<div class='chapter-title-text'>免疫缺陷病</div>
-									</div>
-									<div class='section'>
-										<ul class='section-title'>
-											<li class='order-11'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										
-									</div>
-									<div class='grade-title'>
-										<div class='grade-title-text'>第八章 心血管系统疾病</div>
-									</div>
-									<div class='chapter-title'>
-										<div class='chapter-title-no'>8.1</div>
-										<div class='chapter-title-text'>动脉粥样硬化及冠心病</div>
+										<div class='chapter-title-no'>15.2</div>
+										<div class='chapter-title-text'>脱髓鞘及变性疾病</div>
 									</div>
 									<div class='section'>
 										<ul class='section-title'>
@@ -89,7 +91,16 @@
 											<li class='disabled-item'></li>
 											<li class='disabled-item'></li>
 										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
 									</div>
+									
 									
 								</div>
 							</div>
