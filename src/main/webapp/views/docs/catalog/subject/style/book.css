@@ -95,10 +95,15 @@
 .flipbook .odd .page-body .page-title {
      background-image:url(images/cover_title_right.png);
  }
-
+.flipbook .even .page-body .top-grade{
+	margin-top: 0px;
+}
 /* chapters */
 .flipbook .even .page-body .page-content {
     margin-right:20px;
+    overflow:hidden;
+    height:572px;
+    position: relative;
 }
 
 .flipbook .odd .page-body .page-content {
@@ -106,17 +111,17 @@
 }
 
 .grade-title {
-    background-color:#f1f1f1;
+    background-color:#E8E8E8;
     height:40px;
     margin-bottom:4px;
-    margin-top:20px;
+    margin-top:0px;
     border:solid;
     border-width:1px;
     border-color:#bfbfbf;
 }
 
 .grade-title-text {
-    color:white;
+    color:black;
     background-color:#a4a4a4;
     font-size:21px;
     font-weight:bold;
@@ -127,7 +132,7 @@
 }
 
 .chapter-title {
-    background-color:#f1f1f1;
+    background-color:#E8E8E8;
     height:40px;
     margin-bottom:2px;
     margin-top:8px;
@@ -137,7 +142,7 @@
 }
 .chapter-title-no {
     float:left;
-    color:white;
+    color:black;
     background-color:#a4a4a4;
     font-size:24px;
     font-weight:bold;
@@ -152,7 +157,7 @@
 
 .chapter-title-text {
     float:left;
-    color:white;
+    color:black;
     background-color:#a4a4a4;
     font-size:16px;
     font-weight:bold;
@@ -164,7 +169,7 @@
 }
 .chapter-title-text-child {
     float:left;
-    color:white;
+    color:black;
     background-color:#a4a4a4;
     font-size:14px;
     font-weight:bold;
@@ -177,14 +182,27 @@
 /* Section*/
 
 .section {
-    background-color:#f1f1f1;
+    background-color:#E8E8E8;
     margin-bottom:2px;    
     border:solid;
     border-width:1px;
     border-color:#bfbfbf;
     font-size:12px;
 }
-
+.bottom-section{
+	overflow:hidden; 
+	height: 1000px;
+}
+.bottom-line{
+	/* overflow:scroll; */
+	
+	position:absolute;
+	bottom:-2px;
+	border-style:none none solid none;
+	border-width:1px;
+	height:1px;
+	width: 100%;
+}
 .section-top-padding {
     padding-top:15px;
 }
@@ -344,7 +362,9 @@
     text-decoration:none;
     color: black;
 }
-
+.section-slides li img {
+    margin-right: 5px;
+}
 .section-slide-layout-large li{
     margin-bottom:20px;
 }

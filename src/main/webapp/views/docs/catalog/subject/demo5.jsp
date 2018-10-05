@@ -12,13 +12,12 @@
  <title>目录</title>
 <link rel="stylesheet" href="style/book.css" />
 <link rel="stylesheet" href="style/style.css" />
-<title>Insert title here</title>
 </head>
 <body>
-<div class='flipbook' style='position: relative; width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); margin-left: 0px;'>
+<div class='flipbook' style=' position: relative; width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); margin-left: 0px;'>
      		<div class='own-size page p2 even' style='width: 100%; height: 100%; float: left; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;'>
-			<div class='page-body page-body-with-title'><div class='page-title'></div>
-			<div class='page-content' style='overflow:hidden;height:572px;' >
+			<div class='page-body page-body-with-title' style=""><div class='page-title'></div>
+			<div class='page-content'><div style="float: left;">
 									<div class='grade-title'>
 										<div class='grade-title-text'>第五章 炎症</div>
 									</div>
@@ -29,10 +28,6 @@
 									<div class='section'>
 										<ul class='section-title'>
 											<li class='order-11'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
 										</ul>
 										<ul class='section-sub-title section-sub-title-h'>
 											<li class='disabled-item'></li>
@@ -52,10 +47,6 @@
 											<li class='disabled-item'></li>
 											<li class='disabled-item'></li>
 										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
 										
 									</div>
 									<div class='chapter-title'>
@@ -67,47 +58,43 @@
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]肠阿米巴病</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]急性病毒性肝炎</a></li>
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]乙型脑炎</a></li>
-											<li class='disabled-item'></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴病</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]阿米巴病</a></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										
-									</div>
-									<div class='chapter-title'>
-										<div class='chapter-title-text-child'>5.3.2     渗出性炎</div>
-									</div>
-									<div class='section'>
-										<ul class='section-slides section-slide-layout-large'>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]病毒性肝炎</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]肠阿米巴病</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]亚急性重型肝炎</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴晚期</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]肠阿米巴病2</a></li>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴肝脓肿</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]阿米巴肝脓肿</a></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
+										</ul>
+										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
 										</ul>
 										
 									</div>
+									</div><div class='section bottom-line'></div>
 								</div>
 							</div>
 						</div>
