@@ -21,7 +21,7 @@
 			<div class='page-content'><div style="float: left;">
 									
 									
-									<div class='chapter-title top-grade'>
+									<div class='chapter-title top-section'>
 										<div class='chapter-title-no'>5.4</div>
 										<div class='chapter-title-text'>炎症的经过和结局</div>
 									</div>

@@ -18,7 +18,7 @@
      		<div class='own-size page p2 even' style='width: 100%; height: 100%; float: left; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;'>
 			<div class='page-body page-body-with-title'><div class='page-title'></div>
 			<div class='page-content'><div style="float: left;">
-									<div class='chapter-title top-grade'>
+									<div class='chapter-title top-section'>
 										<div class='chapter-title-text-child'>5.3.2     渗出性炎-浆液性炎</div>
 									</div>
 									<div class='section'>
@@ -34,14 +34,14 @@
 										<ul class='section-slides section-slide-layout-large'>
 											
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1077'>[镜下显微]白喉</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1063'>[镜下显微]细菌性痢疾</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1061'>[大体3D]白喉1</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1078'>[大体3D]白喉2</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]白喉3</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]细菌性痢疾2</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]急性细菌性痢疾</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]纤维素性腹膜炎</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1062'>[大体3D]纤维素性心包炎</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1115'>[镜下显微]细菌性痢疾</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1116'>[大体3D]白喉1</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1117'>[大体3D]白喉2</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1118'>[大体3D]白喉3</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1119'>[大体3D]细菌性痢疾2</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1120'>[大体3D]急性细菌性痢疾</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1078'>[大体3D]纤维素性腹膜炎</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1121'>[大体3D]纤维素性心包炎</a></li>
 											
 										</ul>
 										
@@ -52,11 +52,11 @@
 									<div class='section bottom-section'>
 										<ul class='section-slides section-slide-layout-large'>
 										<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1070'>[镜下显微]肝脓肿</a></li>
-										<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1070'>[镜下显微]流行性脑脊髓膜炎</a></li>
-										<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1070'>[镜下显微]化脓性阑尾炎</a></li>
-										<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1079'>[大体3D]肝脓肿</a></li>
-										<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1079'>[大体3D]肝脓肿3</a></li>
-										<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1071'>[大体3D]肺脓肿</a></li>
+										<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1122'>[镜下显微]流行性脑脊髓膜炎</a></li>
+										<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1123'>[镜下显微]化脓性阑尾炎</a></li>
+										<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1124'>[大体3D]肝脓肿</a></li>
+										<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1125'>[大体3D]肝脓肿3</a></li>
+										<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1126'>[大体3D]肺脓肿</a></li>
 										
 											
 										</ul>

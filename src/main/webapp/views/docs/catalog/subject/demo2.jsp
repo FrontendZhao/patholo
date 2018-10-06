@@ -18,36 +18,32 @@
 <div class='flipbook' style='position: relative; width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); margin-left: 0px;'>
      		<div class='own-size page p2 even' style='width: 100%; height: 100%; float: left; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;'>
 			<div class='page-body page-body-with-title'><div class='page-title'></div>
-			<div class='page-content' style='overflow:hidden;height:572px;' >
-									<div class='section' style="margin-top: 20px;">
+			<div class='page-content'  ><div style="float: left;">
+									<div class='section'>
 									    <ul class='section-title'>
-											<li class='order-2'>增生</li>
+											<li class='order-3'>增生</li>
 										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
+										<ul class='section-slides section-slide-layout-large'>
+											   <li class='disabled-item'></li>
+											   <li class='disabled-item'></li>
+											   <li class='disabled-item'></li>
+											   <li class='disabled-item'></li>
 										</ul>
 										<ul class='section-title'>
-											<li class='order-2'>化生</li>
+											<li class='order-4'>化生</li>
 										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
-											<li class='disabled-item'></li>
+										<ul class='section-slides section-slide-layout-large'>
+											   <li class='disabled-item'></li>
+											   <li class='disabled-item'></li>
+											   <li class='disabled-item'></li>
+											   <li class='disabled-item'></li>
 										</ul>
 								   </div>
 								   <div class='chapter-title' style="margin-top: 15px;">
 										<div class='chapter-title-no'>2.2</div>
 										<div class='chapter-title-text'>损伤</div>
 									</div>
-									<div class='section'>
+									<div class='section bottom-section'>
 										<ul class='section-title'>
 											<li class='order-1'>可逆性损伤（变性）</li>
 										</ul>
@@ -101,7 +97,7 @@
 											<li class='disabled-item'></li>
 										</ul>
 									</div>
-									
+									</div><div class='section bottom-line'></div>
 									
 									
 								</div>

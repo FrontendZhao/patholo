@@ -18,10 +18,10 @@
 <div class='flipbook' style='position: relative; width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); margin-left: 0px;'>
      		<div class='own-size page p2 even' style='width: 100%; height: 100%; float: left; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;'>
 			<div class='page-body page-body-with-title'><div class='page-title'></div>
-			<div class='page-content' style='overflow:hidden;height:572px;' >
+			<div class='page-content' ><div style="float: left;">
 									
 									
-									<div class='chapter-title' style="margin-top: 20px;">
+									<div class='chapter-title top-section' >
 										<div class='chapter-title-no'>14.2</div>
 										<div class='chapter-title-text'>胰岛疾病</div>
 									</div>
@@ -71,11 +71,13 @@
 										<div class='chapter-title-no'>15.2</div>
 										<div class='chapter-title-text'>脱髓鞘及变性疾病</div>
 									</div>
-									<div class='section'>
+									<div class='section bottom-section'>
 										<ul class='section-title'>
 											<li class='order-11'></li>
 										</ul>
 										<ul class='section-sub-title section-sub-title-h'>
+											<li class='disabled-item'></li>
+											<li class='disabled-item'></li>
 											<li class='disabled-item'></li>
 											<li class='disabled-item'></li>
 										</ul>
@@ -100,7 +102,7 @@
 											<li class='disabled-item'></li>
 										</ul>
 									</div>
-									
+									</div><div class='section bottom-line'></div>
 									
 								</div>
 							</div>

@@ -21,10 +21,10 @@
 			<div class='page-content'><div style="float: left;">
 									
 									
-									<div class='section'>
+									<div class='section top-section'>
 										<ul class='section-slides section-slide-layout-large'>
 											
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1079'>[大体3D]肺脓肿2</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1127'>[大体3D]肺脓肿2</a></li>
 											
 										</ul>
 										
@@ -46,12 +46,12 @@
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
-										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1073'>[镜下显微]肠伤寒</a></li>
-										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1073'>[镜下显微]弥漫性毛细血管内增生性肾小球肾炎</a></li>
-										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1081'>[大体3D]肠伤寒结痂期</a></li>
-											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1067'>[大体3D]肠伤寒</a></li>
-											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1067'>[大体3D]肠伤寒2</a></li>
-											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1067'>[大体3D]弥漫性毛细血管内增生性肾小球肾炎</a></li>
+										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1128'>[镜下显微]肠伤寒</a></li>
+										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1129'>[镜下显微]增生性肾小球肾炎</a></li>
+										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1130'>[大体3D]肠伤寒结痂期</a></li>
+											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1131'>[大体3D]肠伤寒</a></li>
+											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1132'>[大体3D]肠伤寒2</a></li>
+											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1133'>[大体3D]增生性肾小球肾炎</a></li>
 										</ul>
 										
 									</div>
@@ -61,9 +61,9 @@
 									<div class='section bottom-section'>
 										<ul class='section-slides section-slide-layout-large'>
 										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1073'>[镜下显微]异物肉芽肿</a></li>
-										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1075'>[镜下显微]增生性淋巴结核</a></li>
-										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1074'>[大体3D]肺原发综合征2</a></li>
-										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1080'>[大体3D]肺原发综合征3</a></li>
+										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1134'>[镜下显微]增生性淋巴结核</a></li>
+										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1135'>[大体3D]肺原发综合征2</a></li>
+										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1136'>[大体3D]肺原发综合征3</a></li>
 										</ul>
 										
 									</div>

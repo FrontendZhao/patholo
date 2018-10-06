@@ -56,16 +56,16 @@
 									<div class='chapter-title'>
 										<div class='chapter-title-text-child'>5.3.1     变质性炎</div>
 									</div>
-									<div class='section'>
+									<div class='section bottom-section'>
 										<ul class='section-slides section-slide-layout-large'>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]肠阿米巴病</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]急性病毒性肝炎</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]肠阿米巴病</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1109'>[镜下显微]急性病毒性肝炎</a></li>
 											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053'>[镜下显微]乙型脑炎</a></li>
-											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1076'>[镜下显微]病毒性肝炎</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]肠阿米巴病</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]亚急性重型肝炎</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴晚期</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]肠阿米巴病2</a></li>
+											<li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1110'>[镜下显微]病毒性肝炎</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1111'>[大体3D]肠阿米巴病</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1112'>[大体3D]亚急性重型肝炎</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1113'>[大体3D]阿米巴晚期</a></li>
+											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1114'>[大体3D]肠阿米巴病2</a></li>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴肝脓肿</a></li>
 										</ul>
 										<ul class='section-sub-title section-sub-title-h'>

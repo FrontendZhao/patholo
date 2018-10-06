@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="Keywords" content="" />
 <script src="${ctx}/resources/reference/jquery/jquery.min.js"></script>
-<title>目录</title>
+<title>河北医科大学</title>
 			
 </head>
 	

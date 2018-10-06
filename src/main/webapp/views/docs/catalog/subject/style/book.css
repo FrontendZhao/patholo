@@ -95,7 +95,7 @@
 .flipbook .odd .page-body .page-title {
      background-image:url(images/cover_title_right.png);
  }
-.flipbook .even .page-body .top-grade{
+.flipbook .even .page-body .top-section{
 	margin-top: 0px;
 }
 /* chapters */
