@@ -372,7 +372,29 @@
 .section-slide-layout-small li {
     margin-bottom:5px;
 }
-
-
+@media (max-height:1441px) {
+	.flipbook .even .page-body .page-content {
+	    margin-right:20px;
+	    overflow:hidden;
+	    height:772px;
+	    position: relative;
+	}
+}
+@media (max-height:1281px) {
+	.flipbook .even .page-body .page-content {
+	    margin-right:20px;
+	    overflow:hidden;
+	    height:672px;
+	    position: relative;
+	}
+}
+@media (max-height:1081px) {
+	.flipbook .even .page-body .page-content {
+	    margin-right:20px;
+	    overflow:hidden;
+	    height:572px;
+	    position: relative;
+	}
+}
  
 
