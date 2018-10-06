@@ -46,7 +46,7 @@
 									</div>
 									<div class='section'>
 										<ul class='section-slides section-slide-layout-large'>
-										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1128'>[镜下显微]肠伤寒</a></li>
+										       <li class='disabled-item'><img src="style/images/slice.png"><a onclick='javascript:return false;' target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1128'>[镜下显微]肠伤寒</a></li>
 										       <li ><img src="style/images/slice.png"><a target='_blank' href='${ctx}/views/docs/catalog/slice.jsp?sliceNo=1129'>[镜下显微]增生性肾小球肾炎</a></li>
 										       <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1130'>[大体3D]肠伤寒结痂期</a></li>
 											   <li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1131'>[大体3D]肠伤寒</a></li>

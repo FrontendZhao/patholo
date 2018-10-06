@@ -66,7 +66,7 @@
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1112'>[大体3D]亚急性重型肝炎</a></li>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1113'>[大体3D]阿米巴晚期</a></li>
 											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1114'>[大体3D]肠阿米巴病2</a></li>
-											<li ><img src="style/images/xuan.png"><a target='_blank' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴肝脓肿</a></li>
+											<li class='disabled-item'><img src="style/images/xuan.png"><a target='_blank' onclick='javascript:return false' href='${ctx}/views/demo/spin.jsp?sliceNo=1054'>[大体3D]阿米巴肝脓肿</a></li>
 										</ul>
 										<ul class='section-sub-title section-sub-title-h'>
 											<li class='disabled-item'></li>

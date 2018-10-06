@@ -329,9 +329,7 @@
     width:150px;
 }
 
-.disabled-item {
-    color:gray;
-}
+
 
 /* Section slides*/
 .section-slides {
@@ -371,6 +369,9 @@
 
 .section-slide-layout-small li {
     margin-bottom:5px;
+}
+.disabled-item{
+    opacity: 0.5;
 }
 @media (max-height:1441px) {
 	.flipbook .even .page-body .page-content {
