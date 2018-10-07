@@ -114,6 +114,11 @@
     background: #F3F3F3;
     border: 1px solid #909090;
 }
+.errorTrim{
+    color: red;
+    background: #F3F3F3;
+    border: 1px solid #909090;
+}
 .question_info:hover{
     color: #00BC9B;
     background: #F3F3F3;
@@ -144,6 +149,16 @@
     color: #59B59C;
     background: none;
     border: 1px solid #CCC;
+}
+.correct_question_id{
+	color: #59B59C;
+    background: none;
+    border: 1px solid #59B59C;
+}
+.error_question_id{
+	color: red;
+    background: none;
+    border: 1px solid red;
 }
 #closeCard,#openCard{
     width: 130px;

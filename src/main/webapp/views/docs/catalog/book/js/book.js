@@ -1,6 +1,8 @@
 var WEB_ROOT = $('#input_hidden_ctx').val();
 $(function(){
 	console.info(WEB_ROOT);
+	usernameShow();
+
     //移动到顶部
     $().UItoTop({ easingType: 'easeOutQuart' });
     userShow();
@@ -81,7 +83,7 @@ function userShow(){
                 if(data){
                 	
                 }else{
-                	window.location.href =WEB_ROOT+"/views/users/login.jsp";
+                	window.location.href =WEB_ROOT+"/views/users/login.jsp?pageid=book";
                 }
             }
        })
@@ -140,7 +142,22 @@ function initPic(){
         }
 	});
 }
-
+function usernameShow(){
+     $.ajax({
+            url: WEB_ROOT+'/olo/subject!doLoginBL.do',
+            type: "POST",
+            success: function(data) {
+                if(data){
+                	$('#loginName').hide();
+                	$('#userName').show();
+                	$('#userName').html(data);
+                }else{
+                	$('#userName').hide();
+                	$('#loginName').show();
+                }
+            }
+       })
+}
 //拼接文件名称
 function pad(num, n) {
     return (Array(n).join(0) + num).slice(-n);

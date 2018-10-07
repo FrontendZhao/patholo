@@ -53,7 +53,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="social">
 							<ul>
-								<li><a id="loginName" href="${ctx}/views/users/login.jsp">登录</a><a id="userName"></a></li>
+								<li><a id="loginName" href="${ctx}/views/users/login.jsp?pageid=index">登录</a><a id="userName"></a></li>
 								<li>|</li>
 								<li><a href="#" data-toggle="modal" data-target="#myModal">关于</a></li>
 								<li>|</li>
@@ -132,7 +132,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="${ctx}/views/docs/index.jsp">主页</a></li>
 								<li><a href="${ctx}/views/docs/catalog/book/book.jsp">虚拟仿真实验教学系统</a></li>
-								<li><a href="${ctx}/views/check/dist.jsp"><span></span>虚拟仿真实验在线考试系统</a></li>
+								<li><a href="${ctx}/views/check/dist.jsp" target="_blank"><span></span>虚拟仿真实验在线考试系统</a></li>
 							</ul>
 							<!-- /.navbar-collapse -->
 						</div>
@@ -243,7 +243,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053">
+							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1053" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img1.jpg" alt="instructor-img1" />
 								</div>
@@ -263,7 +263,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1063">
+							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1110" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img2.jpg" alt="instructor-img1" />
 								</div>
@@ -282,7 +282,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1070">
+							<a href="${ctx}/views/docs/catalog/slice.jsp?sliceNo=1134" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img3.jpg" alt="instructor-img1" />
 								</div>
@@ -301,7 +301,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1061">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1116" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img4.jpg" alt="instructor-img1" />
 								</div>
@@ -320,7 +320,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1071">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1126" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img5.jpg" alt="instructor-img1" />
 								</div>
@@ -339,7 +339,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1031">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1124" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img6.jpg" alt="instructor-img1" />
 								</div>
@@ -361,7 +361,7 @@
 					<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1066">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1127" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img5.jpg" alt="instructor-img1" />
 								</div>
@@ -380,7 +380,7 @@
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<!-- .instructor -->
 							<div class="instructor">
-							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1062">
+							<a href="${ctx}/views/demo/spin.jsp?sliceNo=1125" target="_blank">
 								<div class="instructor-img">
 									<img src="assets/img/instructor-img6.jpg" alt="instructor-img1" />
 								</div>
@@ -427,7 +427,7 @@
 						<p>考试时间：<br> 2018年12月15日上午8:30-10:00</p>
 						<p>考    场：<br> 显微形态学虚拟仿真实验中心-第二教室</p>
 						<p>考试形式： 机考-闭卷</p>
-						<a href="${ctx}/views/check/dist.jsp">进入考试系统</a>
+						<a href="${ctx}/views/check/dist.jsp"  target="_blank">进入考试系统</a>
 					</div>
 				</div>
 				<!-- .price-box -->
@@ -445,7 +445,7 @@
 						<p>考试时间：<br> 2018年12月18日上午8:30-10:00</p>
 						<p>考    场：<br> 显微形态学虚拟仿真实验中心-第一教室</p>
 						<p>考试形式： 机考-闭卷</p>
-						<a href="${ctx}/views/check/dist.jsp">进入考试系统</a>
+						<a href="${ctx}/views/check/dist.jsp"  target="_blank">进入考试系统</a>
 					</div>
 				</div>
 				<!-- .price-box -->
@@ -463,7 +463,7 @@
 						<p>考试时间：<br> 2018年12月19日上午8:30-10:00</p>
 						<p>考    场：<br> 显微形态学虚拟仿真实验中心-第二教室</p>
 						<p>考试形式： 机考-闭卷</p>
-						<a href="${ctx}/views/check/dist.jsp">进入考试系统</a>
+						<a href="${ctx}/views/check/dist.jsp"  target="_blank">进入考试系统</a>
 					</div>
 				</div>
 				<!-- .price-box -->

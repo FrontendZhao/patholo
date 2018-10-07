@@ -1,6 +1,65 @@
 /**
- * Created by Administrator on 2016/11/15.
+ * Created by zhaoqingshan on 2018/09/15.
  */
 
-var QuestionJosn=[{"questionId":"1","questionTitle":"下丘脑与腺垂体之间主要通过下列哪条途径联系？ ","questionItems":"神经纤维;神经纤维和门脉系统;垂体门脉系统;垂体束;轴浆运输","questionAnswer":"c"},{"questionId":"2","questionTitle":"下列激素中，哪一种不是腺垂体分泌的？ ","questionItems":"生长素;催产素;黄体生成素;促卵泡激素;催乳素","questionAnswer":"b"},{"questionId":"3","questionTitle":"关于内分泌系统最佳的描述是 ","questionItems":"区别于外分泌腺的系统;无导管，分泌物直接进入血液的腺体;分泌物通过体液传递信息的系统;包括内分泌腺和散在的内分泌细胞组成的大系统;全身的内分泌细胞群的总称","questionAnswer":"d"},{"questionId":"4","questionTitle":"呆小症的发生是由于幼年时 ","questionItems":"生长素不足;催产素不足;维生素D3不足;甲状腺激素不足;先天性大脑发育不全","questionAnswer":"d"},{"questionId":"5","questionTitle":"影响降钙素分泌的主要因素是 ","questionItems":"血镁浓度;血钙浓度;血磷浓度;血钠浓度;血钾浓度","questionAnswer":"b"},{"questionId":"6","questionTitle":"关于降钙素的叙述，错误的是 ","questionItems":"由甲状腺C细胞分泌;属于肽类激素;可降低血钙，升高血磷;主要靶器官是骨;其分泌主要受血钙浓度调节","questionAnswer":"c"},{"questionId":"7","questionTitle":"激素作用的特异性，下述错误的是 ","questionItems":"可作用于全身所有组织细胞;有的作用于靶腺;有选择性地作用于某些器官、腺体细胞;有的广泛影响细胞代谢;有的只与胞膜或胞浆受体结合发挥作用","questionAnswer":"a"},{"questionId":"8","questionTitle":"使皮质醇浓度增加的麻醉药是 ","questionItems":"吗啡，巴比妥类;芬太尼;乙醚;恩氟烷","questionAnswer":"d"},{"questionId":"9","questionTitle":"使皮质醇浓度降低的因素是","questionItems":"手术创伤;低血压;术中缺氧;二氧化碳蓄积;低温","questionAnswer":"e"},{"questionId":"10","questionTitle":"使甲状腺分泌功能降低的因素是 ","questionItems":"乙醚;以硫喷妥钠为主的全麻;降温初期;手术;椎管内麻醉","questionAnswer":"b"},{"questionId":"11","questionTitle":"下丘脑“促垂体区”神经元的功能特点 ","questionItems":"分泌类固醇激素;不受大脑的控制;将神经信息转变成激素信息;不具典型神经元的作用;无肽能神经元的作用","questionAnswer":"c"},{"questionId":"12","questionTitle":"下列不属于下丘脑调节肽的是 ","questionItems":"TRH;GnRH;GHRH;ACTH;PRF","questionAnswer":"d"},{"questionId":"13","questionTitle":"下列哪一种激素为腺垂体所分泌? ","questionItems":"促甲状腺激素;抗利尿激素;肾上腺皮质激素;生长素释放激素;催乳素释放抑制因子","questionAnswer":"a"},{"questionId":"14","questionTitle":"下列哪种激素不是由垂体前叶分泌的? ","questionItems":"抗利尿激素;生长素;卵泡刺激素;催乳素;促甲状腺激素","questionAnswer":"a"},{"questionId":"15","questionTitle":"促进机体产热增加的主要激素是 ","questionItems":"胰岛素;生长素;甲状腺激素;肾上腺素; 糖皮质激素","questionAnswer":"c"},{"questionId":"16","questionTitle":"在人类和哺乳动物，对骨和脑的发育尤为重要的激素是 ","questionItems":"生长素;糖皮质激素;盐皮质激素;甲状腺激素;甲状旁腺激素","questionAnswer":"d"},{"questionId":"17","questionTitle":"地方性甲状腺肿的主要发病原因是 ","questionItems":"由于促甲状腺素分泌过少;甲状腺合成的甲状腺激素过多;食物中缺少钙和蛋白质;食物中缺少酪氨酸;食物中缺少碘","questionAnswer":"e"},{"questionId":"18","questionTitle":"关于甲状腺激素正确的论述是 ","questionItems":"属于类固醇激素;合成后贮存于细胞内;T4的活性比T3大;可促进生长和发育过程;幼年缺乏时可导致侏儒症","questionAnswer":"d"},{"questionId":"19","questionTitle":"人体内储存量最多的激素是 ","questionItems":"生长素;胰岛素;甲状腺素;促肾上腺皮质激素;肾上腺素和去甲肾上腺素","questionAnswer":"c"},{"questionId":"20","questionTitle":"对胰岛素的叙述错误的是 ","questionItems":"由胰岛B细胞分泌;可使血糖浓度下降;迷走神经兴奋可使其分泌减少;血糖浓度升高可促进其分泌;胃肠激素可促进其分泌","questionAnswer":"c"}];
-var luyouqi=[{"questionId":"1","questionTitle":"下丘脑与腺垂体之间主要通过下列哪条途径联系？ ","questionItems":"神经纤维;神经纤维和门脉系统;垂体门脉系统;垂体束;轴浆运输","questionAnswer":"c"},{"questionId":"2","questionTitle":"下列激素中，哪一种不是腺垂体分泌的？ ","questionItems":"生长素;催产素;黄体生成素;促卵泡激素;催乳素","questionAnswer":"b"},{"questionId":"3","questionTitle":"关于内分泌系统最佳的描述是 ","questionItems":"区别于外分泌腺的系统;无导管，分泌物直接进入血液的腺体;分泌物通过体液传递信息的系统;包括内分泌腺和散在的内分泌细胞组成的大系统;全身的内分泌细胞群的总称","questionAnswer":"d"},{"questionId":"4","questionTitle":"呆小症的发生是由于幼年时 ","questionItems":"生长素不足;催产素不足;维生素D3不足;甲状腺激素不足;先天性大脑发育不全","questionAnswer":"d"},{"questionId":"5","questionTitle":"影响降钙素分泌的主要因素是 ","questionItems":"血镁浓度;血钙浓度;血磷浓度;血钠浓度;血钾浓度","questionAnswer":"b"},{"questionId":"6","questionTitle":"关于降钙素的叙述，错误的是 ","questionItems":"由甲状腺C细胞分泌;属于肽类激素;可降低血钙，升高血磷;主要靶器官是骨;其分泌主要受血钙浓度调节","questionAnswer":"c"},{"questionId":"7","questionTitle":"激素作用的特异性，下述错误的是 ","questionItems":"可作用于全身所有组织细胞;有的作用于靶腺;有选择性地作用于某些器官、腺体细胞;有的广泛影响细胞代谢;有的只与胞膜或胞浆受体结合发挥作用","questionAnswer":"a"},{"questionId":"8","questionTitle":"使皮质醇浓度增加的麻醉药是 ","questionItems":"吗啡，巴比妥类;芬太尼;乙醚;恩氟烷","questionAnswer":"d"},{"questionId":"9","questionTitle":"使皮质醇浓度降低的因素是","questionItems":"手术创伤;低血压;术中缺氧;二氧化碳蓄积;低温","questionAnswer":"e"},{"questionId":"10","questionTitle":"使甲状腺分泌功能降低的因素是 ","questionItems":"乙醚;以硫喷妥钠为主的全麻;降温初期;手术;椎管内麻醉","questionAnswer":"b"},{"questionId":"11","questionTitle":"下丘脑“促垂体区”神经元的功能特点 ","questionItems":"分泌类固醇激素;不受大脑的控制;将神经信息转变成激素信息;不具典型神经元的作用;无肽能神经元的作用","questionAnswer":"c"},{"questionId":"12","questionTitle":"下列不属于下丘脑调节肽的是 ","questionItems":"TRH;GnRH;GHRH;ACTH;PRF","questionAnswer":"d"},{"questionId":"13","questionTitle":"下列哪一种激素为腺垂体所分泌? ","questionItems":"促甲状腺激素;抗利尿激素;肾上腺皮质激素;生长素释放激素;催乳素释放抑制因子","questionAnswer":"a"},{"questionId":"14","questionTitle":"下列哪种激素不是由垂体前叶分泌的? ","questionItems":"抗利尿激素;生长素;卵泡刺激素;催乳素;促甲状腺激素","questionAnswer":"a"},{"questionId":"15","questionTitle":"促进机体产热增加的主要激素是 ","questionItems":"胰岛素;生长素;甲状腺激素;肾上腺素; 糖皮质激素","questionAnswer":"c"},{"questionId":"16","questionTitle":"在人类和哺乳动物，对骨和脑的发育尤为重要的激素是 ","questionItems":"生长素;糖皮质激素;盐皮质激素;甲状腺激素;甲状旁腺激素","questionAnswer":"d"},{"questionId":"17","questionTitle":"地方性甲状腺肿的主要发病原因是 ","questionItems":"由于促甲状腺素分泌过少;甲状腺合成的甲状腺激素过多;食物中缺少钙和蛋白质;食物中缺少酪氨酸;食物中缺少碘","questionAnswer":"e"},{"questionId":"18","questionTitle":"关于甲状腺激素正确的论述是 ","questionItems":"属于类固醇激素;合成后贮存于细胞内;T4的活性比T3大;可促进生长和发育过程;幼年缺乏时可导致侏儒症","questionAnswer":"d"},{"questionId":"19","questionTitle":"人体内储存量最多的激素是 ","questionItems":"生长素;胰岛素;甲状腺素;促肾上腺皮质激素;肾上腺素和去甲肾上腺素","questionAnswer":"c"},{"questionId":"20","questionTitle":"对胰岛素的叙述错误的是 ","questionItems":"由胰岛B细胞分泌;可使血糖浓度下降;迷走神经兴奋可使其分泌减少;血糖浓度升高可促进其分泌;胃肠激素可促进其分泌","questionAnswer":"c"}];
+var QuestionJosn = [{
+			"questionId" : "1",
+			"questionTitle" : "观察右侧的图片，下列说法中正确的是：",
+			"questionItems" : "慢性肝淤血;肝脂肪变性;门脉性肝硬化;急性病毒性肝炎;肝脓肿",
+			"questionAnswer" : "E",
+			"questionAnalysis":"大体标本的切面可以看到多个境界清楚的局限性病灶，病灶中间可以看到液化性坏死所形成的空腔，腔内仍有部分残存的纤维组织。所以是肝脓肿。"
+		}, {
+			"questionId" : "2",
+			"questionTitle" : "如右图所示，肠道的病变为： ",
+			"questionItems" : "增生性肠结核;细菌性痢疾;肠阿米巴病;肠伤寒;血吸虫性肠损伤",
+			"questionAnswer" : "C",
+			"questionAnalysis":"肠粘膜上可以看到有少量灰黄色略凸的大针头尖儿大小的浅表溃疡，部分溃疡体积稍大，呈烧瓶状溃疡符合肠阿米巴病的表现。"
+		}, {
+			"questionId" : "3",
+			"questionTitle" : "如右图所示，其病变为炎症的何种病变： ",
+			"questionItems" : "急性浆液性炎;急性假膜性炎;急性化脓性炎;急性纤维素性炎;急性出血性炎",
+			"questionAnswer" : "C",
+			"questionAnalysis":"镜下切片可见组织高度的水肿，肌纤维之间有明显的颜色变白水肿区，且可以看到中性粒细胞弥漫性的浸润，故为急性化脓性炎。"
+		}, {
+			"questionId" : "4",
+			"questionTitle" : "如右图所示，脑的病变为何种疾病： ",
+			"questionItems" : "急性脑水肿;急性脑淤血;急性化脓性脑膜炎;急性乙型脑炎;急性脑梗死",
+			"questionAnswer" : "D",
+			"questionAnalysis":"脑组织中可以看到部分染色较浅境界较清楚的筛网状的软化灶。为流行性乙型脑炎的特征性改变，故为流行性乙型脑炎。"
+		}, {
+			"questionId" : "5",
+			"questionTitle" : "右图的病变提示： ",
+			"questionItems" : "霍奇金淋巴瘤;非霍奇金淋巴瘤;败血症;淋巴结结核;淋巴结反应性增生",
+			"questionAnswer" : "D",
+			"questionAnalysis":"镜下可见残存的淋巴结结构，黑色的小的细胞为淋巴细胞。并可以看到多个境界清楚的结节状的病灶，病灶中可以看到朗格汉斯巨细胞。故为增生性淋巴结核。"
+		}, {
+			"questionId" : "6",
+			"questionTitle" : "如右图所示，其病变为炎症的何种病变： ",
+			"questionItems" : "急性浆液性炎;急性假膜性炎;急性化脓性炎;急性纤维素性炎;急性出血性炎",
+			"questionAnswer" : "C",
+			"questionAnalysis":"镜下可见肝索的正常结构。部分区域可见红色无结构的坏死区，坏死区内可见大量的细菌及中性粒细胞浸润，肝细胞液化坏死形成局灶性的化脓性炎，故为肝脓肿。"
+		}, {
+			"questionId" : "7",
+			"questionTitle" : "观察右侧的图片，下列说法中正确的是：",
+			"questionItems" : "慢性肺淤血;肺出血性梗死;硅肺;大叶性肺炎;肺脓肿",
+			"questionAnswer" : "E",
+			"questionAnalysis":"局限性的病灶呈灰白色，部分病灶中坏死物液化排出形成空洞而部分坏死物仍为固态，与周围正常组织境界清楚。故为肺脓肿。"
+		}, {
+			"questionId" : "8",
+			"questionTitle" : "图中所示的病变为何种疾病：",
+			"questionItems" : "慢性肺淤血;肺出血性梗死;硅肺;大叶性肺炎;白喉",
+			"questionAnswer" : "E",
+			"questionAnalysis":"大体标本中可见气管及支气管中红色箭头所指区域为灰白色假膜成分，故为假膜性炎，是纤维素性炎的一种。"
+		}, {
+			"questionId" : "9",
+			"questionTitle" : "如右图所示，其病变为炎症的何种病变：",
+			"questionItems" : "急性浆液性炎;急性假膜性炎;急性化脓性炎;急性纤维素性炎;急性出血性炎",
+			"questionAnswer" : "D",
+			"questionAnalysis":"肠壁组织中可以看到明显的充血和出血，肠粘膜正常结构被破坏，粘膜表面有大量的中性粒细胞、纤维素、坏死脱落的粘膜上皮细胞等共同形成的膜状物，故为假膜性炎。"
+		}, {
+			"questionId" : "10",
+			"questionTitle" : "如右图所示，其病变为炎症的何种病变：",
+			"questionItems" : "急性浆液性炎;急性假膜性炎;急性增生性炎;急性纤维素性炎;急性出血性炎",
+			"questionAnswer" : "C",
+			"questionAnalysis":"镜下可见肾小球体积明显增大，肾小球的细胞数明显增多，且可以看到中性粒细胞浸润，故为弥漫性毛细血管内增生性肾小球肾炎。为急性增生性炎，主要表现为系膜细胞和内皮细胞增生及中性粒细胞的浸润。"
+		}];

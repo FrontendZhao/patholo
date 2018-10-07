@@ -54,7 +54,7 @@
 							<ul>
 							    <li><a  href="${ctx}/views/docs/index.jsp">主页</a></li>
 								<li>|</li>
-								<li><a id="loginName" href="${ctx}/views/users/login.jsp">登录</a><a id="userName"></a></li>
+								<li><a id="loginName" href="${ctx}/views/users/login.jsp?pageid=book">登录</a><a id="userName"></a></li>
 								<li>|</li>
 								<li><a href="#" data-toggle="modal" data-target="#myModal">关于</a></li>
 								<li>|</li>

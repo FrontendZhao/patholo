@@ -1,10 +1,12 @@
+var n=0;
 $(function(){
     
 })
 
 function doLoadOpenseadPNG(id){
-	 $('#openSeadragon').html("");
-     $.ajax({
+	 $('#openSeadragon').html("<img width='100%' height='100%'  src='images/"+(id+1)+".jpg'>");
+	 
+     /*$.ajax({
      	async:false,
 		url:WEB_ROOT+'/olo/subject!doFindSliceInfo.do',
 		data:{'sliceNo':id},
@@ -12,8 +14,26 @@ function doLoadOpenseadPNG(id){
 			 //生成图片
 			 initPic(sliceInfo);
 		}
-	})
+	})*/
 }	
+
+function doLoadAnalysis(id){
+	if(n==0){
+		$('#unHeart').html('<div style="color:#999999;cursor: not-allowed;"   title="解析" data-container="body" data-toggle="popover" data-placement="bottom" '+
+      'data-content="'+QuestionJosn[id].questionAnalysis+'"> <span style="cursor: not-allowed;" class="glyphicon glyphicon-heart-empty"></span> <span style="cursor: not-allowed;">答案解析</span> </div>');
+	
+	}
+    
+      
+      if(n==1){
+      	 $('#unHeart').html('<div style="color:#999999;"   title="解析" data-container="body" data-toggle="popover" data-placement="bottom" '+
+      'data-content="'+QuestionJosn[id].questionAnalysis+'"> <span class="glyphicon glyphicon-heart-empty"></span> <span>答案解析</span> </div>');
+         $("[data-toggle='popover']").popover({
+	       trigger:'hover'
+	    });
+      }
+      
+}
 
 function initPic(sliceinfo){
 	var self = this;

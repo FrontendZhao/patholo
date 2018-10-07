@@ -40,13 +40,13 @@
                         <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
                             <div class="form-group">
                                 <div class="field field-icon-right">
-                                    <input type="text" class="input input-big" name="name" id="username" placeholder="登录账号" />
+                                    <input type="text" spellcheck ="false" class="input input-big" name="name" id="username"  placeholder="登录账号" />
                                     <span class="icon icon-user margin-small"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="field field-icon-right">
-                                    <input type="password" class="input input-big" name="password" id="password"  placeholder="登录密码" />
+                                    <input type="password" class="input input-big" name="password" id="password"   placeholder="登录密码" />
                                     <span class="icon icon-key margin-small"></span>
                                 </div>
                             </div>

@@ -1,7 +1,9 @@
 $(function(){
-    console.info('登陆');
+    
     //获取光标焦点
 	$('input[name="name"]').focus();
+	$('input[name="name"]').val('stu1');
+	$('input[name="password"]').val('stu1');
 	//回车键
     $('#form_login').keydown(function(e){
 			var keyCode = e.which || e.keyCode;
@@ -31,6 +33,7 @@ $(function(){
 					.attr({'action': WEB_ROOT+'/sys/login!doLogin.do', 'method':'post'})
 					.append('<input name="j_username" value="'+j_username+'" />')
 					.append('<input name="j_password" value="'+j_password+'" />')
+					.append('<input name="pageid" value="'+getQueryString("pageid")+'" />')
 					.append('<input type="submit" style="display:none" />')
 					.find('input[type="submit"]').trigger('click');
 				}else{
@@ -40,3 +43,9 @@ $(function(){
 		});
 	})
 })
+function getQueryString(name) {  
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]);  
+        return null;  
+    }

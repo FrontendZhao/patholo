@@ -45,7 +45,10 @@ function showQuestion(id){
     $(".questioned").text(id+1);
     questioned = (id+1)/questions.length
     if(activeQuestion!=undefined){
-        $("#ques"+activeQuestion).removeClass("question_id").addClass("active_question_id");
+    	if(n==0){
+    		$("#ques"+activeQuestion).removeClass("question_id").addClass("active_question_id");
+    	}
+        
     }
     activeQuestion = id;
     $(".question").find(".question_info").remove();
@@ -57,19 +60,39 @@ function showQuestion(id){
         item ="<li class='question_info' onclick='clickTrim(this)' id='item"
                 +i+"'><input type='radio' name='item' value='"+itemList[i]+"'>&nbsp;"+itemList[i]+"."+items[i]+"</li>";
         $(".question").append(item);
+        if(n==1){
+        	$(".question").find("input").attr("disabled",true);
+        }
     }
     $(".question").attr("id","question"+id);
-    $("#ques"+id).removeClass("active_question_id").addClass("question_id");
+    if(n==0){
+    	$("#ques"+id).removeClass("active_question_id").addClass("question_id");
+    }
+    
     for(var i=0;i<checkQues.length;i++){
         if(checkQues[i].id==id){
+        	
             $("#"+checkQues[i].item).find("input").prop("checked","checked");
             $("#"+checkQues[i].item).addClass("clickTrim");
-            $("#ques"+activeQuestion).removeClass("question_id").addClass("clickQue");
+            if(n==0){
+            	$("#ques"+activeQuestion).removeClass("question_id").addClass("clickQue");
+            }
+            if(n==1){
+            	if(checkQues[i].bl){
+            		$("#"+checkQues[i].item).removeClass("errorTrim").addClass("clickTrim");
+            	}else{
+            		$("#"+checkQues[i].item).removeClass("clickTrim").addClass("errorTrim");
+            	}
+            	
+            }
         }
+        
     }
     progress();
     
-    doLoadOpenseadPNG(100000+id);
+    doLoadOpenseadPNG(id);
+    
+    doLoadAnalysis(id);
 }
 
 /*答题卡*/
@@ -85,9 +108,13 @@ function answerCard(){
 var Question;
 function clickTrim(source){
     var id = source.id;
-    $("#"+id).find("input").prop("checked","checked");
-    $("#"+id).addClass("clickTrim");
-    $("#ques"+activeQuestion).removeClass("question_id").addClass("clickQue");
+    if(n==0){
+    	$("#"+id).find("input").prop("checked","checked");
+        
+        $("#"+id).addClass("clickTrim");
+        $("#ques"+activeQuestion).removeClass("question_id").addClass("clickQue");
+    
+    
     var ques =0;
     for(var i=0;i<checkQues.length;i++){
        if( checkQues[i].id==activeQuestion&&checkQues[i].item!=id){
@@ -111,6 +138,7 @@ function clickTrim(source){
         }
     })
     Question = activeQuestion;
+    }
 }
 
 /*设置进度条*/
@@ -151,14 +179,14 @@ $(function(){
     });
 
     /*收藏按钮的切换*/
-    $("#unHeart").click(function(){
+    /* $("#unHeart").click(function(){
         $(this).hide();
         $("#heart").show();
     })
     $("#heart").click(function(){
         $(this).hide();
         $("#unHeart").show();
-    })
+    }) */
 
     /*答题卡的切换*/
     $("#openCard").click(function(){
@@ -174,8 +202,44 @@ $(function(){
 
     //提交试卷
     $("#submitQuestions").click(function(){
-        /*alert(JSON.stringify(checkQues));*/
-        alert("已做答:"+($(".clickQue").length)+"道题,还有"+(questions.length-($(".clickQue").length))+"道题未完成");
+    	n=1;
+    	timeState = false;
+        $(this).hide();
+        $(".time-start").show();
+        
+        $.each(QuestionJosn,function(i,val){
+        	 var id=val.questionId;
+        	 var bl=false;
+        	 $.each(checkQues,function(j,value){
+        		 var l=value.id;
+            	 if(id==(l+1)){
+            		 
+            		 if(val.questionAnswer==value.answer){
+            			 console.info(val.questionAnswer+'lll'+value.answer);
+            			 bl=true;
+            			 value.bl=true;
+            		 }else{
+            			 bl=false;
+            			 value.bl=false;
+            		 }
+            	 }
+            })
+                $("#ques"+i).removeClass("active_question_id");
+            	$("#ques"+i).removeClass("question_id");
+            	$("#ques"+i).removeClass("clickQue");
+            if(bl){
+            	
+            	$("#ques"+i).removeClass("error_question_id").addClass("correct_question_id");
+            }else{
+            	
+            	$("#ques"+i).removeClass("correct_question_id").addClass("error_question_id");
+            	//$("#ques"+i).removeClass("correct_question_id").addClass("error_question_id");
+            }
+            
+        })
+        showQuestion(0);
+        //alert(JSON.stringify(checkQues));
+        //alert("已做答:"+($(".clickQue").length)+"道题,还有"+(questions.length-($(".clickQue").length))+"道题未完成");
     })
     //进入下一题
     $("#nextQuestion").click(function(){
@@ -239,10 +303,10 @@ $(function(){
                 </ul>
                 <!--考题的操作区域-->
                 <div class="operation" style="margin-top: 20px;">
-                  <div class="text-left"
+                  <div id="unHeart" class="text-left"
                                          style="margin-left:20px;font-size: 15px;float: left;line-height: 30px;">
-                    <div id="unHeart" style="color:#999999;"> <span class="glyphicon glyphicon-heart-empty"></span> <span>收藏本题</span> </div>
-                    <div id="heart" style="color:#C40000;display: none;"> <span class="glyphicon glyphicon-heart"></span> <span>已收藏</span> </div>
+                    
+                    <!-- <div id="heart" style="color:#C40000;display: none;"> <span class="glyphicon glyphicon-heart"></span> <span>已收藏</span> </div> -->
                   </div>
                   <div class="text-right" style="margin-right: 20px;">
                     <div class="form-group" style="color: #FFF;">
@@ -259,10 +323,10 @@ $(function(){
             <div style="width: 100%;height:auto;display: inline-block;border: 1px solid #CCC;border-top:none;background:#FFF;">
               <div style="width: 100%;padding:20px;">
                 <div class="panel-default">
-                  <div class="panel-heading" class="panel-heading" id="closeCard" style="color: #DCE4EC;font-size: 15px;display: none;background: none;">
+                  <div class="panel-heading" class="panel-heading" id="closeCard" style="color: #DCE4EC;font-size: 15px;background: none;">
                   <span>收起答题卡</span> <span class="glyphicon glyphicon-chevron-up"></span> </div>
-                <div class="panel-heading" id="openCard" style="font-size: 15px;background: none;"> <span>展开答题卡</span> <span class="glyphicon glyphicon-chevron-down"></span> </div>
-                <div id="answerCard" style="display: none;">
+                <div class="panel-heading" id="openCard" style="font-size: 15px;background: none;display: none;"> <span>展开答题卡</span> <span class="glyphicon glyphicon-chevron-down"></span> </div>
+                <div id="answerCard" >
                   <div class="panel-body form-horizontal" style="padding: 0px;">
                     <ul class="list-unstyled">
                     </ul>

@@ -10,11 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.platform.project.sys.model.User;
 import com.platform.project.sys.service.IUserService;
+import com.platform.util.EmptyUtils;
 
 @SuppressWarnings("serial")
 @Namespace("/sys")
 @Results({ 
-	@Result(name = "index", type="redirect", location = "/views/docs/index.jsp")
+	@Result(name = "index", type="redirect", location = "/views/docs/index.jsp"),
+	@Result(name = "check", type="redirect", location = "/views/check/check.jsp"),
+	@Result(name = "book", type="redirect", location = "/views/docs/catalog/book/book.jsp")
 	})
 public class LoginAction extends BaseAction {
 
@@ -25,6 +28,7 @@ public class LoginAction extends BaseAction {
 	public String doLogin(){
 		HttpSession session = getSession();
 		String username = getValue("j_username");
+		String pageid=getValue("pageid");
 		try {
 			session.setAttribute("username", username);
 		} catch (ServiceException e) {
@@ -32,6 +36,9 @@ public class LoginAction extends BaseAction {
 			throw new ServiceException("用户登录失败", e);
 		}
 		//把主体对象
+		if(EmptyUtils.isNotEmpty(pageid)){
+			return pageid;
+		}
 		return "index";
 	}
 	
