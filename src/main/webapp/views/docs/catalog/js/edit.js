@@ -75,7 +75,7 @@ function initModal(){
        })
        if(da==null){
     	   
-    	   window.open(WEB_ROOT+"/views/users/login.jsp","_blank");
+    	   window.open(WEB_ROOT+"/views/users/login.jsp?pageid=book","_blank");
        }
 		
 	})
@@ -106,6 +106,13 @@ function findUser(){
    })
 }
 function savePostil(){
+	console.info($('#openSeadragon').width());
+	
+	console.info($('#openSeadragon').height());
+	
+	var openSeadHeight=$('#openSeadragon').height();
+	
+	console.info(nowLevel);
 	
 	var zoom= viewer.viewport.getZoom(true);
 	
@@ -118,17 +125,18 @@ function savePostil(){
 	console.info(noteBL);
 	
     if(postil!='undefined' && postil!=''){
-    
-    	 /* $.ajax({
+    console.info(sliceinfo);
+    console.info(JSON.stringify(postil));//$.parseJSON( jsonstr );
+    	  $.ajax({
     	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
-    	     data:{'postil':JSON.stringify(postil),'sliceNo':sliceinfo.ID,'noteBL':noteBL},
+    	     data:{'postil':JSON.stringify(postil),'sliceNo':sliceinfo.id,'noteBL':noteBL},
     	     contentType: 'application/json',
     	     dataType:'json',
     	     success:function(success){
     	        console.info(success);
     	     }
     	     
-    	 }) */
+    	 }) 
     	OnSave();
     	 
     }
@@ -136,7 +144,7 @@ function savePostil(){
 }
 function OnSave(){
 	if(CKEDITOR.instances.editor1.getData()==""){
-	    alert("内容不能为空！");
+	    //alert("内容不能为空！");
 	    return false;
 	}else {
 		var data=CKEDITOR.instances.editor1.getData();

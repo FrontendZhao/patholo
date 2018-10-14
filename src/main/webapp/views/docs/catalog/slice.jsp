@@ -21,7 +21,7 @@
 </div>
 <div id="toolbar">
     <div class="panel-toolbar">
-         <a href="javascript:void(0)" class="toolPNG exportJson"><img alt="" src="images/make_arro.png"></a>
+         <a href="javascript:void(0)" class="toolPNG"><img alt="" src="images/make_arro.png"></a>
          <!-- <a href="javascript:void(0)" class="toolPNG selectes"><img alt="" src="images/make_arro.png"></a> -->
          <a href="javascript:void(0)" class="toolPNG curvs"><img alt="" src="images/make_curv.png"></a>
          <a href="javascript:void(0)" class="toolPNG roups"><img alt="" src="images/make_roup.png"></a>

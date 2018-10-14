@@ -284,7 +284,7 @@ function savePostil(){
 	
     if(postil!='undefined' && postil!=''){
     
-    	 /* $.ajax({
+    	  $.ajax({
     	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
     	     data:{'postil':JSON.stringify(postil),'sliceNo':sliceinfo.ID,'noteBL':noteBL},
     	     contentType: 'application/json',
@@ -293,7 +293,7 @@ function savePostil(){
     	        console.info(success);
     	     }
     	     
-    	 }) */
+    	 }) 
     	OnSave();
     	 
     }

@@ -25,7 +25,15 @@ public class Postil {
 	private Integer sliceNo;
 	@Column
 	private Integer userId;
+	@Column
+	private Integer flag;
 	
+	public Integer getFlag() {
+		return flag;
+	}
+	public void setFlag(Integer flag) {
+		this.flag = flag;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

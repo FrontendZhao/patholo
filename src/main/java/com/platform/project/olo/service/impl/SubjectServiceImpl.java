@@ -153,7 +153,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 				
 				 note=1;
 			}
-			jdbcTemplate.execute("insert into tb_postil values(null,'"+postil+"',"+sliceNo+","+user.getId()+")");
+			jdbcTemplate.execute("insert into tb_postil values(null,'"+postil+"',"+sliceNo+","+user.getId()+","+note+")");
 			//jdbcTemplate.execute("update tb_postil set b='"+postil+"' where sliceNo="+sliceNo);
 
 		}

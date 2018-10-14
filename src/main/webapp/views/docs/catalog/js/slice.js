@@ -1,4 +1,4 @@
-var sliceinfo,viewer,canvas,selObject;
+var sliceinfo,viewer,canvas,selObject,nowLevel,nowLevelBL=true;
 $(function(){
 	
 	//初始化
@@ -100,6 +100,7 @@ function initPic(){
 			height:sliceinfo.HEIGHT,
 			tileSize:256,
 	        getTileUrl:function(level,x,y){
+	        	if(nowLevelBL){nowLevel=level;nowLevelBL=false}
 	        	return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceinfo.id;
 	        }
         }]
@@ -398,22 +399,7 @@ function initPostil(){
        	    }
        	    zoom= viewer.viewport.getZoom(true);
      });
-     $('.exportJson').click(function(){
-     	var postil=JSON.stringify(canvas);
-        if(postil!='undefined' && postil!=''){
-        
-        	 $.ajax({
-        	     url:WEB_ROOT+'/olo/subject!doSavePostil.do',
-        	     data:{'postil':postil,'sliceNo':sliceinfo.id},
-        	     contentType: 'application/json',
-        	     dataType:'json',
-        	     success:function(success){
-        	        console.info(success);
-        	     }
-        	     
-        	 })
-        }
-     })
+     
      return canvas;
 }
 function onRightMouse(){
@@ -429,10 +415,10 @@ function onRightMouse(){
 			selObject= canvas.getActiveObject();
 			//context.attach('#openSeadragon', loadRightArray(selObject));
 			if(selObject==undefined){
-				setTimeout(initModal,300)
-				$('#commModal').modal({
+				//setTimeout(initModal,300)
+				//$('#commModal').modal({
 						    //remote:WEB_ROOT+'/views/docs/catalog/prop.jsp'
-				})
+				//})
 		    }else{
 		        setTimeout(initModal,300)
 				$('#commModal').modal({
@@ -489,8 +475,8 @@ function edit(){
     	$('#editColor').colorpicker({'container':true});
 }
 function loadPostil(){
-	console.info(55555);
-    $.ajax({
+	console.info(sliceinfo);
+    /*$.ajax({
     	     url:WEB_ROOT+'/olo/subject!doLoadPostil.do',
     	     data:{'sliceNo':sliceinfo.id},
     	     contentType: 'application/json',
@@ -510,7 +496,7 @@ function loadPostil(){
     	        
     	     }
         	     
-     })
+     })*/
 }
 function setItemProp(obj,zoom,zoom1){
 	if(obj.typeProp=='group'){

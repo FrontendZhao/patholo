@@ -98,7 +98,7 @@
          <img src="img/6.jpg"  alt="six slide">
       </div>
    </div>
-   <div style="text-align:center; position: absolute;bottom: 0px;right: 5%">
+   <div style="text-align:center; position: absolute;bottom: 0px;right: 13%">
           <div class="header-text">
 				<div class="col-xs-12 col-sm-5 col-md-5">
 				</div>
@@ -107,7 +107,15 @@
 					<p>该虚拟仿真实验教学系统在更加真实的呈现大体标本和镜下切片同时，建立完整的考核切片库，切片库中的病例具备完整临床信息、大体特点和全景数字化切片，模拟临床病理诊断，使学生通过对系统中病例的学习及自我考核，掌握一定的病理诊断技能。这种实验教学系统克服了传统临床实践教学资源有限的不足，使学生更真实地进行病理诊断，收到良好的学习效果。线上虚拟教学系统有良好的开放性，可方便地扩充和更新教学资源，方便加入新的病例和病理学资料。本实验也计划在建立和完善虚拟仿真教学病例和考核病例库的基础上，可以逐步加入临床病理工作中的其他相关内容，如标本的取材、免疫组织化学检测和分子病理检测的选择和判读。今后在充分完善炎症性疾病病理虚拟仿真教学系统的基础上，可以延伸建立更多其他病种的虚拟仿真教学系统，如肿瘤、血液循环障碍等供学生使用。通过虚拟教学系统的学习，使学生掌握疾病的病理学特点及病理学诊断，为将来的临床工作打下坚实的基础。 </p>
 					
 				</div>
-				<a href="javascript:void(0)" id="rrr" style="position: relative ;bottom: 10%;left:60%" class="header-btn">虚拟仿真实验室介绍</a>
+				<div style="width:680px;position: relative ;bottom: 10%;left:60%">
+				<div class="col-xs-3 col-sm-5 col-md-5">
+				<a href="javascript:void(0)" id="rrr"  class="header-btn">虚拟仿真实验室介绍</a>
+				</div>
+				<div class="col-xs-3 col-sm-5 col-md-5">
+				<a href="${ctx}/views/docs/catalog/subject/subject1.jsp?subNo=2#p=7" target="_blank" class="header-btn">进入―>炎症的形态学类型</a>
+				</div>
+				</div>
+	     </div>
 	     </div>
    </div>
 </div>
