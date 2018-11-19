@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="tb_catalog1")
+@Table(name="tb_catalog")
 public class CataLog  implements Serializable {
 
 	@Id

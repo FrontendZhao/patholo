@@ -1,17 +1,8 @@
-var sliceinfo,viewer,canvas,selObject,nowLevel,nowLevelBL=true;
+var sliceinfo,viewer,canvas,selObject,maxZoom,nowLevel,nowLevelBL=true;var nuroImage;
 $(function(){
 	
 	//初始化
 	init();
-    
-	$(document).on("show.bs.modal", ".modal", function(){
-	    $(this).draggable({
-	         handle: ".modal-header"   // 只能点击头部拖动
-	    });
-	    $(this).css("overflow", "hidden"); // 防止出现滚动条，出现的话，你会把滚动条一起拖着走的
-	});
-	
-
 
 })
 
@@ -32,15 +23,20 @@ function init(){
 	onRightMouse();
 	//批注编辑
 	edit();
+	//弹出框
+	dialogModal();
+	//页面分辨率调整
+	setResize();
 	
 }
 
 function doLoadOpenseadPNG(){
      $.ajax({
 		async:false,
-		url:WEB_ROOT+'/olo/subject!doFindSliceInfo.do',
-		data:{'sliceNo':getQueryString('sliceNo')},
+		url:'http://59.110.215.223:6060/getMDSInfo',
+		data:{'id':getQueryString('sliceNo')},
 		success:function(sliceInfo){
+			
 			if(sliceInfo==null){
 				
 			  return false;
@@ -57,7 +53,7 @@ function initPic(){
     $(".panel-title").html(sliceinfo.name);
     
 	//var p= getXmlDom('/filePath/科目/'+sliceInfo.SNAME+'/'+sliceInfo.CNAME+'/'+sliceInfo.NAME+'/1/DSI0/MoticDigitalSlideImage');
-	if(!sliceinfo.WIDTH){
+	if(!sliceinfo.width){
 	    $("#openSeadragon").html("切片未找到！");
 	    return;
 	}
@@ -74,7 +70,7 @@ function initPic(){
 	    //设置图像必须留着窗口中
 	    visibilityRatio:0.8,
 	    tileOverlap:1,
-	    debugMode:false,
+	    debugMode:true,
 	    //preserveImageSizeOnResize:true,
 	    //loadTilesWithAjax:true,
 	    animationTime:2,
@@ -96,12 +92,16 @@ function initPic(){
 		preserveImageSizeOnResize:true,
 		imageLoaderLimit:1,
 	    tileSources: [{
-	    	width:sliceinfo.WIDTH,
-			height:sliceinfo.HEIGHT,
+	    	width:sliceinfo.width,
+			height:sliceinfo.height,
 			tileSize:256,
 	        getTileUrl:function(level,x,y){
+	        	
 	        	if(nowLevelBL){nowLevel=level;nowLevelBL=false}
-	        	return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceinfo.id;
+	        	
+	        	return 'http://59.110.215.223:6060/getTileData?level='+level+'&x='+x+'&y='+y+'&id='+getQueryString('sliceNo');
+	        	
+	        	//return WEB_ROOT+'/olo/subject!doTileUrlSlice.do?level='+level+'&x='+x+'&y='+y+'&sliceNo='+sliceinfo.id;
 	        }
         }]
 	});
@@ -146,7 +146,7 @@ function initPic(){
      //canvas.contextContainer.strokeRect(0,0,50,50);
 	/*var overlay = viewer.fabricjsOverlay({scale:1});
 	//获取zoom
-	//console.info('1'+this.viewer.viewport.getZoom(true));
+	////console.info('1'+this.viewer.viewport.getZoom(true));
 	
 	var rect = new fabric.Rect({
                       left: 50,
@@ -170,7 +170,7 @@ function initPic(){
      var rect1;
      var x,y;
      var zoom
-     console.info(self.viewer);
+     //console.info(self.viewer);
     canvas.on('mouse:down',function(e){
     	 
     	     self.viewer.setMouseNavEnabled(false);
@@ -203,11 +203,11 @@ function initPic(){
      		   var ex=Math.round((e.e.clientX-x-bx)/zoom);
      		   var ey=Math.round((e.e.clientY-y-by)/zoom);
      		   var lineWidth=parseFloat((2/zoom).toFixed(1));
-     		   console.info(lineWidth);
+     		   //console.info(lineWidth);
                rect1.set({'width':ex,'height':ey,'strokeWidth':lineWidth});
                canvas.renderAll();
                if(!e.target){
-               	  //console.info(true);
+               	  ////console.info(true);
              }
      	}
                    
@@ -216,7 +216,7 @@ function initPic(){
       	c=false;
       	
       	self.viewer.setMouseNavEnabled(true);
-      	//console.info(e);
+      	////console.info(e);
       	viewer.addHandler('update-viewport', function() {
        	    zoom= viewer.viewport.getZoom(true);
        	    var lineWidth=parseFloat((4/zoom).toFixed(1));
@@ -295,7 +295,6 @@ function initPostil(){
         color=this.value;
     })
     canvas.on('mouse:down',function(e){
-    	console.info(333);
 		 if(bl==1){
 	    	 var viewportWindowPoint= viewer.viewport.viewportToWindowCoordinates(new OpenSeadragon.Point(0, 0));
 		     ex=viewportWindowPoint.x;
@@ -374,6 +373,7 @@ function initPostil(){
 		    });
 		    obj.radius && obj.set({'radius':h/2});
 		    obj.rx && obj.set({'rx':w/2,'ry':h/2});
+		    canvas.renderAll();
 		}})
 	  });
 	  
@@ -475,19 +475,96 @@ function edit(){
     	$('#editColor').colorpicker({'container':true});
 }
 function loadPostil(){
-	console.info(sliceinfo);
-    /*$.ajax({
+	maxZoom= gitMaxZoom();
+    $.ajax({
     	     url:WEB_ROOT+'/olo/subject!doLoadPostil.do',
-    	     data:{'sliceNo':sliceinfo.id},
+    	     data:{'sliceNo':1076},
     	     contentType: 'application/json',
     	     dataType:'json',
     	     success:function(msg){
+    	     	console.info(msg);
     	     	if(msg!=null){
-    	     		console.info(msg);
+    	     		//console.info(msg);
     	     		for (var i = 0; i < msg.length; i++) {
+    	     			
+    	     			var c=null;
+    	     			//console.info(i);
     	     			var obj=JSON.parse(msg[i].b);
-    	     			console.info(obj);
-    	     			canvas.add(new fabric.Circle(JSON.parse(msg[i].b)));
+    	     			//console.info(obj);
+    	     			obj.top=obj.prop.top/maxZoom;
+    	     			obj.left=obj.prop.left/maxZoom;
+    	     			obj.width=obj.prop.width/maxZoom;
+    	     			obj.height=obj.prop.height/maxZoom;
+    	     			var draw=new Draw(viewer,{color:obj.stroke,linew:obj.prop.lineW,n:1,'type':obj.prop.propType});
+    	     			if(obj.prop.linewState){
+    	     			
+    	     			   obj.strokeWidth=obj.prop.lineW;
+    	     			}
+    	     			if(obj.prop.propType=='rect'){
+	
+		                   c=new fabric.Rect(obj); 
+		                   c=draw['setCorners'](c,false,true,false,true,false,true,false,true,true);
+						}
+						if(obj.prop.propType=='line'){
+						   
+						   c=new fabric.Line([obj.prop.x1/maxZoom,obj.prop.y1/maxZoom,obj.prop.x2/maxZoom,obj.prop.y2/maxZoom],obj);
+						   c=draw['setCorners'](c,true,false,false,false,true,false,false,false,true);
+						}
+						if(obj.prop.propType=='curv'){
+						
+							
+						}
+						if(obj.prop.propType=='elli'){
+						
+						   obj.rx=obj.prop.rx/maxZoom;
+						   obj.ry=obj.prop.ry/maxZoom;
+						   c=new fabric.Ellipse(obj);
+						   c=draw['setCorners'](c,false,true,false,true,false,true,false,true,true);
+						}
+						if(obj.prop.propType=='roun'){
+						
+							obj.radius=obj.prop.radius/maxZoom;
+							c=new fabric.Circle(obj);
+							c=draw['setCorners'](c,false,true,false,true,false,true,false,true,true);
+						}
+						if(obj.prop.propType=='poly'){
+						
+							for (var j = 0; j < obj.prop.points.length; j++) {
+								
+							     obj.points[j].x=obj.prop.points[j].x/maxZoom;
+							     obj.points[j].y=obj.prop.points[j].y/maxZoom;
+							}
+							c=new fabric.Polygon([],obj);
+							c=draw['setCorners'](c,false,true,false,true,false,true,false,true,true);
+						}
+						if(obj.prop.propType=='loca'){
+						
+							
+						}
+						if(obj.prop.propType=='angp'){
+						
+							
+						}
+						if(obj.prop.propType=='arcp1'){
+						
+							
+						}
+						if(obj.prop.propType=='arcp'){
+						
+							obj.radius=obj.prop.radius/maxZoom;
+							c=new fabric.Circle(obj);
+							c=draw['setCorners'](c,false,false,false,false,false,false,false,false,false);
+						}
+						if(obj.prop.propType=='roup'){
+						
+							
+						}
+						if(obj.prop.propType=='curp'){
+						
+							
+						}
+    	     			console.info(c);
+    	     			canvas.add(c);
     	     			
     	     		}
     	     	   
@@ -496,7 +573,7 @@ function loadPostil(){
     	        
     	     }
         	     
-     })*/
+     })
 }
 function setItemProp(obj,zoom,zoom1){
 	if(obj.typeProp=='group'){
@@ -505,11 +582,12 @@ function setItemProp(obj,zoom,zoom1){
 	     }
 	     return;
 	}
-    if(obj.linewState){
-       	 obj.set({'strokeWidth':obj.lineW/zoom});
-	}else if(obj.sizeState){
+	//console.info(obj);
+    if(obj.prop.linewState){
+       	 obj.set({'strokeWidth':obj.prop.lineW/zoom});
+	}else if(obj.prop.sizeState){
 		
-		if(obj.radius){
+		if(obj.prop.radius){
 		  obj.set({'radius':5/zoom});
 		}else{
 		  obj.set({'width':30/zoom,'height':30/zoom});
@@ -517,6 +595,14 @@ function setItemProp(obj,zoom,zoom1){
 	}else{
 		  //obj.set({'strokeWidth':obj.lineW/zoom});
 	}
+}
+function dialogModal(){
+    $(document).on("show.bs.modal", ".modal", function(){
+	    $(this).draggable({
+	         handle: ".modal-header"   // 只能点击头部拖动
+	    });
+	    $(this).css("overflow", "hidden"); // 防止出现滚动条，出现的话，你会把滚动条一起拖着走的
+	});
 }
 function makefun(){
     $('.poly').hover(function(){
@@ -607,7 +693,11 @@ function doMouseHover(){
            }
         );
 }
-
+function setResize() {  
+        $(window).resize(function(){
+		    location.reload()
+		});  
+    }
 function getQueryString(name) {  
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
         var r = window.location.search.substr(1).match(reg); 

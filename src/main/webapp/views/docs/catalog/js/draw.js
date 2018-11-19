@@ -16,8 +16,8 @@ function Draw(obj,setting){
     fabric.Object.prototype.cornerColor='#C2B7DA';
     fabric.Object.prototype.cornerSize=13;
     fabric.Object.prototype.cornerStyle='circle';
-    fabric.Object.prototype.originX = 'center';
-    fabric.Object.prototype.originY = 'center';
+    //fabric.Object.prototype.originX = 'center';
+    //fabric.Object.prototype.originY = 'center';
     fabric.Object.prototype.fill=null;
     fabric.Object.prototype.overlayFill=null;
     fabric.Object.prototype.transparentCorners=false;
@@ -52,15 +52,22 @@ Draw.prototype={
 	                  width: 0,
 	                  height: 0
 	                });
+	    Postil=this.setCorners(Postil,false,true,false,true,false,true,false,true,true);
 	    return this.setState(Postil,true,false);
     },
     rect:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
     	var zoom= this.zoom();
-    	var x1=pointArr[0].x;
-    	var y1=pointArr[0].y;
-    	var w= Math.abs((x2-x1)*2);
-    	var h= Math.abs((y2-y1)*2);
-        Postil.set({'width':w,'height':h});
+    	var l=x1=pointArr[0].x;
+    	var t=y1=pointArr[0].y;
+    	if(x2<x1){
+    	   l=x2;
+    	}
+    	if(y2<y1){
+    	   t=y2;
+    	}
+    	var w= Math.abs((x2-x1));
+    	var h= Math.abs((y2-y1));
+        Postil.set({'top':t,'left':l,'width':w,'height':h});
     },
     initline:function(canvas,groupPostil,Postil,i,pointArr){
         var zoom= this.zoom();
@@ -71,6 +78,7 @@ Draw.prototype={
                  stroke: this.color,
                  strokeWidth: this.lineW/zoom
 	            });
+	    Postil=this.setCorners(Postil,true,false,false,false,true,false,false,false,true);
 	    return this.setState(Postil,true,false);
     },
     line:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
@@ -94,15 +102,22 @@ Draw.prototype={
            strokeWidth:this.lineW/zoom,
            borderOpacityWhenMoving:1
 	    });
+	    Postil=this.setCorners(Postil,false,true,false,true,false,true,false,true,true);
 	    return this.setState(Postil,true,false);
     },
     elli:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
 	    var zoom= this.zoom();
-	    var x1=pointArr[0].x;
-    	var y1=pointArr[0].y;
-	    var x= Math.abs(x2-x1);
-	    var y= Math.abs(y2-y1);
-    	Postil.set({'rx':x,'ry':y});
+	    var l=x1=pointArr[0].x;
+    	var t=y1=pointArr[0].y;
+    	if(x2<x1){
+    	   l=x2;
+    	}
+    	if(y2<y1){
+    	   t=y2;
+    	}
+	    var x= Math.abs(x2-x1)/2;
+	    var y= Math.abs(y2-y1)/2;
+    	Postil.set({'top':t,'left':l,'rx':x,'ry':y});
     },
     initroun:function(canvas,groupPostil,Postil,i,pointArr){
 	    var zoom= this.zoom();
@@ -117,14 +132,19 @@ Draw.prototype={
            lockUniScaling:true,
            radius: 0
 	    });
+	    Postil=this.setCorners(Postil,false,true,false,true,false,true,false,true,true);
 	    return this.setState(Postil,true,false);
     },
     roun:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
 	    var zoom= this.zoom();
-	    var x1=pointArr[0].x;
-    	var y1=pointArr[0].y;
-	    var radius= Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
-    	Postil.set({'radius':radius});
+	    var l=x1=pointArr[0].x;
+    	var t=y1=pointArr[0].y;
+    	var prop=this.getCircleCentre(x1,y1,x2,y2);
+    	var r=this.getCircleRadii(x1,y1,x2,y2);
+    	l=prop.x-r;
+    	t=prop.y-r;
+	    //var radius= Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2))/2;
+    	Postil.set({'left':l,'top':t,'radius':r});
     },
     initpoly:function(canvas,groupPostil,Postil,i,pointArr){
     	var zoom= this.zoom();
@@ -139,13 +159,14 @@ Draw.prototype={
             strokeWidth:this.lineW/zoom,
             borderOpacityWhenMoving:1
 		});
+		Postil=this.setCorners(Postil,false,true,false,true,false,true,false,true,true);
 		return this.setState(Postil,true,false);
     },
     poly:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
     	var zoom= this.zoom();
     	var x1=pointArr[0].x;
     	var y1=pointArr[0].y;
-        var r=(Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2)));
+        var r=this.getCircleRadii(x1,y1,x2,y2);
         var points=new Array();
         for (var i = 0; i <this.polyN; i++) {
         	points.push({x:x1+(r*Math.cos(Math.PI/2+(i*2*Math.PI/this.polyN))),y:y1+(r*Math.sin(Math.PI/2+(i*2*Math.PI/this.polyN)))});
@@ -156,13 +177,33 @@ Draw.prototype={
     	var zoom= this.zoom();
     	var x1=pointArr[0].x;
     	var y1=pointArr[0].y;
+    	var maxZoom=gitMaxZoom();
+    	var prop={};
 		fabric.Image.fromURL('../catalog/images/make_loca1.png', function(img){
-			img.linewState=false;
-    	    img.sizeState=true; 
-		    canvas.add(img.set({ left: x1, top: y1-15/zoom,width:30/zoom,height:30/zoom}));
+			
+			
+	    	prop.linewState=false;
+	    	prop.sizeState=true; 
+	    	prop.propType='loca';
+	    	//prop.x=x1;
+	    	//prop.y=(y1-15/zoom);
+	    	img.prop=prop;
+	    	img.originX = 'center';
+	    	img.originY = 'bottom';
+	    	img.setControlVisible('tl',false);
+		    img.setControlVisible('ml',false);
+		    img.setControlVisible('bl',false);
+		    img.setControlVisible('mb',false);
+		    img.setControlVisible('br',false);
+		    img.setControlVisible('mr',false);
+		    img.setControlVisible('tr',false);
+		    img.setControlVisible('mt',false);
+		    img.setControlVisible('mtr',false);
+			canvas.add(img.set({ left: x1, top: y1-1/zoom,width:30/zoom,height:30/zoom}));
 		    //Postil=img;
 		});
 		this.reset(canvas);
+		
 	    return null;
     },
     loca:function(canvas,groupPostil,Postil,i,pointArr,x2,y2){
@@ -177,7 +218,7 @@ Draw.prototype={
     	var y1=pointArr[i].y;
     	switch (i){
     	   case 0:{
-    	   	  groupPostil = this.makeGroup(x1,y1);
+    	   	  groupPostil = this.makeGroup(x1,y1,'left','top');
     	      canvas.add(this.setState(groupPostil,true,false));
     	      line2=this.setState(this.makeLine(canvas,Postil,i,x1,y1),true,false);
     	      Postil=this.setState(this.makeCircle(x1,y1,line1,line2,line3,lineType),false,true);
@@ -201,8 +242,10 @@ Draw.prototype={
     	      break;
     	   }
     	}
-    	groupPostil.addWithUpdate(line2);
-    	groupPostil.addWithUpdate(Postil);
+    	this.addGroupItem(groupPostil,line2,x1,y1);
+    	//groupPostil.addWithUpdate(line2);
+    	this.addGroupItem(groupPostil,Postil,x1,y1);
+    	//groupPostil.addWithUpdate(Postil);
     	
 	    return groupPostil;
 	    //return this.setState(Postil,false,true);
@@ -234,7 +277,7 @@ Draw.prototype={
     	var y1=pointArr[i].y;
     	switch (i){
     	   case 0:{
-    	   	  groupPostil = this.makeGroup(x1,y1);
+    	   	  groupPostil = this.makeGroup(x1,y1,'left','top');
     	   	  this.setState(groupPostil,true,false);
     	      canvas.add(groupPostil.set({'originX':'left','originY':'top'}));
     	   	  line1= new fabric.Path('M 0 0 Q 1, 1, 2, 2',{stroke: this.color,strokeWidth: this.lineW/zoom,selectable: false});
@@ -302,7 +345,7 @@ Draw.prototype={
     	var line3=null;
     	switch (i){
     	   case 0:{
-    	   	  groupPostil = this.makeGroup(x1,y1);
+    	   	  groupPostil = this.makeGroup(x1,y1,'center','center');
     	      canvas.add(this.setState(groupPostil,true,false));
     	   	  var x1=pointArr[0].x;
     	   	  var y1=pointArr[0].y;
@@ -314,6 +357,8 @@ Draw.prototype={
 		           borderOpacityWhenMoving:1,
 		           lockUniScaling:true,
 		           selectable: false,
+		           originX:'center',
+		           originY:'center',
 		           radius: 0,
 				   startAngle:0,
 				   endAngle: 0
@@ -392,7 +437,7 @@ Draw.prototype={
     	var line3=null;
     	switch (i){
     	   case 0:{
-    	   	  groupPostil = this.makeGroup(x1,y1);
+    	   	  groupPostil = this.makeGroup(x1,y1,'center','center');
     	      canvas.add(this.setState(groupPostil,true,false));
     	   	  var x1=pointArr[0].x;
     	   	  var y1=pointArr[0].y;
@@ -402,6 +447,8 @@ Draw.prototype={
 		           stroke:this.color,
 		           strokeWidth:this.lineW/zoom,
 		           borderOpacityWhenMoving:1,
+		           originX:'center',
+		           originY:'center',
 		           lockUniScaling:true,
 		           selectable: false,
 		           radius: 0
@@ -483,7 +530,7 @@ Draw.prototype={
     		var j= groupPostil.size()-2;
     	    line1=groupPostil.item(j).line2;
     	}else{
-    		groupPostil = this.makeGroup(x1,y1);
+    		groupPostil = this.makeGroup(x1,y1,'center','center');
     	    canvas.add(this.setState(groupPostil,true,false));
     	}
     	line2=this.setState(this.makeLine(canvas,Postil,i,x1,y1),true,false);
@@ -564,15 +611,17 @@ Draw.prototype={
 	    p.setControlVisible('mtr',mtr);
 	    return p;
     },
-    makeGroup:function(left, top) {
+    makeGroup:function(left, top,originx,originy) {
 	    var g = new fabric.Group([],{
 		      left: left,
 		      top: top,
 		      radius: 1,
 		      lockMovementX:true,
-		      lockMovementY:true
+		      lockMovementY:true,
+		      originX:originx,
+		      originY:originy
 	    });
-	    this.setCorners(g,false,false,false,false,false,false,false,false,true);
+	    this.setCorners(g,false,false,false,false,false,false,false,false,false);
 	    g.typeProp='group';
 	    return g;
     },
@@ -589,14 +638,36 @@ Draw.prototype={
 		      top: top,
 		      radius: 6/zoom,
 		      fill: '#C2B7DA',
-		      strokeWidth: 0
+		      strokeWidth: 0,
+		      originX:'center',
+		      originY:'center'
 	    });
+		var prop={};
+		prop.linewState=true;
+		prop.sizeState=true; 
+		prop.lineW=this.lineW;
+		prop.propType=type;
+		c.prop=prop;
+	    //c.originX = 'center';
+	    //c.originY = 'left';
 	    c.hasControls = c.hasBorders = false;
 	    c.line1 = line1;
 	    c.line2 = line2;
 	    c.line3 = line3;
 	    c.lineType=type;
 	    return c;
+    },
+    //根据过直径两点计算圆心
+    getCircleCentre:function(x1,y1,x2,y2){
+        var prop={};
+        prop.x=(x1+x2)*0.5;
+        prop.y=(y1+y2)*0.5;
+        return prop;
+    },
+    //根据过直径两点计算半径
+    getCircleRadii:function(x1,y1,x2,y2){
+        var r= 0.5*Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+        return r;
     },
     getCircleProp:function(x1,y1,x2,y2,x3,y3) {
     	var A1, A2, B1, B2, C1, C2, temp,cx,cy,radius;  
@@ -648,7 +719,11 @@ Draw.prototype={
     	  p.linewState=w;
     	  p.sizeState=s; 
     	  p.lineW=this.lineW;
+    	  prop.linewState=w;
+    	  prop.sizeState=s; 
+    	  prop.lineW=this.lineW;
     	  prop.propType=this.type;
+    	  prop.serialization=false;
     	  p.prop=prop;
     	}
     	return p;

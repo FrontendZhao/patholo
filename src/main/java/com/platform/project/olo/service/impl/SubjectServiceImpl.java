@@ -33,7 +33,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@Override
 	public List<?> findCatalogData(String subNo) throws ServiceException {
 		
-		String sql="select ID,NAME,PID from tb_subject where ID=? and visible=1 union select ID,NAME,PID from tb_catalog1 where pid=? and visible=1";
+		String sql="select ID,NAME,PID from tb_subject where ID=? and visible=1 union select ID,NAME,PID from tb_catalog where pid=? and visible=1";
 		return hibernateDao.queryList(sql,new Object[]{subNo,subNo});
 	}
 
@@ -57,7 +57,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@Override
 	public Object findSliceInfo(String sliceNo) throws ServiceException {
 		
-		String sql="select * from tb_catalog1 where id=? and visible=1";
+		String sql="select * from tb_catalog where id=? and visible=1";
 		
 		Map<String, Object> map=hibernateDao.queryMap(sql, new Object[]{sliceNo});
 		
@@ -208,9 +208,9 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@Override
 	public Map findSubjectPageData(String subNo,String pageNo) throws ServiceException {
 		
-		String nodeSql="select ID,NAME,PID,SLICEFLAG from tb_catalog1 where pid in (select id from tb_catalog1 where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
+		String nodeSql="select ID,NAME,PID,SLICEFLAG from tb_catalog where pid in (select id from tb_catalog where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
 		
-		String sql="select ID,NAME,PID,SLICEFLAG from tb_catalog1 where id=? and visible=1";
+		String sql="select ID,NAME,PID,SLICEFLAG from tb_catalog where id=? and visible=1";
 		
 		List<?> nodeList= hibernateDao.queryList(nodeSql, new Object[]{subNo});
 		
@@ -243,7 +243,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@SuppressWarnings("unchecked")
 	public List findChildNode(Map m){
 		
-		String sql="select ID,NAME,PID,SLICEFLAG from tb_catalog1 where pid=? and visible=1 order by sortid";
+		String sql="select ID,NAME,PID,SLICEFLAG from tb_catalog where pid=? and visible=1 order by sortid";
 		
 		List<?> list=hibernateDao.queryList(sql,new Object[]{m.get("ID")});
 		
@@ -265,7 +265,7 @@ public class SubjectServiceImpl extends BaseService implements ISubjectService {
 	@Override
 	public Map findSubjectPageTotal(String subNo) throws ServiceException {
 		
-        String sql="select count(*) as TOTAL from tb_catalog1 where pid in (select id from tb_catalog1 where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
+        String sql="select count(*) as TOTAL from tb_catalog where pid in (select id from tb_catalog where pid=? and visible=1 order by chapsort) and visible=1 order by chapsort,nodesort";
 		
 		Map map= hibernateDao.queryMap(sql,new Object[]{subNo});
 		

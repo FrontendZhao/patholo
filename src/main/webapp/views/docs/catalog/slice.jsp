@@ -116,6 +116,7 @@
 									                 <option value="elli">椭圆</option>
 									                 <option value="rect">矩形</option>
 									                 <option value="poly">正多边形</option>
+									                 <option value="loca">标记</option>
 									                 <option value="angp">折线</option>
 									                 <option value="arcp1">贝塞尔曲线</option>
 									                 <option value="arcp">圆弧</option>

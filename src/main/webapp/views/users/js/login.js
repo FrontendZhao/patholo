@@ -32,7 +32,7 @@ $(function(){
 					$('<form>').appendTo('body')
 					.attr({'action': WEB_ROOT+'/sys/login!doLogin.do', 'method':'post'})
 					.append('<input name="j_username" value="'+j_username+'" />')
-					.append('<input name="j_password" value="'+j_password+'" />')
+					.append('<input name="j_password" type="password" value="'+j_password+'" />')
 					.append('<input name="pageid" value="'+getQueryString("pageid")+'" />')
 					.append('<input type="submit" style="display:none" />')
 					.find('input[type="submit"]').trigger('click');

@@ -42,6 +42,8 @@ Prop.prototype={
     	$('#girth label').html('周长:  '+this.fixed(l*n*this.bilici)+'  微米');
     	$('#area label').html('面积:  '+this.fixed(area)+'  平方微米');
     },
+    loca:function(){
+    },
     angp:function(){
     	var x1=this.obj._objects[1].left,x2=this.obj._objects[3].left,x3=this.obj._objects[4].left;
     	var y1=this.obj._objects[1].top,y2=this.obj._objects[3].top,y3=this.obj._objects[4].top;
