@@ -26,11 +26,8 @@
 										<div class='chapter-title-text'>炎症的基本病理变化</div>
 									</div>
 									<div class='section'>
-										<ul class='section-title'>
-											<li class='order-11'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
+										<ul class='section-slides section-slide-layout-large'>
+											<li ><img src="style/images/pdf.jpg"><a target='_blank' href='${ctx}/views/docs/catalog/subject/files/fy.pdf'>教学课件</a></li>
 											<li class='disabled-item'></li>
 										</ul>
 										
@@ -40,11 +37,8 @@
 										<div class='chapter-title-text'>炎症的血液动力学改变</div>
 									</div>
 									<div class='section'>
-										<ul class='section-title'>
-											<li class='order-11'></li>
-										</ul>
-										<ul class='section-sub-title section-sub-title-h'>
-											<li class='disabled-item'></li>
+										<ul class='section-slides section-slide-layout-large'>
+											<li ><img src="style/images/shipin.jpg"><a target='_blank' href='${ctx}/views/docs/catalog/subject/video.jsp'>教学视频</a></li>
 											<li class='disabled-item'></li>
 										</ul>
 										
